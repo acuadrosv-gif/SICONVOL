@@ -1,0 +1,6955 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#17324d">
+
+<title>
+Control de Vibraciones por Voladuras — UNE 22-381-93
+</title>
+
+<style>
+
+/* ==========================================================
+   VARIABLES
+   ========================================================== */
+
+:root{
+  --azul:#17324d;
+  --azul2:#245b86;
+  --azul3:#eaf2f8;
+
+  --verde:#16803c;
+  --verde-bg:#e7f6ec;
+
+  --naranja:#b56a00;
+  --naranja-bg:#fff2d9;
+
+  --rojo:#b42318;
+  --rojo-bg:#fde8e7;
+
+  --morado:#9b59b6;
+  --morado-claro:#b36bd1;
+
+  --gris:#667085;
+  --gris2:#eef1f4;
+
+  --borde:#d0d5dd;
+
+  --blanco:#fff;
+
+  --sombra:0 2px 10px rgba(0,0,0,.08);
+}
+
+
+/* ==========================================================
+   GENERAL
+   ========================================================== */
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:#f5f7fa;
+  color:#1d2939;
+}
+
+/* CABECERA WEB - TÍTULO VISIBLE EN PANTALLA */
+header{
+  background:
+    linear-gradient(
+      135deg,
+      var(--azul),
+      #285f89
+    );
+
+  color:white;
+
+  padding:20px 25px;
+
+  box-shadow:var(--sombra);
+
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+.header-logo{
+  height:55px;
+  width:auto;
+  object-fit:contain;
+}
+
+.header-text h1{
+  margin:0 0 5px;
+  font-size:25px;
+}
+
+.header-text p{
+  margin:0;
+  opacity:.9;
+}
+
+/* CABECERA PARA PDF - LOGO + TÍTULO + PROYECTO */
+.pdf-header{
+  display: none;
+}
+
+nav{
+  background:white;
+
+  border-bottom:
+    1px solid var(--borde);
+
+  display:flex;
+
+  gap:4px;
+
+  padding:8px;
+
+  position:sticky;
+  top:0;
+
+  z-index:20;
+
+  overflow-x:auto;
+}
+
+nav button{
+  border:0;
+
+  background:white;
+
+  padding:11px 15px;
+
+  cursor:pointer;
+
+  border-radius:7px;
+
+  color:#344054;
+
+  white-space:nowrap;
+
+  font-weight:600;
+}
+
+nav button:hover,
+nav button.active{
+  background:var(--azul3);
+  color:var(--azul);
+}
+
+main{
+  max-width:1450px;
+  margin:auto;
+  padding:20px;
+}
+
+.tab{
+  display:none;
+}
+
+.tab.active{
+  display:block;
+}
+
+
+/* ==========================================================
+   TARJETAS
+   ========================================================== */
+
+.card{
+  background:white;
+
+  border:
+    1px solid var(--borde);
+
+  border-radius:10px;
+
+  box-shadow:var(--sombra);
+
+  padding:20px;
+
+  margin-bottom:20px;
+}
+
+.card h2,
+.card h3{
+  margin-top:0;
+  color:var(--azul);
+}
+
+
+/* ==========================================================
+   GRID
+   ========================================================== */
+
+.grid{
+  display:grid;
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:14px;
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:14px;
+}
+
+.grid2{
+  display:grid;
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:14px;
+}
+
+
+/* ==========================================================
+   FORMULARIOS
+   ========================================================== */
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:5px;
+}
+
+.field label{
+  font-size:13px;
+  font-weight:700;
+  color:#475467;
+}
+
+input,
+select,
+textarea{
+  width:100%;
+
+  border:
+    1px solid var(--borde);
+
+  border-radius:6px;
+
+  padding:10px;
+
+  font-size:14px;
+
+  background:white;
+}
+
+textarea{
+  min-height:80px;
+  resize:vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+  outline:
+    2px solid #b7d4ea;
+
+  border-color:
+    var(--azul2);
+}
+
+
+/* ==========================================================
+   BOTONES
+   ========================================================== */
+
+.btn{
+  border:0;
+
+  border-radius:7px;
+
+  padding:10px 15px;
+
+  cursor:pointer;
+
+  font-weight:700;
+
+  background:var(--azul);
+
+  color:white;
+}
+
+.btn:hover{
+  filter:brightness(1.1);
+}
+
+.btn.secondary{
+  background:#667085;
+}
+
+.btn.green{
+  background:var(--verde);
+}
+
+.btn.orange{
+  background:var(--naranja);
+}
+
+.btn.red{
+  background:var(--rojo);
+}
+
+.btn.light{
+  background:#edf2f7;
+  color:#344054;
+}
+
+.actions{
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:8px;
+
+  margin-top:18px;
+}
+
+
+/* ==========================================================
+   ESTADOS
+   ========================================================== */
+
+.status{
+  border-radius:10px;
+
+  padding:20px;
+
+  text-align:center;
+
+  border:
+    1px solid transparent;
+}
+
+.status .big{
+  font-size:27px;
+  font-weight:800;
+}
+
+.status .small{
+  margin-top:7px;
+  font-size:14px;
+}
+
+.status.green{
+  color:var(--verde);
+  background:var(--verde-bg);
+  border-color:#a6e0b9;
+}
+
+.status.orange{
+  color:var(--naranja);
+  background:var(--naranja-bg);
+  border-color:#f0ce91;
+}
+
+.status.red{
+  color:var(--rojo);
+  background:var(--rojo-bg);
+  border-color:#efb1ad;
+}
+
+.status.gray{
+  color:#475467;
+  background:#f2f4f7;
+  border-color:#d0d5dd;
+}
+
+
+/* ==========================================================
+   RESULTADOS
+   ========================================================== */
+
+.result-grid{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:12px;
+
+  margin-top:15px;
+}
+
+.metric{
+  background:#f8fafc;
+
+  border:
+    1px solid #e4e7ec;
+
+  border-radius:8px;
+
+  padding:14px;
+}
+
+.metric .label{
+  color:#667085;
+  font-size:12px;
+}
+
+.metric .value{
+  font-size:20px;
+
+  font-weight:800;
+
+  margin-top:5px;
+}
+
+
+/* ==========================================================
+   TABLAS
+   ========================================================== */
+
+table{
+  width:100%;
+
+  border-collapse:collapse;
+
+  font-size:13px;
+}
+
+th,
+td{
+  padding:9px;
+
+  border-bottom:
+    1px solid #eaecf0;
+
+  text-align:left;
+}
+
+th{
+  background:#f8fafc;
+
+  color:#475467;
+}
+
+
+/* ==========================================================
+   BADGES
+   ========================================================== */
+
+.badge{
+  display:inline-block;
+
+  border-radius:20px;
+
+  padding:4px 9px;
+
+  font-size:11px;
+
+  font-weight:800;
+}
+
+.badge.green{
+  background:var(--verde-bg);
+  color:var(--verde);
+}
+
+.badge.orange{
+  background:var(--naranja-bg);
+  color:var(--naranja);
+}
+
+.badge.red{
+  background:var(--rojo-bg);
+  color:var(--rojo);
+}
+
+.badge.gray{
+  background:#eaecf0;
+  color:#475467;
+}
+
+
+/* ==========================================================
+   AYUDA
+   ========================================================== */
+
+.help{
+  color:#667085;
+
+  font-size:13px;
+
+  line-height:1.5;
+}
+
+.alert{
+  border-left:
+    4px solid var(--naranja);
+
+  background:#fffaf0;
+
+  padding:12px 15px;
+
+  margin-bottom:15px;
+
+  font-size:13px;
+}
+
+
+/* ==========================================================
+   DASHBOARD
+   ========================================================== */
+
+.kpis{
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,1fr);
+
+  gap:15px;
+}
+
+.kpi{
+  background:white;
+
+  border:
+    1px solid var(--borde);
+
+  border-radius:10px;
+
+  padding:18px;
+
+  box-shadow:var(--sombra);
+}
+
+.kpi .num{
+  font-size:30px;
+
+  font-weight:800;
+
+  color:var(--azul);
+}
+
+.kpi .txt{
+  color:#667085;
+
+  margin-top:4px;
+}
+
+
+/* ==========================================================
+   BOTONES PEQUEÑOS
+   ========================================================== */
+
+.small-btn{
+  border:0;
+
+  background:#eef2f6;
+
+  padding:6px 8px;
+
+  border-radius:5px;
+
+  cursor:pointer;
+
+  font-size:12px;
+
+  margin:2px;
+}
+
+
+/* ==========================================================
+   CONTENEDOR DE GRÁFICA
+   ========================================================== */
+
+.chart-wrapper{
+
+  position:relative;
+
+  width:100%;
+
+  min-height:560px;
+
+  overflow:hidden;
+
+  background:white;
+
+  border-radius:8px;
+}
+
+#chart{
+
+  width:100%;
+
+  height:560px;
+
+  display:block;
+
+  background:white;
+}
+
+
+/* ==========================================================
+   LEYENDA DE COMPONENTES
+   ========================================================== */
+
+.component-legend{
+
+  display:flex;
+
+  flex-wrap:wrap;
+
+  gap:18px;
+
+  padding:12px 4px;
+
+  font-size:13px;
+
+  font-weight:700;
+}
+
+.component-item{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:7px;
+}
+
+.component-symbol{
+
+  font-size:21px;
+
+  line-height:1;
+}
+
+.symbol-vertical{
+  color:#e53935;
+}
+
+.symbol-longitudinal{
+  color:#16803c;
+}
+
+.symbol-transversal{
+  color:#9b59b6;
+}
+
+
+/* ==========================================================
+   PIE
+   ========================================================== */
+
+footer{
+  text-align:center;
+
+  color:#667085;
+
+  font-size:12px;
+
+  padding:30px;
+}
+
+.footer-logo{
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 5px;
+  display: inline-block;
+}
+
+
+/* ==========================================================
+   IMPRESIÓN
+   ========================================================== */
+
+@media print{
+
+  nav,
+  .no-print,
+  #formCard,
+  .tabs-menu,
+  header{
+    display:none !important;
+  }
+
+  body{
+    background:white;
+  }
+
+  main{
+    max-width:none;
+    padding:0;
+  }
+
+  .card{
+    box-shadow:none;
+    border:0;
+  }
+
+  .tab{
+    display:none !important;
+  }
+
+  #tab-informe{
+    display:block !important;
+  }
+
+  #tab-grafica{
+    display: block !important;
+  }
+
+  /* CABECERA PDF - LOGO + TÍTULO + PROYECTO */
+  .pdf-header{
+    display: block !important;
+    padding: 20px;
+    border-bottom: 3px solid var(--azul);
+  }
+
+  .pdf-header .logo-img{
+    height: 70px;
+    width: auto;
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .pdf-header h1{
+    font-size: 24px;
+    color: var(--azul);
+    margin: 0 0 5px;
+  }
+
+  .pdf-header p{
+    font-size: 13px;
+    color: var(--gris);
+    margin: 0 0 3px;
+  }
+
+  /* ===== GRÁFICA ===== */
+  
+  #chart{
+    height: 350px !important;
+    width: 100% !important;
+    display: block !important;
+    background: white !important;
+    border: 1px solid #d0d5dd !important;
+    border-radius: 4px !important;
+    margin: 10px 0 !important;
+  }
+
+  .chart-wrapper{
+    min-height: 350px !important;
+    height: auto !important;
+    overflow: visible !important;
+    page-break-inside: avoid !important;
+    border: 1px solid #d0d5dd !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    background: white !important;
+    margin: 15px 0 !important;
+  }
+
+  .component-legend{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 15px !important;
+    padding: 10px 4px !important;
+    border-top: 1px solid #eaecf0 !important;
+    margin-top: 8px !important;
+    justify-content: center !important;
+  }
+
+  .component-item{
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    font-size: 12px !important;
+  }
+
+  .component-symbol{
+    font-size: 18px !important;
+  }
+
+  .card:has(.grid3){
+    display: block !important;
+    page-break-inside: avoid !important;
+    margin: 10px 0 !important;
+  }
+
+  .grid3{
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .metric{
+    background: #f8fafc !important;
+    border: 1px solid #e4e7ec !important;
+    border-radius: 6px !important;
+    padding: 10px !important;
+  }
+
+  .metric .label{
+    font-size: 10px !important;
+  }
+
+  .metric .value{
+    font-size: 14px !important;
+    font-weight: 700 !important;
+  }
+
+  .card:has(.chart-wrapper){
+    page-break-inside: avoid !important;
+  }
+
+  /* PÁGINA 1: Gráfica + Medición representada */
+  #tab-grafica {
+    page-break-after: always !important;
+  }
+
+  /* PÁGINA 2: Informe + Instrumentación + Resultados */
+  #tab-informe {
+    page-break-before: always !important;
+  }
+
+  /* Bloque RESULTADO - Nunca se corta */
+  div[style*="border:2px solid"]{
+    page-break-inside: avoid !important;
+    page-break-before: auto !important;
+  }
+
+  /* ===== PIE DE PÁGINA CENTRADO + NÚMERO A LA DERECHA ===== */
+  footer{
+    display: block !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 11px;
+    color: #667085;
+    border-top: 1px solid #d0d5dd;
+    padding-top: 10px;
+    margin-top: 30px;
+    background: white;
+  }
+
+  .footer-logo{
+    height: 15px;
+    vertical-align: middle;
+    margin-left: 5px;
+    display: inline-block;
+  }
+
+  @page {
+    margin: 1.5cm 1cm 2cm 1cm;
+    @bottom-right {
+      content: counter(page) " / " counter(pages);
+      font-size: 10px;
+      color: #667085;
+    }
+  }
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media(max-width:1000px){
+
+  .grid{
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+
+  .grid3{
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .result-grid,
+  .kpis{
+
+    grid-template-columns:
+      repeat(2,1fr);
+  }
+}
+
+
+@media(max-width:650px){
+
+  main{
+    padding:10px;
+  }
+
+  .grid,
+  .grid2,
+  .grid3,
+  .result-grid,
+  .kpis{
+
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    padding:14px;
+  }
+
+  table{
+    font-size:11px;
+  }
+
+  th,
+  td{
+    padding:6px;
+  }
+
+  #chart{
+    height:500px;
+  }
+
+  .chart-wrapper{
+    min-height:500px;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ========================================================
+     CABECERA WEB - VISIBLE EN PANTALLA
+     ======================================================== -->
+
+<header>
+  <img src="LEMOS.png" alt="LEMOS" class="header-logo">
+  <div class="header-text">
+    <h1>Control de Vibraciones por Voladuras</h1>
+    <p>Herramienta de registro y evaluación — UNE 22-381-93</p>
+  </div>
+</header>
+
+
+<!-- ========================================================
+     CABECERA PDF - LOGO + TÍTULO + PROYECTO
+     ======================================================== -->
+
+<div class="pdf-header">
+  <img src="LEMOS.png" alt="LEMOS" class="logo-img">
+  <h1>Control de Vibraciones por Voladuras — UNE 22-381-93</h1>
+  <p>Proyecto: <span id="pdf-proyecto">OBRA DESMONTE BARRIO DO CURA - VIGO</span></p>
+  <p>· Generado: <span id="pdf-generado">27/8/2026</span></p>
+</div>
+
+
+<!-- ========================================================
+     NAVEGACIÓN
+     ======================================================== -->
+
+<nav class="tabs-menu">
+
+  <button
+    class="active"
+    onclick="showTab('tab-dashboard',this)">
+    Dashboard
+  </button>
+
+  <button
+    onclick="showTab('tab-nueva',this)">
+    Nueva medición
+  </button>
+
+  <button
+    onclick="showTab('tab-historial',this)">
+    Historial
+  </button>
+
+  <button
+    onclick="showTab('tab-grafica',this)">
+    Gráfica UNE
+  </button>
+
+  <button
+    onclick="showTab('tab-estudio',this)">
+    Estudio
+  </button>
+
+  <button
+    onclick="showTab('tab-datos',this)">
+    Datos / Backup
+  </button>
+
+  <button
+    onclick="showTab('tab-informe',this)">
+    Informe
+  </button>
+
+</nav>
+
+
+<main>
+
+
+<!-- ========================================================
+     DASHBOARD
+     ======================================================== -->
+
+<section
+  id="tab-dashboard"
+  class="tab active">
+
+  <div class="card">
+
+    <h2>
+      Panel de control
+    </h2>
+
+    <p class="help">
+      Resumen de las mediciones almacenadas
+      en este dispositivo/navegador.
+    </p>
+
+  </div>
+
+
+  <div class="kpis">
+
+    <div class="kpi">
+
+      <div
+        class="num"
+        id="kpiTotal">
+        0
+      </div>
+
+      <div class="txt">
+        Mediciones
+      </div>
+
+    </div>
+
+
+    <div class="kpi">
+
+      <div
+        class="num"
+        id="kpiGreen">
+        0
+      </div>
+
+      <div class="txt">
+        Dentro del límite
+      </div>
+
+    </div>
+
+
+    <div class="kpi">
+
+      <div
+        class="num"
+        id="kpiOrange">
+        0
+      </div>
+
+      <div class="txt">
+        Atención
+      </div>
+
+    </div>
+
+
+    <div class="kpi">
+
+      <div
+        class="num"
+        id="kpiRed">
+        0
+      </div>
+
+      <div class="txt">
+        Por encima
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h3>
+      Últimas mediciones
+    </h3>
+
+    <div id="dashboardTable"></div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     NUEVA MEDICIÓN
+     ======================================================== -->
+
+<section
+  id="tab-nueva"
+  class="tab">
+
+
+  <div
+    class="card"
+    id="formCard">
+
+
+    <h2 id="formTitle">
+      Nueva medición
+    </h2>
+
+
+    <div class="alert">
+
+      Introduce los datos obtenidos del sismógrafo.
+      La aplicación es independiente del fabricante
+      y permite introducir manualmente resultados
+      de distintos equipos.
+
+    </div>
+
+
+    <input
+      type="hidden"
+      id="editId">
+
+
+    <!-- DATOS GENERALES -->
+
+    <h3>
+      1. Datos generales
+    </h3>
+
+
+    <div class="grid">
+
+
+      <div class="field">
+
+        <label>
+          Identificación de voladura
+        </label>
+
+        <input
+          id="voladura"
+          placeholder="VOL-2026-001">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Fecha
+        </label>
+
+        <input
+          type="date"
+          id="fecha">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Hora
+        </label>
+
+        <input
+          type="time"
+          id="hora">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Explotación / obra
+        </label>
+
+        <input
+          id="explotacion">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Punto de control
+        </label>
+
+        <input
+          id="punto"
+          placeholder="P-01">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Distancia a voladura (m)
+        </label>
+
+        <input
+          type="number"
+          step="0.01"
+          id="distancia">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Tipo de estructura
+        </label>
+
+        <select id="grupo">
+
+          <option value="I">
+            Grupo I
+          </option>
+
+          <option
+            value="II"
+            selected>
+            Grupo II
+          </option>
+
+          <option value="III">
+            Grupo III
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Descripción estructura
+        </label>
+
+        <input id="estructura">
+
+      </div>
+
+
+    </div>
+
+
+    <!-- VOLADURA -->
+
+    <h3 style="margin-top:25px">
+
+      2. Voladura
+
+    </h3>
+
+
+    <div class="grid">
+
+
+      <div class="field">
+
+        <label>
+          Carga total (kg)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="cargaTotal">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Carga máxima instantánea / secuencia (kg)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="cargaMIC">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Nº de barrenos
+        </label>
+
+        <input
+          type="number"
+          id="barrenos">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Secuencias
+        </label>
+
+        <input id="secuencias">
+
+      </div>
+
+
+    </div>
+
+
+    <!-- SISMÓGRAFO -->
+
+    <h3 style="margin-top:25px">
+
+      3. Sismógrafo
+
+    </h3>
+
+
+    <div class="grid">
+
+
+      <div class="field">
+
+        <label>
+          Fabricante
+        </label>
+
+        <input
+          id="fabricante"
+          placeholder="Ej. Instantel">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Modelo
+        </label>
+
+        <input id="modelo">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Nº de serie
+        </label>
+
+        <input id="serie">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Observaciones equipo
+        </label>
+
+        <input id="obsEquipo">
+
+      </div>
+
+
+    </div>
+
+
+    <!-- LECTURAS -->
+
+    <h3 style="margin-top:25px">
+
+      4. Lecturas
+
+    </h3>
+
+
+    <div class="grid3">
+
+
+      <div class="field">
+
+        <label>
+          PPV vertical (mm/s)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="v">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          PPV longitudinal (mm/s)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="l">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          PPV transversal (mm/s)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="t">
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      class="grid3"
+      style="margin-top:14px">
+
+
+      <div class="field">
+
+        <label>
+          Frecuencia principal (Hz)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="frecuencia">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Método de frecuencia
+        </label>
+
+        <select id="metodoFrecuencia">
+
+          <option>
+            Dato proporcionado por sismógrafo
+          </option>
+
+          <option>
+            FFT
+          </option>
+
+          <option>
+            Espectro de respuesta
+          </option>
+
+          <option>
+            Semiperíodo
+          </option>
+
+          <option>
+            Estimación manual
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Desplazamiento registrado (mm), si disponible
+        </label>
+
+        <input
+          type="number"
+          step="0.0001"
+          id="desplazamiento">
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      class="field"
+      style="margin-top:14px">
+
+      <label>
+        Descripción del terreno / observaciones
+      </label>
+
+      <textarea
+        id="observaciones"></textarea>
+
+    </div>
+
+
+    <div class="actions">
+
+      <button
+        class="btn green"
+        onclick="calcular(false)">
+
+        Calcular resultado
+
+      </button>
+
+
+      <button
+        class="btn"
+        onclick="guardarMedicion()">
+
+        Guardar medición
+
+      </button>
+
+
+      <button
+        class="btn light"
+        onclick="limpiarFormulario()">
+
+        Limpiar
+
+      </button>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- RESULTADO -->
+
+  <div class="card">
+
+    <h2>
+      Resultado de la evaluación
+    </h2>
+
+
+    <div
+      id="resultadoStatus"
+      class="status gray">
+
+      <div class="big">
+        Sin calcular
+      </div>
+
+      <div class="small">
+
+        Introduce los valores de PPV y frecuencia.
+
+      </div>
+
+    </div>
+
+
+    <div class="result-grid">
+
+
+      <div class="metric">
+
+        <div class="label">
+          PPV máxima
+        </div>
+
+        <div
+          class="value"
+          id="rPPV">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          Componente dominante
+        </div>
+
+        <div
+          class="value"
+          id="rComp">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          Frecuencia
+        </div>
+
+        <div
+          class="value"
+          id="rFreq">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          Límite calculado
+        </div>
+
+        <div
+          class="value"
+          id="rLimite">
+          —
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      id="rDetalle"
+      class="help"
+      style="margin-top:15px">
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     HISTORIAL
+     ======================================================== -->
+
+<section
+  id="tab-historial"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <h2>
+      Historial de mediciones
+    </h2>
+
+
+    <div
+      class="grid3 no-print">
+
+
+      <div class="field">
+
+        <label>
+          Buscar
+        </label>
+
+        <input
+          id="buscar"
+          oninput="renderHistorial()"
+          placeholder="voladura, punto, sismógrafo...">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Estado
+        </label>
+
+        <select
+          id="filtroEstado"
+          onchange="renderHistorial()">
+
+          <option value="">
+            Todos
+          </option>
+
+          <option value="green">
+            Dentro
+          </option>
+
+          <option value="orange">
+            Atención
+          </option>
+
+          <option value="red">
+            Por encima
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Grupo
+        </label>
+
+        <select
+          id="filtroGrupo"
+          onchange="renderHistorial()">
+
+          <option value="">
+            Todos
+          </option>
+
+          <option value="I">
+            Grupo I
+          </option>
+
+          <option value="II">
+            Grupo II
+          </option>
+
+          <option value="III">
+            Grupo III
+          </option>
+
+        </select>
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      id="historialTable"
+      style="overflow-x:auto;margin-top:20px">
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     GRÁFICA
+     ======================================================== -->
+
+<section
+  id="tab-grafica"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <h2>
+      Gráfica de control — frecuencia / velocidad
+    </h2>
+
+
+    <p class="help">
+
+      La gráfica representa simultáneamente las tres
+      componentes registradas por el sismógrafo.
+      La posición horizontal corresponde a la frecuencia
+      principal y la posición vertical al PPV de cada
+      componente.
+
+      La componente que presenta el mayor PPV queda
+      identificada adicionalmente mediante un aro exterior
+      cuyo color indica el estado frente al límite.
+
+    </p>
+
+
+    <div class="chart-wrapper">
+
+      <canvas id="chart"></canvas>
+
+    </div>
+
+
+    <!-- LEYENDA DE COMPONENTES -->
+
+    <div class="component-legend">
+
+
+      <div class="component-item">
+
+        <span
+          class="component-symbol symbol-vertical">
+          ★
+        </span>
+
+        <span>
+          Componente Vertical
+        </span>
+
+      </div>
+
+
+      <div class="component-item">
+
+        <span
+          class="component-symbol symbol-longitudinal">
+          ■
+        </span>
+
+        <span>
+          Componente Longitudinal
+        </span>
+
+      </div>
+
+
+      <div class="component-item">
+
+        <span
+          class="component-symbol symbol-transversal">
+          ✕
+        </span>
+
+        <span>
+          Componente Transversal
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+  <div class="card">
+
+
+    <h3>
+      Medición representada
+    </h3>
+
+
+    <div class="grid3">
+
+
+      <div class="metric">
+
+        <div class="label">
+          Frecuencia
+        </div>
+
+        <div
+          class="value"
+          id="chartFreq">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          PPV máxima
+        </div>
+
+        <div
+          class="value"
+          id="chartPPV">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          Grupo
+        </div>
+
+        <div
+          class="value"
+          id="chartGroup">
+          —
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     ESTUDIO
+     ======================================================== -->
+
+<section
+  id="tab-estudio"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <h2>
+      Estudio de propagación
+    </h2>
+
+
+    <p class="help">
+
+      Herramienta experimental para estudiar la relación
+      entre PPV, carga máxima instantánea y distancia
+      a partir de las mediciones almacenadas.
+
+    </p>
+
+
+    <div class="actions no-print">
+
+      <button
+        class="btn"
+        onclick="calcularEstudio()">
+
+        Calcular estudio
+
+      </button>
+
+    </div>
+
+
+    <div id="estudioResultado"></div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     DATOS
+     ======================================================== -->
+
+<section
+  id="tab-datos"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <h2>
+      Datos y copias de seguridad
+    </h2>
+
+
+    <p class="help">
+
+      Los datos se almacenan localmente en este dispositivo.
+      Realiza periódicamente una copia para respaldo.
+
+    </p>
+
+
+    <div class="actions no-print">
+
+
+      <button
+        class="btn green"
+        onclick="exportJSON()">
+
+        Descargar copia JSON
+
+      </button>
+
+
+      <button
+        class="btn"
+        onclick="document.getElementById('importJSON').click()">
+
+        Restaurar JSON
+
+      </button>
+
+
+      <input
+        type="file"
+        id="importJSON"
+        accept=".json"
+        style="display:none"
+        onchange="importJSONFile(event)">
+
+
+      <button
+        class="btn light"
+        onclick="exportCSV()">
+
+        Exportar CSV
+
+      </button>
+
+
+      <button
+        class="btn light"
+        onclick="document.getElementById('importCSV').click()">
+
+        Importar CSV
+
+      </button>
+
+
+      <input
+        type="file"
+        id="importCSV"
+        accept=".csv"
+        style="display:none"
+        onchange="importCSVFile(event)">
+
+
+      <button
+        class="btn red"
+        onclick="borrarTodo()">
+
+        Borrar todos los datos
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     INFORME
+     ======================================================== -->
+
+<section
+  id="tab-informe"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <div class="no-print actions">
+
+      <button
+        class="btn"
+        onclick="imprimirConGrafica()">
+
+        Imprimir / Guardar PDF
+
+      </button>
+
+    </div>
+
+
+    <div id="informeContenido">
+
+
+      <h1 style="color:#17324d">
+
+        INFORME DE CONTROL DE VIBRACIONES
+        POR VOLADURA
+
+      </h1>
+
+
+      <h2 style="color:#245b86">
+
+        UNE 22-381-93
+
+      </h2>
+
+
+      <hr>
+
+
+      <div id="informeDatos">
+
+        Seleccione una medición desde el historial.
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  <span>© 2026 LEMOS GRANITE, S.L. All rights reserved | A Technology Solution by </span>
+  <img src="LEMOS.png" alt="LEMOS" class="footer-logo">
+
+</footer>
+
+
+
+<script>
+
+/* ==========================================================
+   BASE DE DATOS - IndexedDB (PERSISTENTE EN iOS)
+   ========================================================== */
+
+const DB_NAME = 'SICONVOL_DB';
+const DB_VERSION = 1;
+const STORE_NAME = 'mediciones';
+
+let db = null;
+let mediciones = [];
+let medicionSeleccionada = null;
+
+// ── Inicializar IndexedDB ──
+function initDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+        request.onupgradeneeded = function(e) {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                const store = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+                store.createIndex('fecha', 'fecha', { unique: false });
+                store.createIndex('voladura', 'voladura', { unique: false });
+            }
+        };
+
+        request.onsuccess = function(e) {
+            db = e.target.result;
+            loadData().then(resolve).catch(reject);
+        };
+
+        request.onerror = function(e) {
+            console.error('Error al abrir IndexedDB:', e);
+            // Si IndexedDB falla, usar localStorage como respaldo
+            mediciones = cargarDBLocalStorage();
+            resolve();
+        };
+    });
+}
+
+// ── Cargar datos desde IndexedDB ──
+function loadData() {
+    return new Promise((resolve, reject) => {
+        if (!db) {
+            mediciones = cargarDBLocalStorage();
+            resolve();
+            return;
+        }
+
+        const transaction = db.transaction(STORE_NAME, 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.getAll();
+
+        request.onsuccess = function(e) {
+            mediciones = e.target.result || [];
+            resolve();
+        };
+
+        request.onerror = function(e) {
+            console.error('Error al cargar datos:', e);
+            mediciones = cargarDBLocalStorage();
+            resolve();
+        };
+    });
+}
+
+// ── Guardar datos en IndexedDB ──
+function saveData() {
+    return new Promise((resolve, reject) => {
+        if (!db) {
+            guardarDBLocalStorage();
+            resolve();
+            return;
+        }
+
+        const transaction = db.transaction(STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+
+        // Limpiar todos los registros y volver a insertar
+        const clearRequest = store.clear();
+
+        clearRequest.onsuccess = function() {
+            mediciones.forEach(m => {
+                store.put(m);
+            });
+        };
+
+        transaction.oncomplete = function() {
+            resolve();
+        };
+
+        transaction.onerror = function(e) {
+            console.error('Error al guardar datos:', e);
+            guardarDBLocalStorage();
+            resolve();
+        };
+    });
+}
+
+// ── Respaldo en localStorage (por si IndexedDB falla) ──
+const DB_KEY = "UNE22381_VIBRACIONES_V2";
+
+function cargarDBLocalStorage() {
+    try {
+        const raw = localStorage.getItem(DB_KEY);
+        if (!raw) return [];
+        const data = JSON.parse(raw);
+        return Array.isArray(data) ? data : [];
+    } catch(e) {
+        console.error(e);
+        return [];
+    }
+}
+
+function guardarDBLocalStorage() {
+    try {
+        localStorage.setItem(DB_KEY, JSON.stringify(mediciones));
+    } catch(e) {
+        console.error('Error al guardar en localStorage:', e);
+    }
+}
+
+
+/* ==========================================================
+   CRITERIOS
+   ========================================================== */
+
+const CRITERIOS = {
+
+  I:{
+    bajo:20,
+    d:0.212,
+    alto:100
+  },
+
+  II:{
+    bajo:9,
+    d:0.095,
+    alto:45
+  },
+
+  III:{
+    bajo:4,
+    d:0.042,
+    alto:20
+  }
+
+};
+
+
+/* ==========================================================
+   UTILIDADES
+   ========================================================== */
+
+function uid(){
+
+  return Date.now().toString(36)
+    +
+    Math.random()
+      .toString(36)
+      .substring(2,9);
+
+}
+
+
+function n(v){
+
+  const x =
+    parseFloat(v);
+
+  return Number.isFinite(x)
+    ? x
+    : null;
+
+}
+
+
+function esc(s){
+
+  return String(s ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;");
+
+}
+
+
+function fmt(x,d=3){
+
+  if(
+    x===null ||
+    x===undefined ||
+    !Number.isFinite(Number(x))
+  ){
+
+    return "—";
+
+  }
+
+  return Number(x)
+    .toLocaleString(
+      "es-ES",
+      {
+        minimumFractionDigits:0,
+        maximumFractionDigits:d
+      }
+    );
+
+}
+
+
+/* ==========================================================
+   NAVEGACIÓN
+   ========================================================== */
+
+function showTab(id,btn){
+
+  document.querySelectorAll(".tab")
+    .forEach(x=>
+      x.classList.remove("active")
+    );
+
+
+  document
+    .getElementById(id)
+    .classList.add("active");
+
+
+  document
+    .querySelectorAll("nav button")
+    .forEach(x=>
+      x.classList.remove("active")
+    );
+
+
+  if(btn)
+    btn.classList.add("active");
+
+
+  if(id==="tab-historial")
+    renderHistorial();
+
+
+  if(id==="tab-dashboard")
+    actualizarDashboard();
+
+
+  if(id==="tab-grafica")
+    dibujarGrafica();
+
+
+  if(id==="tab-estudio")
+    calcularEstudio();
+
+}
+
+
+/* ==========================================================
+   EVALUACIÓN
+   ========================================================== */
+
+function evaluar(
+  grupo,
+  freq,
+  ppv
+){
+
+  if(!CRITERIOS[grupo]){
+
+    return{
+
+      estado:"gray",
+
+      texto:"Grupo no válido",
+
+      limite:null
+
+    };
+
+  }
+
+
+  if(
+    freq===null ||
+    ppv===null
+  ){
+
+    return{
+
+      estado:"gray",
+
+      texto:"Faltan datos",
+
+      limite:null
+
+    };
+
+  }
+
+
+  if(freq<2){
+
+    return{
+
+      estado:"gray",
+
+      texto:
+        "Frecuencia inferior a 2 Hz: fuera del rango de la tabla implementada.",
+
+      limite:null,
+
+      zona:"fuera"
+
+    };
+
+  }
+
+
+  const c =
+    CRITERIOS[grupo];
+
+
+  let limite;
+  let tipo;
+
+
+  if(freq<15){
+
+    limite =
+      c.bajo;
+
+    tipo =
+      "velocidad";
+
+  }
+
+  else if(freq<=75){
+
+    limite =
+      2 *
+      Math.PI *
+      freq *
+      c.d;
+
+    tipo =
+      "velocidad equivalente a partir del desplazamiento admisible";
+
+  }
+
+  else{
+
+    limite =
+      c.alto;
+
+    tipo =
+      "velocidad";
+
+  }
+
+
+  let estado;
+
+
+  if(ppv<=limite){
+
+    if(ppv>=limite*0.80)
+      estado="orange";
+
+    else
+      estado="green";
+
+  }
+
+  else{
+
+    estado="red";
+
+  }
+
+
+  let texto;
+
+
+  if(estado==="green")
+    texto="DENTRO DEL LÍMITE";
+
+
+  if(estado==="orange")
+    texto="ATENCIÓN — próximo al límite";
+
+
+  if(estado==="red")
+    texto="POR ENCIMA DEL LÍMITE";
+
+
+  return{
+
+    estado,
+
+    texto,
+
+    limite,
+
+    tipo,
+
+    grupo,
+
+    frecuencia:freq,
+
+    ppv
+
+  };
+
+}
+
+
+/* ==========================================================
+   MAYOR COMPONENTE
+   ========================================================== */
+
+function obtenerMayor(
+  v,
+  l,
+  t
+){
+
+  const arr=[
+
+    {
+      nombre:"Vertical",
+      valor:v
+    },
+
+    {
+      nombre:"Longitudinal",
+      valor:l
+    },
+
+    {
+      nombre:"Transversal",
+      valor:t
+    }
+
+  ]
+  .filter(
+    x=>x.valor!==null
+  );
+
+
+  if(!arr.length)
+    return null;
+
+
+  arr.sort(
+    (a,b)=>
+      b.valor-a.valor
+  );
+
+
+  return arr[0];
+
+}
+
+
+/* ==========================================================
+   FORMULARIO
+   ========================================================== */
+
+function leerFormulario(){
+
+  const v =
+    n(document.getElementById("v").value);
+
+  const l =
+    n(document.getElementById("l").value);
+
+  const t =
+    n(document.getElementById("t").value);
+
+  const freq =
+    n(document.getElementById("frecuencia").value);
+
+
+  const mayor =
+    obtenerMayor(v,l,t);
+
+
+  return{
+
+    id:
+      document.getElementById("editId").value
+      ||
+      uid(),
+
+    voladura:
+      document.getElementById("voladura").value,
+
+    fecha:
+      document.getElementById("fecha").value,
+
+    hora:
+      document.getElementById("hora").value,
+
+    explotacion:
+      document.getElementById("explotacion").value,
+
+    punto:
+      document.getElementById("punto").value,
+
+    distancia:
+      n(
+        document.getElementById("distancia").value
+      ),
+
+    grupo:
+      document.getElementById("grupo").value,
+
+    estructura:
+      document.getElementById("estructura").value,
+
+    cargaTotal:
+      n(
+        document.getElementById("cargaTotal").value
+      ),
+
+    cargaMIC:
+      n(
+        document.getElementById("cargaMIC").value
+      ),
+
+    barrenos:
+      n(
+        document.getElementById("barrenos").value
+      ),
+
+    secuencias:
+      document.getElementById("secuencias").value,
+
+    fabricante:
+      document.getElementById("fabricante").value,
+
+    modelo:
+      document.getElementById("modelo").value,
+
+    serie:
+      document.getElementById("serie").value,
+
+    obsEquipo:
+      document.getElementById("obsEquipo").value,
+
+    vertical:v,
+
+    longitudinal:l,
+
+    transversal:t,
+
+    ppv:
+      mayor
+      ?
+      mayor.valor
+      :
+      null,
+
+    componente:
+      mayor
+      ?
+      mayor.nombre
+      :
+      null,
+
+    frecuencia:freq,
+
+    metodoFrecuencia:
+      document.getElementById(
+        "metodoFrecuencia"
+      ).value,
+
+    desplazamiento:
+      n(
+        document.getElementById(
+          "desplazamiento"
+        ).value
+      ),
+
+    observaciones:
+      document.getElementById(
+        "observaciones"
+      ).value,
+
+    creado:
+      new Date().toISOString()
+
+  };
+
+}
+
+
+/* ==========================================================
+   RESULTADO
+   ========================================================== */
+
+function mostrarResultado(m){
+
+  if(
+    !m ||
+    m.ppv===null ||
+    m.frecuencia===null
+  ){
+
+    document.getElementById(
+      "resultadoStatus"
+    ).className =
+      "status gray";
+
+
+    document.getElementById(
+      "resultadoStatus"
+    ).innerHTML =
+
+      `<div class="big">
+        Sin datos suficientes
+       </div>
+
+       <div class="small">
+        Se necesitan PPV y frecuencia.
+       </div>`;
+
+    return;
+
+  }
+
+
+  const r =
+    evaluar(
+      m.grupo,
+      m.frecuencia,
+      m.ppv
+    );
+
+
+  document.getElementById(
+    "resultadoStatus"
+  ).className =
+    "status "+r.estado;
+
+
+  document.getElementById(
+    "resultadoStatus"
+  ).innerHTML =
+
+    `<div class="big">
+      ${r.texto}
+     </div>
+
+     <div class="small">
+      Grupo ${esc(m.grupo)}
+      · ${r.tipo || ""}
+     </div>`;
+
+
+  document.getElementById(
+    "rPPV"
+  ).textContent =
+    fmt(m.ppv)+" mm/s";
+
+
+  document.getElementById(
+    "rComp"
+  ).textContent =
+    m.componente || "—";
+
+
+  document.getElementById(
+    "rFreq"
+  ).textContent =
+    fmt(m.frecuencia)+" Hz";
+
+
+  document.getElementById(
+    "rLimite"
+  ).textContent =
+    r.limite===null
+      ?
+      "—"
+      :
+      fmt(r.limite)+" mm/s";
+
+
+  let detalle =
+
+    `PPV máxima de la medición:
+     <b>${fmt(m.ppv)} mm/s</b>.
+     Componente seleccionada:
+     <b>${esc(m.componente)}</b>.
+     Frecuencia principal:
+     <b>${fmt(m.frecuencia)} Hz</b>.`;
+
+
+  if(r.limite!==null){
+
+    const porcentaje =
+      (m.ppv/r.limite)*100;
+
+
+    detalle +=
+
+      `<br>
+       Valor límite calculado:
+       <b>${fmt(r.limite)} mm/s</b>.
+       Utilización del límite:
+       <b>${fmt(porcentaje,1)} %</b>.`;
+
+  }
+
+
+  detalle +=
+
+    `<br><br>
+     <b>Componentes registradas:</b>
+     Vertical ${fmt(m.vertical)} mm/s ·
+     Longitudinal ${fmt(m.longitudinal)} mm/s ·
+     Transversal ${fmt(m.transversal)} mm/s.`;
+
+
+  document.getElementById(
+    "rDetalle"
+  ).innerHTML =
+    detalle;
+
+}
+
+
+/* ==========================================================
+   CALCULAR
+   ========================================================== */
+
+function calcular(silencioso=false){
+
+  const m =
+    leerFormulario();
+
+
+  mostrarResultado(m);
+
+
+  medicionSeleccionada =
+    m;
+
+
+  actualizarGraficaSeleccion(m);
+
+
+  return m;
+
+}
+
+
+/* ==========================================================
+   GUARDAR - IndexedDB
+   ========================================================== */
+
+async function guardarMedicion(){
+
+  const m =
+    calcular(true);
+
+
+  if(
+    m.ppv===null ||
+    m.frecuencia===null
+  ){
+
+    alert(
+      "Introduce al menos una componente de PPV " +
+      "y la frecuencia principal."
+    );
+
+    return;
+
+  }
+
+
+  // Verificar si existe
+  const index = mediciones.findIndex(x => x.id === m.id);
+
+  if (index >= 0) {
+    mediciones[index] = m;
+  } else {
+    mediciones.push(m);
+  }
+
+  // Guardar en IndexedDB
+  await saveData();
+
+  medicionSeleccionada = m;
+
+  // Verificar que se guardó
+  const encontrada = mediciones.find(x => x.id === m.id);
+  if (encontrada) {
+    alert("Medición guardada correctamente en este dispositivo.");
+  } else {
+    alert("Error: No se pudo guardar la medición.");
+  }
+
+  renderHistorial();
+  actualizarDashboard();
+
+}
+
+
+/* ==========================================================
+   CARGAR MEDICIÓN (BOTÓN EDITAR ARREGLADO)
+   ========================================================== */
+
+function cargarMedicion(id){
+
+  const m =
+    mediciones.find(
+      x=>x.id===id
+    );
+
+
+  if(!m)
+    return;
+
+
+  medicionSeleccionada =
+    m;
+
+
+  document.getElementById(
+    "editId"
+  ).value=m.id;
+
+
+  const fields={
+
+    voladura:m.voladura,
+
+    fecha:m.fecha,
+
+    hora:m.hora,
+
+    explotacion:m.explotacion,
+
+    punto:m.punto,
+
+    distancia:m.distancia,
+
+    grupo:m.grupo,
+
+    estructura:m.estructura,
+
+    cargaTotal:m.cargaTotal,
+
+    cargaMIC:m.cargaMIC,
+
+    barrenos:m.barrenos,
+
+    secuencias:m.secuencias,
+
+    fabricante:m.fabricante,
+
+    modelo:m.modelo,
+
+    serie:m.serie,
+
+    obsEquipo:m.obsEquipo,
+
+    v:m.vertical,
+
+    l:m.longitudinal,
+
+    t:m.transversal,
+
+    frecuencia:m.frecuencia,
+
+    metodoFrecuencia:
+      m.metodoFrecuencia,
+
+    desplazamiento:
+      m.desplazamiento,
+
+    observaciones:
+      m.observaciones
+
+  };
+
+
+  Object.entries(fields)
+    .forEach(
+      ([id,val])=>{
+        const el =
+          document.getElementById(id);
+
+        if(el)
+          el.value =
+            val ?? "";
+      }
+    );
+
+
+  document.getElementById(
+    "formTitle"
+  ).textContent =
+    "Editar medición";
+
+
+  mostrarResultado(m);
+
+  // Cambiar a la pestaña de "Nueva medición" para editar
+  showTab("tab-nueva", document.querySelectorAll("nav button")[1]);
+
+}
+
+
+/* ==========================================================
+   ELIMINAR - IndexedDB
+   ========================================================== */
+
+async function eliminarMedicion(id){
+
+  if(
+    !confirm(
+      "¿Eliminar esta medición?"
+    )
+  )
+    return;
+
+
+  mediciones =
+    mediciones.filter(
+      x=>x.id!==id
+    );
+
+  // Guardar en IndexedDB
+  await saveData();
+
+  renderHistorial();
+
+  actualizarDashboard();
+
+}
+
+
+/* ==========================================================
+   LIMPIAR
+   ========================================================== */
+
+function limpiarFormulario(){
+
+  document.querySelectorAll(
+    "#formCard input:not([type=hidden])," +
+    "#formCard textarea"
+  )
+  .forEach(
+    el=>el.value=""
+  );
+
+
+  document.getElementById(
+    "grupo"
+  ).value="II";
+
+
+  document.getElementById(
+    "metodoFrecuencia"
+  ).selectedIndex=0;
+
+
+  document.getElementById(
+    "editId"
+  ).value="";
+
+
+  document.getElementById(
+    "formTitle"
+  ).textContent =
+    "Nueva medición";
+
+
+  document.getElementById(
+    "resultadoStatus"
+  ).className =
+    "status gray";
+
+
+  document.getElementById(
+    "resultadoStatus"
+  ).innerHTML =
+
+    `<div class="big">
+      Sin calcular
+     </div>
+
+     <div class="small">
+      Introduce los valores de PPV y frecuencia.
+     </div>`;
+
+
+  [
+    "rPPV",
+    "rComp",
+    "rFreq",
+    "rLimite"
+  ]
+  .forEach(
+    id=>
+      document.getElementById(id)
+        .textContent="—"
+  );
+
+
+  medicionSeleccionada=null;
+
+  actualizarGraficaSeleccion(null);
+
+}
+
+
+/* ==========================================================
+   HISTORIAL
+   ========================================================== */
+
+function renderHistorial(){
+
+  const buscar =
+    (
+      document.getElementById(
+        "buscar"
+      )?.value
+      ||
+      ""
+    )
+    .toLowerCase();
+
+
+  const estado =
+    document.getElementById(
+      "filtroEstado"
+    )?.value
+    ||
+    "";
+
+
+  const grupo =
+    document.getElementById(
+      "filtroGrupo"
+    )?.value
+    ||
+    "";
+
+
+  let data =
+    mediciones.filter(
+      m=>{
+
+        const txt=[
+
+          m.voladura,
+
+          m.punto,
+
+          m.explotacion,
+
+          m.fabricante,
+
+          m.modelo,
+
+          m.serie
+
+        ]
+        .join(" ")
+        .toLowerCase();
+
+
+        if(
+          buscar &&
+          !txt.includes(buscar)
+        )
+          return false;
+
+
+        const r =
+          evaluar(
+            m.grupo,
+            m.frecuencia,
+            m.ppv
+          );
+
+
+        if(
+          estado &&
+          r.estado!==estado
+        )
+          return false;
+
+
+        if(
+          grupo &&
+          m.grupo!==grupo
+        )
+          return false;
+
+
+        return true;
+
+      }
+    );
+
+
+  data.sort(
+    (a,b)=>
+      String(
+        b.fecha+b.hora
+      )
+      .localeCompare(
+        String(
+          a.fecha+a.hora
+        )
+      )
+  );
+
+
+  if(!data.length){
+
+    document.getElementById(
+      "historialTable"
+    ).innerHTML =
+
+      `<p class="help">
+        No hay mediciones.
+       </p>`;
+
+    return;
+
+  }
+
+
+  let html=
+
+    `<table>
+
+      <thead>
+
+        <tr>
+
+          <th>Fecha</th>
+
+          <th>Voladura</th>
+
+          <th>Punto</th>
+
+          <th>Sismógrafo</th>
+
+          <th>Distancia</th>
+
+          <th>PPV</th>
+
+          <th>Componente</th>
+
+          <th>Hz</th>
+
+          <th>Grupo</th>
+
+          <th>Resultado</th>
+
+          <th>Acciones</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>`;
+
+
+  data.forEach(
+    m=>{
+
+      const r =
+        evaluar(
+          m.grupo,
+          m.frecuencia,
+          m.ppv
+        );
+
+
+      const badge =
+
+        `<span
+          class="badge ${r.estado}">
+          ${r.texto}
+         </span>`;
+
+
+      html+=
+
+        `<tr>
+
+          <td>
+            ${esc(m.fecha)}
+            ${esc(m.hora)}
+          </td>
+
+          <td>
+            ${esc(m.voladura)}
+          </td>
+
+          <td>
+            ${esc(m.punto)}
+          </td>
+
+          <td>
+            ${esc(m.fabricante)}
+            ${esc(m.modelo)}
+          </td>
+
+          <td>
+            ${fmt(m.distancia)} m
+          </td>
+
+          <td>
+            ${fmt(m.ppv)} mm/s
+          </td>
+
+          <td>
+            ${esc(m.componente)}
+          </td>
+
+          <td>
+            ${fmt(m.frecuencia)} Hz
+          </td>
+
+          <td>
+            ${esc(m.grupo)}
+          </td>
+
+          <td>
+            ${badge}
+          </td>
+
+          <td>
+
+            <button
+              class="small-btn"
+              onclick="cargarMedicion('${m.id}')">
+
+              Editar
+
+            </button>
+
+
+            <button
+              class="small-btn"
+              onclick="verInforme('${m.id}')">
+
+              PDF
+
+            </button>
+
+
+            <button
+              class="small-btn"
+              onclick="verGrafica('${m.id}')">
+
+              Gráfica
+
+            </button>
+
+
+            <button
+              class="small-btn"
+              onclick="eliminarMedicion('${m.id}')">
+
+              Eliminar
+
+            </button>
+
+          </td>
+
+        </tr>`;
+
+    }
+  );
+
+
+  html+=
+
+    `</tbody>
+     </table>`;
+
+
+  document.getElementById(
+    "historialTable"
+  ).innerHTML =
+    html;
+
+}
+
+
+/* ==========================================================
+   DASHBOARD
+   ========================================================== */
+
+function actualizarDashboard(){
+
+  let green=0;
+  let orange=0;
+  let red=0;
+
+
+  mediciones.forEach(
+    m=>{
+
+      const r =
+        evaluar(
+          m.grupo,
+          m.frecuencia,
+          m.ppv
+        );
+
+
+      if(r.estado==="green")
+        green++;
+
+
+      if(r.estado==="orange")
+        orange++;
+
+
+      if(r.estado==="red")
+        red++;
+
+    }
+  );
+
+
+  document.getElementById(
+    "kpiTotal"
+  ).textContent =
+    mediciones.length;
+
+
+  document.getElementById(
+    "kpiGreen"
+  ).textContent =
+    green;
+
+
+  document.getElementById(
+    "kpiOrange"
+  ).textContent =
+    orange;
+
+
+  document.getElementById(
+    "kpiRed"
+  ).textContent =
+    red;
+
+
+  const ultimas =
+    [...mediciones]
+    .sort(
+      (a,b)=>
+        String(
+          b.fecha+b.hora
+        )
+        .localeCompare(
+          String(
+            a.fecha+a.hora
+          )
+        )
+    )
+    .slice(0,10);
+
+
+  if(!ultimas.length){
+
+    document.getElementById(
+      "dashboardTable"
+    ).innerHTML =
+
+      `<p class="help">
+        Todavía no hay mediciones.
+       </p>`;
+
+    return;
+
+  }
+
+
+  let html=
+
+    `<table>
+
+      <thead>
+
+        <tr>
+
+          <th>Fecha</th>
+
+          <th>Voladura</th>
+
+          <th>Punto</th>
+
+          <th>PPV</th>
+
+          <th>Hz</th>
+
+          <th>Estado</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>`;
+
+
+  ultimas.forEach(
+    m=>{
+
+      const r =
+        evaluar(
+          m.grupo,
+          m.frecuencia,
+          m.ppv
+        );
+
+
+      html+=
+
+        `<tr>
+
+          <td>
+            ${esc(m.fecha)}
+          </td>
+
+          <td>
+            ${esc(m.voladura)}
+          </td>
+
+          <td>
+            ${esc(m.punto)}
+          </td>
+
+          <td>
+            ${fmt(m.ppv)} mm/s
+          </td>
+
+          <td>
+            ${fmt(m.frecuencia)} Hz
+          </td>
+
+          <td>
+
+            <span
+              class="badge ${r.estado}">
+
+              ${r.texto}
+
+            </span>
+
+          </td>
+
+        </tr>`;
+
+    }
+  );
+
+
+  html+=
+    "</tbody></table>";
+
+
+  document.getElementById(
+    "dashboardTable"
+  ).innerHTML =
+    html;
+
+}
+
+
+/* ==========================================================
+   GRÁFICA
+   ========================================================== */
+
+function actualizarGraficaSeleccion(m){
+
+  medicionSeleccionada =
+    m;
+
+
+  if(m){
+
+    document.getElementById(
+      "chartFreq"
+    ).textContent =
+      fmt(m.frecuencia)+" Hz";
+
+
+    document.getElementById(
+      "chartPPV"
+    ).textContent =
+      fmt(m.ppv)+" mm/s";
+
+
+    document.getElementById(
+      "chartGroup"
+    ).textContent =
+      "Grupo "+m.grupo;
+
+  }
+
+  else{
+
+    document.getElementById(
+      "chartFreq"
+    ).textContent="—";
+
+
+    document.getElementById(
+      "chartPPV"
+    ).textContent="—";
+
+
+    document.getElementById(
+      "chartGroup"
+    ).textContent="—";
+
+  }
+
+
+  dibujarGrafica();
+
+}
+
+
+function verGrafica(id){
+
+  const m =
+    mediciones.find(
+      x=>x.id===id
+    );
+
+
+  if(!m)
+    return;
+
+
+  medicionSeleccionada =
+    m;
+
+
+  actualizarGraficaSeleccion(m);
+
+
+  showTab(
+    "tab-grafica",
+    document.querySelectorAll(
+      "nav button"
+    )[4]
+  );
+
+}
+
+
+/* ==========================================================
+   DIBUJAR GRÁFICA COMPLETA
+   ========================================================== */
+
+function dibujarGrafica(){
+
+  const canvas =
+    document.getElementById(
+      "chart"
+    );
+
+
+  if(!canvas)
+    return;
+
+
+  const rect =
+    canvas.getBoundingClientRect();
+
+
+  const dpr =
+    window.devicePixelRatio || 1;
+
+
+  const W =
+    Math.max(
+      rect.width,
+      600
+    );
+
+
+  const H =
+    560;
+
+
+  canvas.width =
+    W*dpr;
+
+
+  canvas.height =
+    H*dpr;
+
+
+  canvas.style.height =
+    H+"px";
+
+
+  const ctx =
+    canvas.getContext("2d");
+
+
+  ctx.setTransform(
+    dpr,
+    0,
+    0,
+    dpr,
+    0,
+    0
+  );
+
+
+  ctx.clearRect(
+    0,
+    0,
+    W,
+    H
+  );
+
+
+  /* ========================================================
+     ÁREA DE GRÁFICA
+     ======================================================== */
+
+  const left=85;
+  const right=245;
+  const top=40;
+  const bottom=65;
+
+
+  const pw =
+    W-left-right;
+
+
+  const ph =
+    H-top-bottom;
+
+
+  /*
+     Escala X:
+       2 Hz -> 200 Hz
+
+     Escala Y:
+       1 mm/s -> 150 mm/s
+  */
+
+  const xmin=2;
+  const xmax=200;
+
+  const ymin=1;
+  const ymax=150;
+
+
+  function lx(x){
+
+    return left+
+
+      (
+        Math.log10(x)
+        -
+        Math.log10(xmin)
+      )
+      /
+      (
+        Math.log10(xmax)
+        -
+        Math.log10(xmin)
+      )
+      *
+      pw;
+
+  }
+
+
+  function ly(y){
+
+    return top+
+
+      (
+        Math.log10(ymax)
+        -
+        Math.log10(y)
+      )
+      /
+      (
+        Math.log10(ymax)
+        -
+        Math.log10(ymin)
+      )
+      *
+      ph;
+
+  }
+
+
+  /* ========================================================
+     FONDO
+     ======================================================== */
+
+  ctx.fillStyle =
+    "#ffffff";
+
+  ctx.fillRect(
+    0,
+    0,
+    W,
+    H
+  );
+
+
+  /* ========================================================
+     REJILLA
+     ======================================================== */
+
+  ctx.font =
+    "11px Arial";
+
+  ctx.strokeStyle =
+    "#e5e7eb";
+
+  ctx.fillStyle =
+    "#667085";
+
+  ctx.lineWidth=1;
+
+
+  const xticks=[
+    2,
+    5,
+    10,
+    15,
+    20,
+    50,
+    75,
+    100,
+    200
+  ];
+
+
+  xticks.forEach(
+    x=>{
+
+      const px =
+        lx(x);
+
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+        px,
+        top
+      );
+
+      ctx.lineTo(
+        px,
+        top+ph
+      );
+
+      ctx.stroke();
+
+
+      ctx.fillText(
+        String(x),
+        px-8,
+        top+ph+20
+      );
+
+    }
+  );
+
+
+  const yticks=[
+    1,
+    2,
+    5,
+    10,
+    20,
+    50,
+    100,
+    150
+  ];
+
+
+  yticks.forEach(
+    y=>{
+
+      const py =
+        ly(y);
+
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+        left,
+        py
+      );
+
+      ctx.lineTo(
+        left+pw,
+        py
+      );
+
+      ctx.stroke();
+
+
+      ctx.fillText(
+        String(y),
+        42,
+        py+4
+      );
+
+    }
+  );
+
+
+  /* ========================================================
+     EJES
+     ======================================================== */
+
+  ctx.strokeStyle =
+    "#344054";
+
+  ctx.lineWidth=1.5;
+
+  ctx.beginPath();
+
+  ctx.moveTo(
+    left,
+    top
+  );
+
+  ctx.lineTo(
+    left,
+    top+ph
+  );
+
+  ctx.lineTo(
+    left+pw,
+    top+ph
+  );
+
+  ctx.stroke();
+
+
+  /* ========================================================
+     CURVAS DE LÍMITES
+     ======================================================== */
+
+  dibujarCurva(
+    ctx,
+    lx,
+    ly,
+    "I",
+    "#16803c"
+  );
+
+
+  dibujarCurva(
+    ctx,
+    lx,
+    ly,
+    "II",
+    "#245b86"
+  );
+
+
+  dibujarCurva(
+    ctx,
+    lx,
+    ly,
+    "III",
+    "#b42318"
+  );
+
+
+  /* ========================================================
+     PUNTOS DE LAS TRES COMPONENTES
+     ======================================================== */
+
+  if(
+    medicionSeleccionada &&
+    medicionSeleccionada.frecuencia>=2
+  ){
+
+    dibujarComponentes(
+      ctx,
+      lx,
+      ly,
+      medicionSeleccionada
+    );
+
+  }
+
+
+  /* ========================================================
+     TÍTULOS DE EJES
+     ======================================================== */
+
+  ctx.fillStyle =
+    "#17324d";
+
+  ctx.font =
+    "bold 14px Arial";
+
+
+  ctx.fillText(
+    "Frecuencia (Hz)",
+    left+
+      pw/2-
+      50,
+    H-15
+  );
+
+
+  ctx.save();
+
+
+  ctx.translate(
+    18,
+    top+
+      ph/2+
+      100
+  );
+
+
+  ctx.rotate(
+    -Math.PI/2
+  );
+
+
+  ctx.fillText(
+    "Velocidad de vibración (mm/s)",
+    0,
+    0
+  );
+
+
+  ctx.restore();
+
+
+  /* ========================================================
+     LEYENDA COMPLETA DENTRO DE LA GRÁFICA
+     ======================================================== */
+
+  dibujarLeyendaCompleta(
+    ctx,
+    W,
+    H
+  );
+
+}
+
+
+/* ==========================================================
+   CURVAS
+   ========================================================== */
+
+function dibujarCurva(
+  ctx,
+  lx,
+  ly,
+  grupo,
+  color
+){
+
+  const c =
+    CRITERIOS[grupo];
+
+
+  ctx.strokeStyle =
+    color;
+
+  ctx.lineWidth=3;
+
+
+  ctx.beginPath();
+
+
+  let first=true;
+
+
+  for(
+    let i=0;
+    i<=300;
+    i++
+  ){
+
+    const f =
+      2*
+      Math.pow(
+        100,
+        i/300
+      );
+
+
+    let v;
+
+
+    if(f<15){
+
+      v=c.bajo;
+
+    }
+
+    else if(f<=75){
+
+      v=
+        2*
+        Math.PI*
+        f*
+        c.d;
+
+    }
+
+    else{
+
+      v=c.alto;
+
+    }
+
+
+    v =
+      Math.max(
+        1,
+        Math.min(
+          150,
+          v
+        )
+      );
+
+
+    const x =
+      lx(f);
+
+
+    const y =
+      ly(v);
+
+
+    if(first){
+
+      ctx.moveTo(
+        x,
+        y
+      );
+
+      first=false;
+
+    }
+
+    else{
+
+      ctx.lineTo(
+        x,
+        y
+      );
+
+    }
+
+  }
+
+
+  ctx.stroke();
+
+}
+
+
+/* ==========================================================
+   DIBUJAR COMPONENTES
+   ========================================================== */
+
+function dibujarComponentes(
+  ctx,
+  lx,
+  ly,
+  m
+){
+
+  const freq =
+    m.frecuencia;
+
+
+  const componentes=[
+
+    {
+      nombre:"Vertical",
+      valor:m.vertical,
+      color:"#e53935",
+      tipo:"star"
+    },
+
+    {
+      nombre:"Longitudinal",
+      valor:m.longitudinal,
+      color:"#16803c",
+      tipo:"square"
+    },
+
+    {
+      nombre:"Transversal",
+      valor:m.transversal,
+      color:"#9b59b6",
+      tipo:"cross"
+    }
+
+  ];
+
+
+  const validas =
+    componentes.filter(
+      x=>
+        x.valor!==null &&
+        x.valor>0
+    );
+
+
+  if(!validas.length)
+    return;
+
+
+  /*
+     Determinamos cuál es la mayor
+     de las tres componentes.
+  */
+
+  let maxComp =
+    validas[0];
+
+
+  validas.forEach(
+    c=>{
+
+      if(
+        c.valor >
+        maxComp.valor
+      ){
+
+        maxComp=c;
+
+      }
+
+    }
+  );
+
+
+  /*
+     Estado de la PPV máxima
+     frente al límite del grupo.
+  */
+
+  const r =
+    evaluar(
+      m.grupo,
+      m.frecuencia,
+      maxComp.valor
+    );
+
+
+  let estadoColor;
+
+
+  if(r.estado==="green")
+    estadoColor="#16803c";
+
+
+  else if(r.estado==="orange")
+    estadoColor="#f59e0b";
+
+
+  else if(r.estado==="red")
+    estadoColor="#b42318";
+
+
+  else
+    estadoColor="#667085";
+
+
+  /*
+     Separación visual.
+
+     Como normalmente las tres componentes
+     comparten la frecuencia principal,
+     pueden caer exactamente sobre la misma
+     coordenada X.
+
+     Por eso desplazamos ligeramente los
+     puntos solamente en X para que puedan
+     verse individualmente.
+
+     La frecuencia real continúa apareciendo
+     en la etiqueta.
+  */
+
+  const offsets={
+
+    Vertical:-7,
+
+    Longitudinal:0,
+
+    Transversal:7
+
+  };
+
+
+  validas.forEach(
+    c=>{
+
+      const realX =
+        lx(freq);
+
+
+      const x =
+        realX+
+        offsets[c.nombre];
+
+
+      const y =
+        ly(c.valor);
+
+
+      /*
+         Aro exterior únicamente para
+         la componente máxima.
+      */
+
+      const esMax =
+        c.nombre===
+        maxComp.nombre;
+
+
+      if(esMax){
+
+        ctx.beginPath();
+
+        ctx.arc(
+          x,
+          y,
+          12,
+          0,
+          Math.PI*2
+        );
+
+        ctx.strokeStyle =
+          estadoColor;
+
+        ctx.lineWidth=3;
+
+        ctx.stroke();
+
+      }
+
+
+      /*
+         Símbolo
+      */
+
+      ctx.fillStyle =
+        c.color;
+
+      ctx.strokeStyle =
+        c.color;
+
+      ctx.lineWidth=2;
+
+
+      if(c.tipo==="square"){
+
+        ctx.fillRect(
+          x-6,
+          y-6,
+          12,
+          12
+        );
+
+      }
+
+
+      else if(c.tipo==="star"){
+
+        dibujarEstrella(
+          ctx,
+          x,
+          y,
+          8,
+          4,
+          5,
+          c.color
+        );
+
+      }
+
+
+      else if(c.tipo==="cross"){
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+          x-7,
+          y-7
+        );
+
+        ctx.lineTo(
+          x+7,
+          y+7
+        );
+
+        ctx.moveTo(
+          x+7,
+          y-7
+        );
+
+        ctx.lineTo(
+          x-7,
+          y+7
+        );
+
+        ctx.stroke();
+
+      }
+
+
+      /*
+         Etiqueta
+      */
+
+      ctx.font =
+        "bold 11px Arial";
+
+      ctx.fillStyle =
+        c.color;
+
+
+      let etiqueta =
+        c.nombre+
+        ": "+
+        fmt(c.valor)+
+        " mm/s";
+
+
+      if(esMax){
+
+        etiqueta +=
+          "  ← PPV máx.";
+
+      }
+
+
+      let labelX =
+        x+15;
+
+
+      /*
+         Evitar que las etiquetas
+         se salgan por la derecha.
+      */
+
+      if(
+        labelX >
+        0+
+        lx(200)-
+        150
+      ){
+
+        labelX =
+          x-
+          150;
+
+      }
+
+
+      ctx.fillText(
+        etiqueta,
+        labelX,
+        y-10
+      );
+
+    }
+  );
+
+
+  /*
+     Línea vertical de frecuencia.
+  */
+
+  ctx.strokeStyle =
+    "rgba(23,50,77,.35)";
+
+  ctx.setLineDash([
+    5,
+    5
+  ]);
+
+  ctx.lineWidth=1;
+
+
+  const fx =
+    lx(freq);
+
+
+  ctx.beginPath();
+
+  ctx.moveTo(
+    fx,
+    topSeguro(ly)
+  );
+
+  ctx.lineTo(
+    fx,
+    500
+  );
+
+  ctx.stroke();
+
+
+  ctx.setLineDash([]);
+
+
+  /*
+     Etiqueta de frecuencia.
+  */
+
+  ctx.fillStyle =
+    "#344054";
+
+  ctx.font =
+    "bold 11px Arial";
+
+
+  ctx.fillText(
+    "f = "+
+    fmt(freq)+
+    " Hz",
+    fx+8,
+    30
+  );
+
+}
+
+
+/* ==========================================================
+   ESTRELLA
+   ========================================================== */
+
+function dibujarEstrella(
+  ctx,
+  cx,
+  cy,
+  outer,
+  inner,
+  points,
+  color
+){
+
+  ctx.save();
+
+  ctx.beginPath();
+
+  for(
+    let i=0;
+    i<points*2;
+    i++
+  ){
+
+    const radius =
+      i%2===0
+      ?
+      outer
+      :
+      inner;
+
+
+    const angle =
+      -Math.PI/2+
+      i*
+      Math.PI/
+      points;
+
+
+    const x =
+      cx+
+      Math.cos(angle)*
+      radius;
+
+
+    const y =
+      cy+
+      Math.sin(angle)*
+      radius;
+
+
+    if(i===0)
+      ctx.moveTo(x,y);
+
+    else
+      ctx.lineTo(x,y);
+
+  }
+
+
+  ctx.closePath();
+
+  ctx.fillStyle =
+    color;
+
+  ctx.fill();
+
+  ctx.restore();
+
+}
+
+
+/* ==========================================================
+   PEQUEÑA UTILIDAD
+   ========================================================== */
+
+function topSeguro(){
+  return 40;
+}
+
+
+/* ==========================================================
+   LEYENDA COMPLETA
+   ========================================================== */
+
+function dibujarLeyendaCompleta(
+  ctx,
+  W,
+  H
+){
+
+  /*
+     La leyenda se dibuja dentro de un
+     panel blanco a la derecha del gráfico.
+  */
+
+  const x =
+    W-225;
+
+
+  const y =
+    70;
+
+
+  const width =
+    205;
+
+
+  const height =
+    330;
+
+
+  /*
+     Fondo
+  */
+
+  ctx.fillStyle =
+    "rgba(255,255,255,.96)";
+
+
+  ctx.strokeStyle =
+    "#d0d5dd";
+
+
+  ctx.lineWidth=1;
+
+
+  ctx.beginPath();
+
+  ctx.roundRect(
+    x,
+    y,
+    width,
+    height,
+    8
+  );
+
+  ctx.fill();
+
+  ctx.stroke();
+
+
+  /*
+     Título
+  */
+
+  ctx.fillStyle =
+    "#17324d";
+
+  ctx.font =
+    "bold 13px Arial";
+
+
+  ctx.fillText(
+    "LEYENDA",
+    x+14,
+    y+23
+  );
+
+
+  let yy =
+    y+48;
+
+
+  /*
+     LÍMITES
+  */
+
+  ctx.font =
+    "bold 11px Arial";
+
+  ctx.fillStyle =
+    "#667085";
+
+
+  ctx.fillText(
+    "LÍMITES",
+    x+14,
+    yy
+  );
+
+
+  yy+=22;
+
+
+  dibujarLineaLeyenda(
+    ctx,
+    x+14,
+    yy,
+    "#16803c",
+    "Límite Grupo I"
+  );
+
+
+  yy+=22;
+
+
+  dibujarLineaLeyenda(
+    ctx,
+    x+14,
+    yy,
+    "#245b86",
+    "Límite Grupo II"
+  );
+
+
+  yy+=22;
+
+
+  dibujarLineaLeyenda(
+    ctx,
+    x+14,
+    yy,
+    "#b42318",
+    "Límite Grupo III"
+  );
+
+
+  yy+=32;
+
+
+  /*
+     ESTADOS
+  */
+
+  ctx.font =
+    "bold 11px Arial";
+
+  ctx.fillStyle =
+    "#667085";
+
+
+  ctx.fillText(
+    "ESTADO PPV MÁX.",
+    x+14,
+    yy
+  );
+
+
+  yy+=22;
+
+
+  dibujarEstadoLeyenda(
+    ctx,
+    x+25,
+    yy,
+    "#16803c",
+    "Lectura bajo umbral (PPV máx.)"
+  );
+
+
+  yy+=26;
+
+
+  dibujarEstadoLeyenda(
+    ctx,
+    x+25,
+    yy,
+    "#f59e0b",
+    "Lectura en vigilancia (PPV máx.)"
+  );
+
+
+  yy+=26;
+
+
+  dibujarEstadoLeyenda(
+    ctx,
+    x+25,
+    yy,
+    "#b42318",
+    "Lectura sobre el límite (PPV máx.)"
+  );
+
+
+  yy+=35;
+
+
+  /*
+     COMPONENTES
+  */
+
+  ctx.font =
+    "bold 11px Arial";
+
+  ctx.fillStyle =
+    "#667085";
+
+
+  ctx.fillText(
+    "COMPONENTES",
+    x+14,
+    yy
+  );
+
+
+  yy+=23;
+
+
+  /*
+     Vertical
+  */
+
+  ctx.font =
+    "bold 18px Arial";
+
+  ctx.fillStyle =
+    "#e53935";
+
+
+  ctx.fillText(
+    "★",
+    x+16,
+    yy
+  );
+
+
+  ctx.font =
+    "11px Arial";
+
+  ctx.fillStyle =
+    "#344054";
+
+
+  ctx.fillText(
+    "Componente Vertical",
+    x+40,
+    yy
+  );
+
+
+  yy+=25;
+
+
+  /*
+     Longitudinal
+  */
+
+  ctx.fillStyle =
+    "#16803c";
+
+  ctx.font =
+    "bold 16px Arial";
+
+
+  ctx.fillText(
+    "■",
+    x+18,
+    yy
+  );
+
+
+  ctx.font =
+    "11px Arial";
+
+  ctx.fillStyle =
+    "#344054";
+
+
+  ctx.fillText(
+    "Componente Longitudinal",
+    x+40,
+    yy
+  );
+
+
+  yy+=25;
+
+
+  /*
+     Transversal
+  */
+
+  ctx.fillStyle =
+    "#9b59b6";
+
+  ctx.font =
+    "bold 19px Arial";
+
+
+  ctx.fillText(
+    "✕",
+    x+17,
+    yy
+  );
+
+
+  ctx.font =
+    "11px Arial";
+
+  ctx.fillStyle =
+    "#344054";
+
+
+  ctx.fillText(
+    "Componente Transversal",
+    x+40,
+    yy
+  );
+
+}
+
+
+/* ==========================================================
+   LÍNEA DE LEYENDA
+   ========================================================== */
+
+function dibujarLineaLeyenda(
+  ctx,
+  x,
+  y,
+  color,
+  texto
+){
+
+  ctx.strokeStyle =
+    color;
+
+  ctx.lineWidth=3;
+
+
+  ctx.beginPath();
+
+  ctx.moveTo(
+    x,
+    y
+  );
+
+  ctx.lineTo(
+    x+25,
+    y
+  );
+
+  ctx.stroke();
+
+
+  ctx.fillStyle =
+    "#344054";
+
+  ctx.font =
+    "11px Arial";
+
+
+  ctx.fillText(
+    texto,
+    x+35,
+    y+4
+  );
+
+}
+
+
+/* ==========================================================
+   LEYENDA DE ESTADOS
+   ========================================================== */
+
+function dibujarEstadoLeyenda(
+  ctx,
+  x,
+  y,
+  color,
+  texto
+){
+
+  /*
+     Círculo exterior representa el
+     estado de la PPV máxima.
+  */
+
+  ctx.strokeStyle =
+    color;
+
+  ctx.lineWidth=3;
+
+
+  ctx.beginPath();
+
+  ctx.arc(
+    x,
+    y,
+    7,
+    0,
+    Math.PI*2
+  );
+
+  ctx.stroke();
+
+
+  ctx.fillStyle =
+    "#344054";
+
+  ctx.font =
+    "10px Arial";
+
+
+  /*
+     La leyenda es ancha.
+     Partimos el texto en dos líneas
+     si fuera necesario.
+  */
+
+  const palabras =
+    texto.split(" ");
+
+
+  let linea="";
+  let lineas=[];
+
+
+  palabras.forEach(
+    palabra=>{
+
+      const prueba =
+        linea
+        ?
+        linea+" "+palabra
+        :
+        palabra;
+
+
+      if(
+        prueba.length>28
+      ){
+
+        lineas.push(linea);
+
+        linea=palabra;
+
+      }
+
+      else{
+
+        linea=prueba;
+
+      }
+
+    }
+  );
+
+
+  if(linea)
+    lineas.push(linea);
+
+
+  lineas.forEach(
+    (l,i)=>{
+
+      ctx.fillText(
+        l,
+        x+15,
+        y+
+        3+
+        i*12
+      );
+
+    }
+  );
+
+}
+
+
+/* ==========================================================
+   ESTUDIO DE PROPAGACIÓN
+   ========================================================== */
+
+function calcularEstudio(){
+
+  const datos =
+    mediciones.filter(
+      m=>
+
+        Number.isFinite(m.ppv)
+        &&
+        Number.isFinite(m.distancia)
+        &&
+        m.ppv>0
+        &&
+        m.distancia>0
+    );
+
+
+  if(datos.length<2){
+
+    document.getElementById(
+      "estudioResultado"
+    ).innerHTML =
+
+      `<div class="alert">
+
+        Se necesitan al menos dos mediciones
+        con PPV y distancia para realizar
+        un estudio preliminar.
+
+       </div>`;
+
+    return;
+
+  }
+
+
+  /*
+     Ajuste:
+
+       V = A × D^B
+
+     ln(V)=ln(A)+B ln(D)
+  */
+
+
+  const xs =
+    datos.map(
+      m=>Math.log(
+        m.distancia
+      )
+    );
+
+
+  const ys =
+    datos.map(
+      m=>Math.log(
+        m.ppv
+      )
+    );
+
+
+  const xmean =
+    xs.reduce(
+      (a,b)=>a+b,
+      0
+    )
+    /
+    xs.length;
+
+
+  const ymean =
+    ys.reduce(
+      (a,b)=>a+b,
+      0
+    )
+    /
+    ys.length;
+
+
+  let num=0;
+  let den=0;
+
+
+  for(
+    let i=0;
+    i<xs.length;
+    i++
+  ){
+
+    num +=
+      (
+        xs[i]-xmean
+      )
+      *
+      (
+        ys[i]-ymean
+      );
+
+
+    den +=
+      (
+        xs[i]-xmean
+      )**2;
+
+  }
+
+
+  const B =
+    num/den;
+
+
+  const lnA =
+    ymean-
+    B*xmean;
+
+
+  const A =
+    Math.exp(lnA);
+
+
+  let ssTot=0;
+  let ssRes=0;
+
+
+  for(
+    let i=0;
+    i<xs.length;
+    i++
+  ){
+
+    const pred =
+      lnA+
+      B*xs[i];
+
+
+    ssTot +=
+      (
+        ys[i]-ymean
+      )**2;
+
+
+    ssRes +=
+      (
+        ys[i]-pred
+      )**2;
+
+  }
+
+
+  const r2 =
+    ssTot===0
+      ?
+      1
+      :
+      1-
+      ssRes/ssTot;
+
+
+  document.getElementById(
+    "estudioResultado"
+  ).innerHTML =
+
+    `
+
+    <div class="result-grid">
+
+      <div class="metric">
+
+        <div class="label">
+          Nº puntos
+        </div>
+
+        <div class="value">
+          ${datos.length}
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          A
+        </div>
+
+        <div class="value">
+          ${fmt(A,4)}
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          B
+        </div>
+
+        <div class="value">
+          ${fmt(B,4)}
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          R²
+        </div>
+
+        <div class="value">
+          ${fmt(r2,4)}
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="card"
+      style="
+        margin-top:15px;
+        background:#f8fafc
+      ">
+
+
+      <h3>
+        Ley ajustada
+      </h3>
+
+
+      <p
+        style="
+          font-size:18px;
+          text-align:center
+        ">
+
+        <b>
+          PPV =
+          ${fmt(A,4)}
+          ×
+          D<sup>${fmt(B,4)}</sup>
+        </b>
+
+      </p>
+
+
+      <p class="help">
+
+        Ajuste logarítmico preliminar realizado
+        sobre las mediciones disponibles.
+
+        Para estudios reglamentarios deberá
+        utilizarse la metodología y tratamiento
+        de datos que corresponda al estudio
+        técnico de vibraciones.
+
+      </p>
+
+
+    </div>
+
+    `;
+
+}
+
+
+/* ==========================================================
+   DESCARGA
+   ========================================================== */
+
+function descargarBlob(
+  blob,
+  nombre
+){
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+
+  const a =
+    document.createElement("a");
+
+
+  a.href =
+    url;
+
+
+  a.download =
+    nombre;
+
+
+  document.body.appendChild(a);
+
+
+  a.click();
+
+
+  a.remove();
+
+
+  setTimeout(
+    ()=>{
+      URL.revokeObjectURL(url);
+    },
+    1000
+  );
+
+}
+
+
+/* ==========================================================
+   EXPORTAR JSON
+   ========================================================== */
+
+function exportJSON(){
+
+  const blob =
+    new Blob(
+      [
+        JSON.stringify(
+          mediciones,
+          null,
+          2
+        )
+      ],
+      {
+        type:
+          "application/json"
+      }
+    );
+
+
+  descargarBlob(
+    blob,
+    "backup_vibraciones_une22381.json"
+  );
+
+}
+
+
+/* ==========================================================
+   IMPORTAR JSON
+   ========================================================== */
+
+async function importJSONFile(event){
+
+  const file =
+    event.target.files[0];
+
+
+  if(!file)
+    return;
+
+
+  const reader =
+    new FileReader();
+
+
+  reader.onload=async function(){
+
+    try{
+
+      const data =
+        JSON.parse(
+          reader.result
+        );
+
+
+      if(!Array.isArray(data))
+        throw new Error(
+          "Formato incorrecto"
+        );
+
+
+      if(
+        !confirm(
+          "Esto reemplazará las mediciones actuales. ¿Continuar?"
+        )
+      )
+        return;
+
+
+      mediciones =
+        data;
+
+      // Guardar en IndexedDB
+      await saveData();
+
+      renderHistorial();
+
+      actualizarDashboard();
+
+
+      alert(
+        "Backup restaurado."
+      );
+
+
+    }
+
+    catch(e){
+
+      alert(
+        "No se pudo importar el archivo JSON.\n"+
+        e.message
+      );
+
+    }
+
+  };
+
+
+  reader.readAsText(file);
+
+}
+
+
+/* ==========================================================
+   CSV
+   ========================================================== */
+
+function csvEscape(v){
+
+  if(
+    v===null ||
+    v===undefined
+  )
+    return "";
+
+
+  let s =
+    String(v);
+
+
+  if(
+    s.includes(";")
+    ||
+    s.includes('"')
+    ||
+    s.includes("\n")
+  ){
+
+    s =
+      '"'+
+      s.replaceAll(
+        '"',
+        '""'
+      )+
+      '"';
+
+  }
+
+
+  return s;
+
+}
+
+
+/* ==========================================================
+   EXPORTAR CSV
+   ========================================================== */
+
+function exportCSV(){
+
+  const headers=[
+
+    "id",
+
+    "voladura",
+
+    "fecha",
+
+    "hora",
+
+    "explotacion",
+
+    "punto",
+
+    "distancia_m",
+
+    "grupo",
+
+    "estructura",
+
+    "carga_total_kg",
+
+    "carga_MIC_kg",
+
+    "barrenos",
+
+    "secuencias",
+
+    "fabricante",
+
+    "modelo",
+
+    "serie",
+
+    "vertical_mm_s",
+
+    "longitudinal_mm_s",
+
+    "transversal_mm_s",
+
+    "ppv_max_mm_s",
+
+    "componente",
+
+    "frecuencia_hz",
+
+    "metodo_frecuencia",
+
+    "desplazamiento_mm",
+
+    "observaciones"
+
+  ];
+
+
+  let csv =
+    headers.join(";")
+    +
+    "\n";
+
+
+  mediciones.forEach(
+    m=>{
+
+      const row=[
+
+        m.id,
+
+        m.voladura,
+
+        m.fecha,
+
+        m.hora,
+
+        m.explotacion,
+
+        m.punto,
+
+        m.distancia,
+
+        m.grupo,
+
+        m.estructura,
+
+        m.cargaTotal,
+
+        m.cargaMIC,
+
+        m.barrenos,
+
+        m.secuencias,
+
+        m.fabricante,
+
+        m.modelo,
+
+        m.serie,
+
+        m.vertical,
+
+        m.longitudinal,
+
+        m.transversal,
+
+        m.ppv,
+
+        m.componente,
+
+        m.frecuencia,
+
+        m.metodoFrecuencia,
+
+        m.desplazamiento,
+
+        m.observaciones
+
+      ];
+
+
+      csv +=
+        row
+        .map(csvEscape)
+        .join(";")
+        +
+        "\n";
+
+    }
+  );
+
+
+  const blob =
+    new Blob(
+      [
+        "\ufeff"+
+        csv
+      ],
+      {
+        type:
+          "text/csv;charset=utf-8"
+      }
+    );
+
+
+  descargarBlob(
+    blob,
+    "mediciones_vibraciones_une22381.csv"
+  );
+
+}
+
+
+/* ==========================================================
+   IMPORTAR CSV
+   ========================================================== */
+
+function parseCSVLine(line){
+
+  const result=[];
+
+  let current="";
+
+  let quoted=false;
+
+
+  for(
+    let i=0;
+    i<line.length;
+    i++
+  ){
+
+    const ch =
+      line[i];
+
+
+    if(ch==='"'){
+
+      if(
+        quoted &&
+        line[i+1]==='"'
+      ){
+
+        current+='"';
+
+        i++;
+
+      }
+
+      else{
+
+        quoted=
+          !quoted;
+
+      }
+
+    }
+
+
+    else if(
+      ch===";" &&
+      !quoted
+    ){
+
+      result.push(
+        current
+      );
+
+      current="";
+
+    }
+
+
+    else{
+
+      current+=ch;
+
+    }
+
+  }
+
+
+  result.push(
+    current
+  );
+
+
+  return result;
+
+}
+
+
+/* ==========================================================
+   IMPORTAR CSV
+   ========================================================== */
+
+async function importCSVFile(event){
+
+  const file =
+    event.target.files[0];
+
+
+  if(!file)
+    return;
+
+
+  const reader =
+    new FileReader();
+
+
+  reader.onload=async function(){
+
+    try{
+
+      let text =
+        reader.result;
+
+
+      text =
+        text.replace(
+          /^\uFEFF/,
+          ""
+        );
+
+
+      const lines =
+        text
+        .split(/\r?\n/)
+        .filter(
+          x=>x.trim()!==""
+        );
+
+
+      if(lines.length<2)
+        throw new Error(
+          "CSV vacío"
+        );
+
+
+      const headers =
+        parseCSVLine(
+          lines[0]
+        );
+
+
+      const rows=[];
+
+
+      for(
+        let i=1;
+        i<lines.length;
+        i++
+      ){
+
+        const values =
+          parseCSVLine(
+            lines[i]
+          );
+
+
+        const obj={};
+
+
+        headers.forEach(
+          (h,j)=>{
+
+            obj[h] =
+              values[j] ??
+              "";
+
+          }
+        );
+
+
+        rows.push({
+
+          id:
+            obj.id ||
+            uid(),
+
+          voladura:
+            obj.voladura ||
+            "",
+
+          fecha:
+            obj.fecha ||
+            "",
+
+          hora:
+            obj.hora ||
+            "",
+
+          explotacion:
+            obj.explotacion ||
+            "",
+
+          punto:
+            obj.punto ||
+            "",
+
+          distancia:
+            n(obj.distancia_m),
+
+          grupo:
+            obj.grupo ||
+            "II",
+
+          estructura:
+            obj.estructura ||
+            "",
+
+          cargaTotal:
+            n(
+              obj.carga_total_kg
+            ),
+
+          cargaMIC:
+            n(
+              obj.carga_MIC_kg
+            ),
+
+          barrenos:
+            n(obj.barrenos),
+
+          secuencias:
+            obj.secuencias ||
+            "",
+
+          fabricante:
+            obj.fabricante ||
+            "",
+
+          modelo:
+            obj.modelo ||
+            "",
+
+          serie:
+            obj.serie ||
+            "",
+
+          vertical:
+            n(
+              obj.vertical_mm_s
+            ),
+
+          longitudinal:
+            n(
+              obj.longitudinal_mm_s
+            ),
+
+          transversal:
+            n(
+              obj.transversal_mm_s
+            ),
+
+          ppv:
+            n(
+              obj.ppv_max_mm_s
+            ),
+
+          componente:
+            obj.componente ||
+            "",
+
+          frecuencia:
+            n(
+              obj.frecuencia_hz
+            ),
+
+          metodoFrecuencia:
+            obj.metodo_frecuencia ||
+            "",
+
+          desplazamiento:
+            n(
+              obj.desplazamiento_mm
+            ),
+
+          observaciones:
+            obj.observaciones ||
+            "",
+
+          creado:
+            new Date().toISOString()
+
+        });
+
+      }
+
+
+      if(
+        !confirm(
+          `Se han encontrado ${rows.length} registros. `+
+          `¿Añadirlos a la base de datos?`
+        )
+      )
+        return;
+
+
+      mediciones=[
+        ...mediciones,
+        ...rows
+      ];
+
+      // Guardar en IndexedDB
+      await saveData();
+
+      renderHistorial();
+
+      actualizarDashboard();
+
+
+      alert(
+        `Importadas ${rows.length} mediciones.`
+      );
+
+
+    }
+
+    catch(e){
+
+      alert(
+        "No se pudo importar el CSV.\n"+
+        e.message
+      );
+
+    }
+
+  };
+
+
+  reader.readAsText(
+    file,
+    "UTF-8"
+  );
+
+}
+
+
+/* ==========================================================
+   BORRAR TODO
+   ========================================================== */
+
+async function borrarTodo(){
+
+  if(
+    !confirm(
+      "ATENCIÓN: se eliminarán todas las mediciones "+
+      "guardadas en este dispositivo.\n\n"+
+      "¿Continuar?"
+    )
+  )
+    return;
+
+
+  mediciones=[];
+
+  // Guardar en IndexedDB
+  await saveData();
+
+  renderHistorial();
+
+  actualizarDashboard();
+
+
+  alert(
+    "Datos eliminados."
+  );
+
+}
+
+
+/* ==========================================================
+   FECHA ACTUAL
+   ========================================================== */
+
+function establecerFechaActual(){
+
+  const ahora =
+    new Date();
+
+
+  const yyyy =
+    ahora.getFullYear();
+
+
+  const mm =
+    String(
+      ahora.getMonth()+1
+    )
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  const dd =
+    String(
+      ahora.getDate()
+    )
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  document.getElementById(
+    "fecha"
+  ).value =
+
+    `${yyyy}-${mm}-${dd}`;
+
+
+  document.getElementById(
+    "hora"
+  ).value =
+
+    String(
+      ahora.getHours()
+    )
+    .padStart(2,"0")
+    +
+    ":"
+    +
+    String(
+      ahora.getMinutes()
+    )
+    .padStart(2,"0");
+
+}
+
+
+/* ==========================================================
+   INFORME
+   ========================================================== */
+
+function verInforme(id){
+
+  const m =
+    mediciones.find(
+      x=>x.id===id
+    );
+
+
+  if(!m)
+    return;
+
+
+  medicionSeleccionada =
+    m;
+
+
+  generarInforme(m);
+
+
+  showTab(
+    "tab-informe",
+    document.querySelectorAll(
+      "nav button"
+    )[6]
+  );
+
+}
+
+
+function generarInforme(m){
+
+  const r =
+    evaluar(
+      m.grupo,
+      m.frecuencia,
+      m.ppv
+    );
+
+
+  const pct =
+    r.limite
+      ?
+      (m.ppv/r.limite)*100
+      :
+      null;
+
+
+  document.getElementById(
+    "informeDatos"
+  ).innerHTML =
+
+
+  `
+
+    <h3>
+      1. Identificación
+    </h3>
+
+
+    <table>
+
+      <tr>
+
+        <td>
+          <b>Voladura</b>
+        </td>
+
+        <td>
+          ${esc(m.voladura)}
+        </td>
+
+        <td>
+          <b>Fecha</b>
+        </td>
+
+        <td>
+          ${esc(m.fecha)}
+        </td>
+
+      </tr>
+
+
+      <tr>
+
+        <td>
+          <b>Hora</b>
+        </td>
+
+        <td>
+          ${esc(m.hora)}
+        </td>
+
+        <td>
+          <b>Explotación</b>
+        </td>
+
+        <td>
+          ${esc(m.explotacion)}
+        </td>
+
+      </tr>
+
+
+      <tr>
+
+        <td>
+          <b>Punto</b>
+        </td>
+
+        <td>
+          ${esc(m.punto)}
+        </td>
+
+        <td>
+          <b>Distancia</b>
+        </td>
+
+        <td>
+          ${fmt(m.distancia)} m
+        </td>
+
+      </tr>
+
+
+      <tr>
+
+        <td>
+          <b>Estructura</b>
+        </td>
+
+        <td>
+          ${esc(m.estructura)}
+        </td>
+
+        <td>
+          <b>Grupo</b>
+        </td>
+
+        <td>
+          ${esc(m.grupo)}
+        </td>
+
+      </tr>
+
+    </table>
+
+
+    <h3>
+      2. Datos de la voladura
+    </h3>
+
+
+    <table>
+
+      <tr>
+
+        <td>
+          <b>Carga total</b>
+        </td>
+
+        <td>
+          ${fmt(m.cargaTotal)} kg
+        </td>
+
+        <td>
+          <b>Carga máxima instantánea</b>
+        </td>
+
+        <td>
+          ${fmt(m.cargaMIC)} kg
+        </td>
+
+      </tr>
+
+
+      <tr>
+
+        <td>
+          <b>Nº barrenos</b>
+        </td>
+
+        <td>
+          ${fmt(m.barrenos,0)}
+        </td>
+
+        <td>
+          <b>Secuencias</b>
+        </td>
+
+        <td>
+          ${esc(m.secuencias)}
+        </td>
+
+      </tr>
+
+    </table>
+
+
+    <h3>
+      3. Instrumentación
+    </h3>
+
+
+    <table>
+
+      <tr>
+
+        <td>
+          <b>Fabricante</b>
+        </td>
+
+        <td>
+          ${esc(m.fabricante)}
+        </td>
+
+        <td>
+          <b>Modelo</b>
+        </td>
+
+        <td>
+          ${esc(m.modelo)}
+        </td>
+
+      </tr>
+
+
+      <tr>
+
+        <td>
+          <b>Nº serie</b>
+        </td>
+
+        <td>
+          ${esc(m.serie)}
+        </td>
+
+        <td>
+          <b>Método frecuencia</b>
+        </td>
+
+        <td>
+          ${esc(m.metodoFrecuencia)}
+        </td>
+
+      </tr>
+
+    </table>
+
+
+    <h3>
+      4. Resultados de la medición
+    </h3>
+
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>
+            Componente
+          </th>
+
+          <th>
+            Símbolo
+          </th>
+
+          <th>
+            Color gráfico
+          </th>
+
+          <th>
+            PPV (mm/s)
+          </th>
+
+          <th>
+            Observación
+          </th>
+
+        </tr>
+
+      </thead>
+
+
+      <tbody>
+
+
+        <tr>
+
+          <td>
+            Vertical
+          </td>
+
+          <td style="
+            color:#e53935;
+            font-size:18px;
+            font-weight:bold;
+          ">
+            ★
+          </td>
+
+          <td>
+            Rojo
+          </td>
+
+          <td>
+            ${fmt(m.vertical)}
+          </td>
+
+          <td>
+            ${
+              m.componente==="Vertical"
+              ?
+              "<b>PPV máxima</b>"
+              :
+              ""
+            }
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            Longitudinal
+          </td>
+
+          <td style="
+            color:#16803c;
+            font-size:18px;
+            font-weight:bold;
+          ">
+            ■
+          </td>
+
+          <td>
+            Verde
+          </td>
+
+          <td>
+            ${fmt(m.longitudinal)}
+          </td>
+
+          <td>
+            ${
+              m.componente==="Longitudinal"
+              ?
+              "<b>PPV máxima</b>"
+              :
+              ""
+            }
+          </td>
+
+        </tr>
+
+
+        <tr>
+
+          <td>
+            Transversal
+          </td>
+
+          <td style="
+            color:#9b59b6;
+            font-size:18px;
+            font-weight:bold;
+          ">
+            ✕
+          </td>
+
+          <td>
+            Morado-lila
+          </td>
+
+          <td>
+            ${fmt(m.transversal)}
+          </td>
+
+          <td>
+            ${
+              m.componente==="Transversal"
+              ?
+              "<b>PPV máxima</b>"
+              :
+              ""
+            }
+          </td>
+
+        </tr>
+
+
+      </tbody>
+
+    </table>
+
+
+    <div
+      style="
+        margin-top:20px;
+        padding:20px;
+        border:2px solid ${
+          r.estado==="green"
+          ?
+          "#16803c"
+          :
+          r.estado==="orange"
+          ?
+          "#b56a00"
+          :
+          r.estado==="red"
+          ?
+          "#b42318"
+          :
+          "#667085"
+        };
+        border-radius:10px;
+        page-break-inside: avoid;
+      ">
+
+
+      <h2 style="margin-top:0">
+
+        RESULTADO:
+        ${esc(r.texto)}
+
+      </h2>
+
+
+      <p>
+
+        <b>
+          PPV máxima:
+        </b>
+
+        ${fmt(m.ppv)} mm/s
+
+      </p>
+
+
+      <p>
+
+        <b>
+          Componente dominante:
+        </b>
+
+        ${esc(m.componente)}
+
+      </p>
+
+
+      <p>
+
+        <b>
+          Frecuencia principal:
+        </b>
+
+        ${fmt(m.frecuencia)} Hz
+
+      </p>
+
+
+      <p>
+
+        <b>
+          Grupo:
+        </b>
+
+        ${esc(m.grupo)}
+
+      </p>
+
+
+      <p>
+
+        <b>
+          Límite calculado:
+        </b>
+
+        ${
+          r.limite===null
+          ?
+          "No disponible"
+          :
+          fmt(r.limite)+" mm/s"
+        }
+
+      </p>
+
+
+      <p>
+
+        <b>
+          Relación PPV/límite:
+        </b>
+
+        ${
+          pct===null
+          ?
+          "—"
+          :
+          fmt(pct,1)+" %"
+        }
+
+      </p>
+
+
+    </div>
+
+
+    <h3>
+      5. Observaciones
+    </h3>
+
+
+    <p>
+      ${esc(m.observaciones)}
+    </p>
+
+
+    <h3>
+      6. Criterio de evaluación
+    </h3>
+
+
+    <p>
+
+      Se han considerado las tres componentes
+      de velocidad de vibración registradas:
+      vertical, longitudinal y transversal.
+
+      La componente con mayor valor de PPV
+      se identifica como componente dominante
+      para la evaluación principal.
+
+    </p>
+
+
+    <p>
+
+      Para el intervalo de frecuencia comprendido
+      entre 15 y 75 Hz se calcula la velocidad
+      equivalente a partir del desplazamiento
+      admisible mediante:
+
+    </p>
+
+
+    <p
+      style="
+        text-align:center;
+        font-size:18px
+      ">
+
+      <b>
+        V = 2π f d
+      </b>
+
+    </p>
+
+
+    <p>
+
+      <b>Nota:</b>
+
+      la zona denominada "ATENCIÓN"
+      es una función preventiva interna
+      de esta aplicación cuando la medición
+      alcanza el 80 % del límite.
+
+      No constituye una categoría adicional
+      de la UNE.
+
+    </p>
+
+
+    <hr>
+
+
+    <p
+      style="
+        font-size:11px;
+        color:#667085
+      ">
+
+      Documento generado mediante
+      Control de Vibraciones V2.
+
+      Este informe debe ser revisado por
+      personal técnicamente competente
+      antes de su utilización con finalidad
+      oficial o reglamentaria.
+
+    </p>
+
+  `;
+
+}
+
+
+/* ==========================================================
+   FUNCIONES PARA PDF CON GRÁFICA
+   ========================================================== */
+
+function prepararGraficaParaPDF() {
+  const canvas = document.getElementById('chart');
+  if (!canvas) {
+    console.warn('No se encontró el canvas');
+    return;
+  }
+  
+  dibujarGrafica();
+  
+  const ctx = canvas.getContext('2d');
+  
+  try {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    window._chartImageData = imageData;
+    window._chartDataURL = canvas.toDataURL('image/png');
+  } catch(e) {
+    console.warn('Error al capturar canvas:', e);
+  }
+  
+  console.log('✅ Gráfica preparada para exportación PDF');
+}
+
+
+function imprimirConGrafica() {
+  const graficaTab = document.getElementById('tab-grafica');
+  const informeTab = document.getElementById('tab-informe');
+  
+  if (informeTab && informeTab.classList.contains('active')) {
+    // La gráfica ya debería estar visible
+  }
+  
+  prepararGraficaParaPDF();
+  
+  setTimeout(function() {
+    dibujarGrafica();
+    
+    setTimeout(function() {
+      window.print();
+    }, 200);
+  }, 150);
+}
+
+
+/* ==========================================================
+   INICIO
+   ========================================================== */
+
+window.addEventListener(
+  "resize",
+  ()=>{
+
+    if(
+      document
+        .getElementById(
+          "tab-grafica"
+        )
+        .classList
+        .contains("active")
+    ){
+
+      dibujarGrafica();
+
+    }
+
+  }
+);
+
+
+window.addEventListener('beforeprint', function() {
+  console.log('🖨️ Preparando impresión...');
+  
+  const graficaActiva = document.getElementById('tab-grafica')?.classList.contains('active');
+  const informeActivo = document.getElementById('tab-informe')?.classList.contains('active');
+  
+  if (graficaActiva || informeActivo) {
+    dibujarGrafica();
+    prepararGraficaParaPDF();
+  }
+});
+
+
+window.addEventListener('afterprint', function() {
+  console.log('📄 Impresión completada');
+  window._chartImageData = null;
+  window._chartDataURL = null;
+});
+
+
+document.addEventListener(
+  "DOMContentLoaded",
+  async ()=>{
+
+    // Inicializar IndexedDB
+    await initDB();
+
+    establecerFechaActual();
+
+    actualizarDashboard();
+
+    renderHistorial();
+
+    setTimeout(
+      function() {
+        dibujarGrafica();
+        prepararGraficaParaPDF();
+      },
+      100
+    );
+
+  }
+);
+
+</script>
+
+
+</body>
+</html>
