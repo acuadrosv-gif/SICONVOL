@@ -6277,11 +6277,27 @@ function generarInforme(m){
       :
       null;
 
+  // ==========================================================
+  // 🔥 CORRECCIÓN: Actualizar fecha y proyecto dinámicamente
+  // ==========================================================
+  const ahora = new Date();
+  const fechaGeneracion = ahora.toLocaleDateString('es-ES'); // dd/mm/yyyy
+  const horaGeneracion = ahora.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+  const fechaGeneracionCompleta = `${fechaGeneracion} · ${horaGeneracion}`;
+
+  const pdfGeneradoEl = document.getElementById('pdf-generado');
+  if (pdfGeneradoEl) {
+      pdfGeneradoEl.textContent = fechaGeneracionCompleta;
+  }
+
+  const pdfProyectoEl = document.getElementById('pdf-proyecto');
+  if (pdfProyectoEl && m.explotacion) {
+      pdfProyectoEl.textContent = m.explotacion;
+  }
 
   document.getElementById(
     "informeDatos"
   ).innerHTML =
-
 
   `
 
