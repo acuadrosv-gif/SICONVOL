@@ -1,0 +1,7534 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#f8fafc" id="themeMeta">
+
+<title>Control de Vibraciones por Voladuras — DIN 4150-3:2016-12</title>
+
+<!-- GOOGLE FONTS: Plus Jakarta Sans & JetBrains Mono -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================
+   DYNAMIC LUXURY DESIGN SYSTEM — DIN 4150-3:2016-12 SICONVOL
+   Ultra-Corporate High-Tech Precision Edition
+   Dual-Theme: Platinum Light (Default) & Midnight Obsidian
+   ========================================================== */
+
+/* ─── TEMA CLARO: PLATINUM LUXURY (DEFAULT) ─── */
+:root, [data-theme="light"] {
+  --bg-primary: #f4f6fb;
+  --bg-secondary: #e9eef7;
+  --bg-card: rgba(255, 255, 255, 0.88);
+  --bg-card-hover: rgba(255, 255, 255, 0.98);
+  --bg-card-elevated: #ffffff;
+  --bg-input: #ffffff;
+  --bg-input-focus: #ffffff;
+
+  /* Metallic & Vivid Luxury Accents */
+  --gold-primary: #b45309;
+  --gold-light: #f59e0b;
+  --gold-gradient: linear-gradient(135deg, #d97706 0%, #f59e0b 50%, #b45309 100%);
+  --gold-glow: rgba(217, 119, 6, 0.2);
+
+  --cyan-electric: #0284c7;
+  --cyan-glow: rgba(2, 132, 199, 0.25);
+  --blue-sapphire: #1d4ed8;
+  --blue-gradient: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+
+  /* Functional Statuses (Vibrant & High Contrast) */
+  --verde: #059669;
+  --verde-bg: #ecfdf5;
+  --verde-border: #a7f3d0;
+  --verde-glow: rgba(16, 185, 129, 0.2);
+
+  --naranja: #d97706;
+  --naranja-bg: #fffbeb;
+  --naranja-border: #fde68a;
+  --naranja-glow: rgba(245, 158, 11, 0.2);
+
+  --rojo: #e11d48;
+  --rojo-bg: #fff1f2;
+  --rojo-border: #fecdd3;
+  --rojo-glow: rgba(225, 29, 72, 0.2);
+
+  --morado: #7c3aed;
+  --morado-claro: #a78bfa;
+  --morado-bg: #f5f3ff;
+
+  --azul: #0284c7;
+  --azul2: #2563eb;
+  --azul3: #e0f2fe;
+
+  /* Typography & High-Contrast Neutrals */
+  --text-main: #0f172a;
+  --text-heading: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+  --gris: #64748b;
+  --gris2: #f1f5f9;
+
+  /* Borders & Glassmorphic Elevation */
+  --borde: #cbd5e1;
+  --borde-light: #e2e8f0;
+  --borde-focus: #2563eb;
+  --blanco: #ffffff;
+
+  /* Volumetric 3D Shadows */
+  --sombra: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(226, 232, 240, 0.8);
+  --sombra-card: 0 14px 35px -6px rgba(15, 23, 42, 0.07), 0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  --sombra-glow: 0 0 25px rgba(37, 99, 235, 0.15);
+
+  --header-bg: rgba(255, 255, 255, 0.92);
+  --header-border: rgba(226, 232, 240, 0.9);
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --nav-active-bg: linear-gradient(135deg, #0284c7 0%, #2563eb 100%);
+  --nav-active-color: #ffffff;
+  --nav-btn-color: #334155;
+  --nav-btn-hover: #f1f5f9;
+
+  --metric-bg: #f8fafc;
+  --metric-border: #e2e8f0;
+  --metric-value-color: #0f172a;
+
+  --th-bg: #f1f5f9;
+  --tr-hover: rgba(2, 132, 199, 0.05);
+
+  --body-bg-gradient: 
+    radial-gradient(circle at 10% 10%, rgba(2, 132, 199, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(217, 119, 6, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 80%, rgba(37, 99, 235, 0.05) 0%, transparent 55%),
+    linear-gradient(180deg, #f8fafc 0%, #eef2f8 50%, #f8fafc 100%);
+}
+
+/* ─── TEMA OSCURO: MIDNIGHT OBSIDIAN LUXURY ─── */
+[data-theme="dark"] {
+  --bg-primary: #060911;
+  --bg-secondary: #0c1220;
+  --bg-card: rgba(13, 20, 36, 0.78);
+  --bg-card-hover: rgba(18, 28, 50, 0.92);
+  --bg-card-elevated: rgba(22, 35, 62, 0.94);
+  --bg-input: rgba(8, 14, 26, 0.85);
+  --bg-input-focus: rgba(11, 19, 36, 0.98);
+
+  --gold-primary: #d4af37;
+  --gold-light: #f7e089;
+  --gold-gradient: linear-gradient(135deg, #c5a059 0%, #f7df94 50%, #d4af37 100%);
+  --gold-glow: rgba(212, 175, 55, 0.25);
+
+  --cyan-electric: #38bdf8;
+  --cyan-glow: rgba(56, 189, 248, 0.35);
+  --blue-sapphire: #2563eb;
+  --blue-gradient: linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%);
+
+  --verde: #10b981;
+  --verde-bg: rgba(16, 185, 129, 0.12);
+  --verde-border: rgba(16, 185, 129, 0.4);
+  --verde-glow: rgba(16, 185, 129, 0.3);
+
+  --naranja: #f59e0b;
+  --naranja-bg: rgba(245, 158, 11, 0.12);
+  --naranja-border: rgba(245, 158, 11, 0.4);
+  --naranja-glow: rgba(245, 158, 11, 0.3);
+
+  --rojo: #f43f5e;
+  --rojo-bg: rgba(244, 63, 94, 0.12);
+  --rojo-border: rgba(244, 63, 94, 0.4);
+  --rojo-glow: rgba(244, 63, 94, 0.3);
+
+  --morado: #a855f7;
+  --morado-claro: #d8b4fe;
+  --morado-bg: rgba(168, 85, 247, 0.15);
+
+  --azul: #38bdf8;
+  --azul2: #60a5fa;
+  --azul3: rgba(56, 189, 248, 0.14);
+
+  --text-main: #f8fafc;
+  --text-heading: #ffffff;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+  --gris: #94a3b8;
+  --gris2: rgba(255, 255, 255, 0.05);
+
+  --borde: rgba(255, 255, 255, 0.1);
+  --borde-light: rgba(255, 255, 255, 0.16);
+  --borde-focus: #38bdf8;
+  --blanco: #ffffff;
+
+  --sombra: 0 16px 36px -8px rgba(0, 0, 0, 0.55), 0 0 1px 1px rgba(255, 255, 255, 0.06);
+  --sombra-card: 0 20px 45px -12px rgba(0, 0, 0, 0.65), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
+  --sombra-glow: 0 0 35px -5px rgba(56, 189, 248, 0.22);
+
+  --header-bg: rgba(10, 16, 28, 0.88);
+  --header-border: rgba(255, 255, 255, 0.08);
+  --nav-bg: rgba(12, 19, 34, 0.9);
+  --nav-active-bg: linear-gradient(135deg, rgba(37, 99, 235, 0.3) 0%, rgba(56, 189, 248, 0.22) 100%);
+  --nav-active-color: #ffffff;
+  --nav-btn-color: #94a3b8;
+  --nav-btn-hover: rgba(255, 255, 255, 0.06);
+
+  --metric-bg: rgba(8, 14, 28, 0.65);
+  --metric-border: rgba(255, 255, 255, 0.08);
+  --metric-value-color: #ffffff;
+
+  --th-bg: rgba(8, 14, 28, 0.85);
+  --tr-hover: rgba(56, 189, 248, 0.06);
+
+  --body-bg-gradient: 
+    radial-gradient(circle at 15% 10%, rgba(56, 189, 248, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 25%, rgba(212, 175, 55, 0.06) 0%, transparent 45%),
+    radial-gradient(circle at 50% 85%, rgba(37, 99, 235, 0.05) 0%, transparent 55%),
+    linear-gradient(180deg, #060911 0%, #0a0f1d 50%, #060911 100%);
+}
+
+/* ==========================================================
+   RESET, SCROLLBAR & BASE ENVIRONMENT
+   ========================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--borde);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--azul2);
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-primary);
+  background-image: var(--body-bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ==========================================================
+   DYNAMIC LUXURY HEADER (ULTRA-CORPORATE DARK LUXURY)
+   ========================================================== */
+
+header {
+  background: rgba(10, 16, 28, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  color: #ffffff;
+  padding: 16px 36px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  z-index: 30;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+header::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(56, 189, 248, 0.7) 30%, rgba(212, 175, 55, 0.7) 70%, transparent 100%);
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header-logo:hover {
+  transform: scale(1.04);
+}
+
+.header-text h1 {
+  margin: 0 0 3px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 60%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-text p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #94a3b8;
+  letter-spacing: 0.01em;
+}
+
+/* THEME TOGGLE BUTTON (ON DARK LUXURY HEADER) */
+.theme-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  backdrop-filter: blur(12px);
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #38bdf8;
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.35);
+  color: #ffffff;
+}
+
+.theme-toggle-btn .theme-icon {
+  font-size: 16px;
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.theme-toggle-btn:hover .theme-icon {
+  transform: rotate(20deg) scale(1.15);
+}
+
+/* CABECERA PARA PDF - OCULTA EN PANTALLA */
+.pdf-header {
+  display: none;
+}
+
+/* ==========================================================
+   DYNAMIC DOCK NAVIGATION
+   ========================================================== */
+
+nav.tabs-menu {
+  background: var(--nav-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid var(--borde);
+  display: flex;
+  gap: 6px;
+  padding: 10px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 25;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+nav.tabs-menu::-webkit-scrollbar {
+  display: none;
+}
+
+nav.tabs-menu button {
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 10px 18px;
+  cursor: pointer;
+  border-radius: 10px;
+  color: var(--nav-btn-color);
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 13.5px;
+  font-family: inherit;
+  letter-spacing: 0.01em;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+nav.tabs-menu button:hover {
+  background: var(--nav-btn-hover);
+  color: var(--text-heading);
+  transform: translateY(-1px);
+}
+
+nav.tabs-menu button.active {
+  background: var(--nav-active-bg);
+  color: var(--nav-active-color) !important;
+  font-weight: 700;
+  border-color: rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+nav.tabs-menu button.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 20%;
+  right: 20%;
+  height: 2.5px;
+  background: linear-gradient(90deg, #0284c7, #2563eb);
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.6);
+}
+
+/* ==========================================================
+   MAIN CONTAINER & TAB TRANSITIONS
+   ========================================================== */
+
+main {
+  max-width: 1480px;
+  margin: auto;
+  padding: 28px 32px;
+}
+
+.tab {
+  display: none;
+}
+
+.tab.active {
+  display: block;
+  animation: luxuryTabEnter 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes luxuryTabEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================
+   GLASSMORPHIC 3D CARDS
+   ========================================================== */
+
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  box-shadow: var(--sombra-card);
+  padding: 26px 30px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--borde-light);
+  box-shadow: 0 20px 45px -8px rgba(15, 23, 42, 0.12);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.3), rgba(217, 119, 6, 0.3), transparent);
+  pointer-events: none;
+}
+
+.card h2,
+.card h3 {
+  margin-top: 0;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-heading);
+}
+
+.card h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h3 {
+  font-size: 16px;
+  color: var(--text-heading);
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--borde-light);
+}
+
+/* ==========================================================
+   GRID LAYOUTS
+   ========================================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* ==========================================================
+   FORM CONTROLS & SATIN INPUTS
+   ========================================================== */
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.field label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1.5px solid var(--borde);
+  border-radius: 9px;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text-main);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.25s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-dim);
+}
+
+select {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 36px;
+  appearance: none;
+}
+
+[data-theme="dark"] select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2394a3b8'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+}
+
+select option {
+  background: var(--bg-card-elevated);
+  color: var(--text-main);
+}
+
+textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  background: var(--bg-input-focus);
+  border-color: var(--borde-focus);
+  box-shadow: 0 0 0 3.5px rgba(37, 99, 235, 0.18);
+}
+
+/* ==========================================================
+   DYNAMIC LUXURY BUTTONS
+   ========================================================== */
+
+.btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 20px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13.5px;
+  font-family: inherit;
+  letter-spacing: 0.02em;
+  background: var(--blue-gradient);
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
+  filter: brightness(1.08);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn.secondary {
+  background: var(--gris2);
+  color: var(--text-main);
+  border: 1px solid var(--borde);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn.secondary:hover {
+  background: var(--borde-light);
+  color: var(--text-heading);
+}
+
+.btn.green {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn.green:hover {
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5);
+}
+
+.btn.orange {
+  background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn.orange:hover {
+  box-shadow: 0 8px 24px rgba(245, 158, 11, 0.5);
+}
+
+.btn.red {
+  background: linear-gradient(135deg, #e11d48 0%, #f43f5e 100%);
+  box-shadow: 0 4px 16px rgba(225, 29, 72, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.btn.red:hover {
+  box-shadow: 0 8px 24px rgba(225, 29, 72, 0.5);
+}
+
+.btn.light {
+  background: var(--gris2);
+  color: var(--text-main);
+  border: 1px solid var(--borde);
+  box-shadow: none;
+}
+
+.btn.light:hover {
+  background: var(--borde);
+  color: var(--text-heading);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+/* ==========================================================
+   STATUS & EVALUATION INDICATORS
+   ========================================================== */
+
+.status {
+  border-radius: 14px;
+  padding: 22px;
+  text-align: center;
+  border: 1.5px solid transparent;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.status .big {
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.status .small {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  opacity: 0.95;
+}
+
+.status.green {
+  color: var(--verde);
+  background: var(--verde-bg);
+  border-color: var(--verde-border);
+  box-shadow: 0 0 25px var(--verde-glow);
+}
+
+.status.orange {
+  color: var(--naranja);
+  background: var(--naranja-bg);
+  border-color: var(--naranja-border);
+  box-shadow: 0 0 25px var(--naranja-glow);
+}
+
+.status.red {
+  color: var(--rojo);
+  background: var(--rojo-bg);
+  border-color: var(--rojo-border);
+  box-shadow: 0 0 25px var(--rojo-glow);
+}
+
+.status.gray {
+  color: var(--text-muted);
+  background: var(--gris2);
+  border-color: var(--borde);
+}
+
+/* ==========================================================
+   RESULT METRICS (HIGH-TECH GAUGES)
+   ========================================================== */
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.metric {
+  background: var(--metric-bg);
+  border: 1px solid var(--metric-border);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  transition: all 0.25s ease;
+}
+
+.metric:hover {
+  border-color: var(--azul);
+  transform: translateY(-2px);
+}
+
+.metric .label {
+  color: var(--text-muted);
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metric .value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 6px;
+  color: var(--metric-value-color);
+  letter-spacing: -0.02em;
+}
+
+/* ==========================================================
+   KPIS DASHBOARD (LUXURY GAUGES WITH BACKLIGHT)
+   ========================================================== */
+
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.kpi {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--borde);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kpi:hover {
+  transform: translateY(-3px);
+  border-color: var(--azul2);
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+}
+
+.kpi .num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.kpi .txt {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Ambient backlight spheres per KPI */
+.kpi:has(#kpiTotal) {
+  background: radial-gradient(circle at 80% 20%, rgba(2, 132, 199, 0.1) 0%, transparent 60%), var(--bg-card);
+}
+.kpi:has(#kpiGreen) {
+  background: radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 60%), var(--bg-card);
+}
+.kpi:has(#kpiOrange) {
+  background: radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 60%), var(--bg-card);
+}
+.kpi:has(#kpiRed) {
+  background: radial-gradient(circle at 80% 20%, rgba(225, 29, 72, 0.1) 0%, transparent 60%), var(--bg-card);
+}
+
+#kpiGreen { color: var(--verde); }
+#kpiOrange { color: var(--naranja); }
+#kpiRed { color: var(--rojo); }
+#kpiTotal { color: var(--azul2); }
+
+/* ==========================================================
+   TABLES (GLASS DATA GRID)
+   ========================================================== */
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13.5px;
+}
+
+th, td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--borde-light);
+  text-align: left;
+}
+
+th {
+  background: var(--th-bg);
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+th:first-child { border-top-left-radius: 8px; }
+th:last-child { border-top-right-radius: 8px; }
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: var(--tr-hover);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ==========================================================
+   BADGES (PILLS WITH GLOW)
+   ========================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 4px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.badge.green {
+  background: var(--verde-bg);
+  color: var(--verde);
+  border: 1px solid var(--verde-border);
+}
+
+.badge.orange {
+  background: var(--naranja-bg);
+  color: var(--naranja);
+  border: 1px solid var(--naranja-border);
+}
+
+.badge.red {
+  background: var(--rojo-bg);
+  color: var(--rojo);
+  border: 1px solid var(--rojo-border);
+}
+
+.badge.gray {
+  background: var(--gris2);
+  color: var(--text-muted);
+  border: 1px solid var(--borde);
+}
+
+/* ==========================================================
+   HELP & ALERT BOXES
+   ========================================================== */
+
+.help {
+  color: var(--text-muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.alert {
+  border-left: 4px solid #d97706;
+  background: var(--naranja-bg);
+  border-top: 1px solid var(--naranja-border);
+  border-right: 1px solid var(--naranja-border);
+  border-bottom: 1px solid var(--naranja-border);
+  border-radius: 0 10px 10px 0;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 13.5px;
+  color: var(--naranja);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ==========================================================
+   SMALL BUTTONS
+   ========================================================== */
+
+.small-btn {
+  border: 1px solid var(--borde);
+  background: var(--gris2);
+  color: var(--text-main);
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  margin: 2px;
+  transition: all 0.2s ease;
+}
+
+.small-btn:hover {
+  background: var(--azul3);
+  border-color: var(--azul2);
+  color: var(--azul2);
+}
+
+/* ==========================================================
+   CANVAS CHART & WRAPPER
+   ========================================================== */
+
+.chart-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 560px;
+  overflow: hidden;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+#chart {
+  width: 100%;
+  height: 560px;
+  display: block;
+  background: #ffffff;
+}
+
+/* ==========================================================
+   COMPONENT LEGEND
+   ========================================================== */
+
+.component-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  padding: 14px 6px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.component-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.component-symbol {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.symbol-vertical { color: #e53935; }
+.symbol-longitudinal { color: #16803c; }
+.symbol-transversal { color: #9b59b6; }
+
+/* ==========================================================
+   INFORME PREVIEW ON SCREEN
+   ========================================================== */
+
+#informeContenido h1 {
+  color: var(--text-heading) !important;
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+#informeContenido h2 {
+  color: var(--azul2) !important;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#informeContenido hr {
+  border: 0;
+  height: 1px;
+  background: var(--borde);
+  margin: 16px 0;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+footer {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 12px;
+  padding: 36px 20px;
+  border-top: 1px solid var(--borde-light);
+}
+
+.footer-logo {
+  height: 22px;
+  vertical-align: middle;
+  margin-left: 6px;
+  display: inline-block;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+}
+
+/* ==========================================================
+   PRINT / PDF STYLESHEET (DIN 4150-3:2016-12)
+   ========================================================== */
+
+@media print {
+  nav,
+  .no-print,
+  #formCard,
+  .tabs-menu,
+  header,
+  .theme-toggle-btn {
+    display: none !important;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-sizing: border-box !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #1d2939 !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Reset global de cards para print: sin glassmorphism ni sombras */
+  .card {
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    padding: 6px 0 !important;
+    margin-bottom: 8px !important;
+    border-radius: 0 !important;
+    color: #1d2939 !important;
+    overflow: visible !important;
+  }
+
+  /* Quitar pseudo-elementos decorativos */
+  .card::before,
+  .card::after {
+    display: none !important;
+  }
+
+  .card h2, .card h3 {
+    color: #17324d !important;
+    font-size: 13px !important;
+    margin-bottom: 6px !important;
+    padding-bottom: 3px !important;
+    border-bottom: 1px solid #d0d5dd !important;
+  }
+
+  #informeContenido h1 {
+    color: #17324d !important;
+    font-size: 16px !important;
+    margin-bottom: 4px !important;
+  }
+
+  #informeContenido h2 {
+    color: #245b86 !important;
+    font-size: 13px !important;
+  }
+
+  #informeContenido hr {
+    border: 0 !important;
+    height: 1px !important;
+    background: #d0d5dd !important;
+    margin: 6px 0 !important;
+  }
+
+  /* Ocultar todas las tabs, mostrar solo las del informe/gráfica */
+  .tab {
+    display: none !important;
+  }
+
+  #tab-informe {
+    display: block !important;
+  }
+
+  #tab-grafica {
+    display: block !important;
+  }
+
+  /* Cabecera PDF compacta */
+  .pdf-header {
+    display: block !important;
+    padding: 12px 0 8px;
+    border-bottom: 2px solid #17324d;
+    margin-bottom: 10px;
+  }
+
+  .pdf-header .logo-img {
+    height: 50px;
+    width: auto;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .pdf-header h1 {
+    font-size: 18px;
+    color: #17324d !important;
+    margin: 0 0 3px;
+  }
+
+  .pdf-header p {
+    font-size: 11px;
+    color: #667085 !important;
+    margin: 0 0 2px;
+  }
+
+  /* Gráfica */
+  #chart {
+    height: 320px !important;
+    width: 100% !important;
+    display: block !important;
+    background: white !important;
+    border: 1px solid #d0d5dd !important;
+    border-radius: 4px !important;
+    margin: 8px 0 !important;
+  }
+
+  .chart-wrapper {
+    min-height: 320px !important;
+    height: auto !important;
+    overflow: visible !important;
+    page-break-inside: avoid !important;
+    border: 1px solid #d0d5dd !important;
+    border-radius: 6px !important;
+    padding: 8px !important;
+    background: white !important;
+    margin: 10px 0 !important;
+  }
+
+  .component-legend {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    padding: 6px 4px !important;
+    border-top: 1px solid #eaecf0 !important;
+    margin-top: 6px !important;
+    justify-content: center !important;
+    color: #1d2939 !important;
+  }
+
+  .component-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    font-size: 11px !important;
+  }
+
+  .component-symbol {
+    font-size: 15px !important;
+  }
+
+  /* Grid de métricas — Medición representada: Frecuencia / PPV Máxima / Grupo */
+  .card:has(.grid3) {
+    display: block !important;
+    page-break-inside: avoid !important;
+    margin: 6px 0 !important;
+    padding: 0 !important;
+  }
+
+  .grid3 {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  /* Tarjetas de métrica compactas para print */
+  .metric {
+    background: #f8fafc !important;
+    border: 1px solid #e4e7ec !important;
+    border-radius: 4px !important;
+    padding: 6px 8px !important;
+    color: #1d2939 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .metric .label {
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    color: #667085 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .metric .value {
+    font-family: 'JetBrains Mono', monospace, sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #17324d !important;
+    letter-spacing: 0 !important;
+    margin-top: 2px !important;
+  }
+
+  /* KPIs del dashboard (si aparecen en la página de gráfica) */
+  .kpis {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 6px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .kpi {
+    background: #f8fafc !important;
+    border: 1px solid #e4e7ec !important;
+    border-radius: 4px !important;
+    padding: 6px 8px !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  .kpi .num {
+    font-size: 20px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+  }
+
+  .kpi .txt {
+    font-size: 9px !important;
+    margin-top: 3px !important;
+  }
+
+  .card:has(.chart-wrapper) {
+    page-break-inside: avoid !important;
+  }
+
+  #tab-grafica {
+    page-break-after: always !important;
+  }
+
+  #tab-informe {
+    page-break-before: always !important;
+  }
+
+  /* Bloque de resultado (borde coloreado) */
+  div[style*="border:2px solid"] {
+    page-break-inside: avoid !important;
+    page-break-before: auto !important;
+  }
+
+  /* Tablas del informe */
+  table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    font-size: 11px !important;
+    margin-bottom: 8px !important;
+  }
+
+  td, th {
+    padding: 4px 6px !important;
+    border: 1px solid #e4e7ec !important;
+  }
+
+  th {
+    background: #f1f5f9 !important;
+    font-weight: 700 !important;
+  }
+
+  /* Footer fijo en TODAS las páginas del PDF */
+  footer {
+    display: block !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 10px !important;
+    color: #667085 !important;
+    border-top: 1px solid #d0d5dd !important;
+    padding: 6px 10px 4px !important;
+    background: white !important;
+    z-index: 9999 !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Reservar espacio inferior para que el contenido no quede bajo el footer fijo */
+  #informeContenido,
+  #tab-informe .card {
+    padding-bottom: 55px !important;
+  }
+
+  .footer-logo {
+    height: 12px;
+    vertical-align: middle;
+    margin-left: 4px;
+    display: inline-block;
+  }
+
+  /* Secciones 5 y 6 del informe: no partir en mitad de página */
+  #informeContenido h3 {
+    page-break-after: avoid !important;
+  }
+
+  #informeContenido p,
+  #informeContenido table {
+    page-break-inside: avoid !important;
+    orphans: 3 !important;
+    widows: 3 !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 1.2cm 1cm 2.2cm 1cm;
+    @bottom-right {
+      content: counter(page) " / " counter(pages);
+      font-size: 9px;
+      color: #667085;
+    }
+  }
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid3 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .result-grid,
+  .kpis {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 14px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .header-brand {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .header-logo {
+    height: 42px;
+  }
+  .header-text h1 {
+    font-size: 18px;
+  }
+  nav.tabs-menu {
+    padding: 8px 16px;
+  }
+  main {
+    padding: 16px;
+  }
+  .card {
+    padding: 18px 16px;
+    border-radius: 12px;
+  }
+  .grid,
+  .grid2,
+  .grid3,
+  .result-grid,
+  .kpis {
+    grid-template-columns: 1fr;
+  }
+  #chart {
+    height: 420px;
+  }
+  .chart-wrapper {
+    min-height: 420px;
+  }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ========================================================
+     CABECERA WEB - VISIBLE EN PANTALLA
+     ======================================================== -->
+
+<header>
+  <div class="header-brand">
+    <img src="lemostransparente.png" alt="LEMOS" class="header-logo">
+    <div class="header-text">
+      <h1>Control de Vibraciones por Voladuras</h1>
+      <p>Herramienta de registro y evaluación — DIN 4150-3:2016-12</p>
+    </div>
+  </div>
+  <button id="themeToggleBtn" onclick="toggleTheme()" class="theme-toggle-btn" title="Cambiar Tema (Claro / Oscuro)">
+    <span class="theme-icon" id="themeIcon">☀️</span>
+    <span class="theme-label" id="themeLabel">Modo Claro</span>
+  </button>
+</header>
+
+
+<!-- ========================================================
+     CABECERA PDF - LOGO + TÍTULO + PROYECTO
+     ======================================================== -->
+
+<div class="pdf-header">
+  <img src="LEMOS.png" alt="LEMOS" class="logo-img">
+  <h1>Control de Vibraciones por Voladuras — DIN 4150-3:2016-12</h1>
+  <p>Proyecto: <span id="pdf-proyecto">OBRA DESMONTE BARRIO DO CURA - VIGO</span></p>
+  <p>· Generado: <span id="pdf-generado"></span></p>
+</div>
+
+<!-- ========================================================
+     NAVEGACIÓN
+     ======================================================== -->
+
+<nav class="tabs-menu">
+
+  <button
+    class="active"
+    onclick="showTab('tab-dashboard',this)">
+    Dashboard
+  </button>
+
+  <button
+    onclick="showTab('tab-nueva',this)">
+    Nueva medición
+  </button>
+
+  <button
+    onclick="showTab('tab-historial',this)">
+    Historial
+  </button>
+
+  <button
+    onclick="showTab('tab-grafica',this)">
+    Gráfica DIN
+  </button>
+
+  <button
+    onclick="showTab('tab-estudio',this)">
+    Estudio
+  </button>
+
+  <button
+    onclick="showTab('tab-datos',this)">
+    Datos / Backup
+  </button>
+
+  <button
+    onclick="showTab('tab-informe',this)">
+    Informe
+  </button>
+
+</nav>
+
+
+<main>
+
+
+<!-- ========================================================
+     DASHBOARD
+     ======================================================== -->
+
+<section
+  id="tab-dashboard"
+  class="tab active">
+
+  <div class="card">
+
+    <h2>
+      Panel de control
+    </h2>
+
+    <p class="help">
+      Resumen de las mediciones almacenadas
+      en este dispositivo/navegador.
+    </p>
+
+  </div>
+
+
+  <div class="kpis">
+
+    <div class="kpi">
+
+      <div
+        class="num"
+        id="kpiTotal">
+        0
+      </div>
+
+      <div class="txt">
+        Mediciones
+      </div>
+
+    </div>
+
+
+    <div class="kpi">
+
+      <div
+        class="num"
+        id="kpiGreen">
+        0
+      </div>
+
+      <div class="txt">
+        Dentro del límite
+      </div>
+
+    </div>
+
+
+    <div class="kpi">
+
+      <div
+        class="num"
+        id="kpiOrange">
+        0
+      </div>
+
+      <div class="txt">
+        Atención
+      </div>
+
+    </div>
+
+
+    <div class="kpi">
+
+      <div
+        class="num"
+        id="kpiRed">
+        0
+      </div>
+
+      <div class="txt">
+        Por encima
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="card">
+
+    <h3>
+      Últimas mediciones
+    </h3>
+
+    <div id="dashboardTable"></div>
+
+  </div>
+
+</section>
+
+
+
+<!-- ========================================================
+     NUEVA MEDICIÓN
+     ======================================================== -->
+
+<section
+  id="tab-nueva"
+  class="tab">
+
+
+  <div
+    class="card"
+    id="formCard">
+
+
+    <h2 id="formTitle">
+      Nueva medición
+    </h2>
+
+
+    <div class="alert">
+
+      Introduce los datos obtenidos del sismógrafo.
+      La aplicación es independiente del fabricante
+      y permite introducir manualmente resultados
+      de distintos equipos. La evaluación normativa
+      se realiza conforme a DIN 4150-3:2016-12.
+
+    </div>
+
+
+    <input
+      type="hidden"
+      id="editId">
+
+
+    <!-- DATOS GENERALES -->
+
+    <h3>
+      1. Datos generales
+    </h3>
+
+
+    <div class="grid">
+
+
+      <div class="field">
+
+        <label>
+          Identificación de voladura
+        </label>
+
+        <input
+          id="voladura"
+          placeholder="VOL-2026-001">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Fecha
+        </label>
+
+        <input
+          type="date"
+          id="fecha">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Hora
+        </label>
+
+        <input
+          type="time"
+          id="hora">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Explotación / obra
+        </label>
+
+        <input
+          id="explotacion">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Punto de control
+        </label>
+
+        <input
+          id="punto"
+          placeholder="P-01">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Distancia a voladura (m)
+        </label>
+
+        <input
+          type="number"
+          step="0.01"
+          id="distancia">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Tipo de estructura
+        </label>
+
+        <select id="grupo">
+
+          <option value="I">
+            Línea 1 — Comercial / industrial
+          </option>
+
+          <option
+            value="II"
+            selected>
+            Línea 2 — Viviendas
+          </option>
+
+          <option value="III">
+            Línea 3 — Sensible / gran valor
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Descripción estructura
+        </label>
+
+        <input id="estructura">
+
+      </div>
+
+
+    </div>
+
+
+    <!-- VOLADURA -->
+
+    <h3 style="margin-top:25px">
+
+      2. Voladura
+
+    </h3>
+
+
+    <div class="grid">
+
+
+      <div class="field">
+
+        <label>
+          Carga total (kg)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="cargaTotal">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Carga máxima instantánea / secuencia (kg)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="cargaMIC">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Nº de barrenos
+        </label>
+
+        <input
+          type="number"
+          id="barrenos">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Secuencias
+        </label>
+
+        <input id="secuencias">
+
+      </div>
+
+
+    </div>
+
+
+    <!-- SISMÓGRAFO -->
+
+    <h3 style="margin-top:25px">
+
+      3. Sismógrafo
+
+    </h3>
+
+
+    <div class="grid">
+
+
+      <div class="field">
+
+        <label>
+          Fabricante
+        </label>
+
+        <input
+          id="fabricante"
+          placeholder="Ej. Instantel">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Modelo
+        </label>
+
+        <input id="modelo">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Nº de serie
+        </label>
+
+        <input id="serie">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Observaciones equipo
+        </label>
+
+        <input id="obsEquipo">
+
+      </div>
+
+
+    </div>
+
+
+    <!-- LECTURAS -->
+
+    <h3 style="margin-top:25px">
+
+      4. Lecturas
+
+    </h3>
+
+
+    <div class="grid3">
+
+
+      <div class="field">
+
+        <label>
+          PPV vertical (mm/s)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="v">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          PPV longitudinal (mm/s)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="l">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          PPV transversal (mm/s)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="t">
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      class="grid3"
+      style="margin-top:14px">
+
+
+      <div class="field">
+
+        <label>
+          Modo de evaluación DIN 4150-3
+        </label>
+
+        <select id="modoDIN">
+
+          <option value="fundacion_corta" selected>
+            Corta duración — cimentación
+          </option>
+
+          <option value="piso_superior_corta">
+            Corta duración — piso superior horizontal
+          </option>
+
+          <option value="losa_corta">
+            Corta duración — losa de piso vertical
+          </option>
+
+          <option value="piso_superior_larga">
+            Larga duración — piso superior horizontal
+          </option>
+
+          <option value="losa_larga">
+            Larga duración — losa de piso vertical
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Frecuencia principal (Hz)
+        </label>
+
+        <input
+          type="number"
+          step="0.001"
+          id="frecuencia">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Método de frecuencia
+        </label>
+
+        <select id="metodoFrecuencia">
+
+          <option>
+            Dato proporcionado por sismógrafo
+          </option>
+
+          <option>
+            FFT
+          </option>
+
+          <option>
+            Espectro de respuesta
+          </option>
+
+          <option>
+            Semiperíodo
+          </option>
+
+          <option>
+            Estimación manual
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Desplazamiento registrado (mm), si disponible
+        </label>
+
+        <input
+          type="number"
+          step="0.0001"
+          id="desplazamiento">
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      class="field"
+      style="margin-top:14px">
+
+      <label>
+        Descripción del terreno / observaciones
+      </label>
+
+      <textarea
+        id="observaciones"></textarea>
+
+    </div>
+
+
+    <div class="actions">
+
+      <button
+        class="btn green"
+        onclick="calcular(false)">
+
+        Calcular resultado
+
+      </button>
+
+
+      <button
+        class="btn"
+        onclick="guardarMedicion()">
+
+        Guardar medición
+
+      </button>
+
+
+      <button
+        class="btn light"
+        onclick="limpiarFormulario()">
+
+        Limpiar
+
+      </button>
+
+    </div>
+
+
+  </div>
+
+
+  <!-- RESULTADO -->
+
+  <div class="card">
+
+    <h2>
+      Resultado de la evaluación
+    </h2>
+
+
+    <div
+      id="resultadoStatus"
+      class="status gray">
+
+      <div class="big">
+        Sin calcular
+      </div>
+
+      <div class="small">
+
+        Introduce los valores de PPV y frecuencia.
+
+      </div>
+
+    </div>
+
+
+    <div class="result-grid">
+
+
+      <div class="metric">
+
+        <div class="label">
+          PPV máxima
+        </div>
+
+        <div
+          class="value"
+          id="rPPV">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          Componente dominante
+        </div>
+
+        <div
+          class="value"
+          id="rComp">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          Frecuencia
+        </div>
+
+        <div
+          class="value"
+          id="rFreq">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          Límite calculado
+        </div>
+
+        <div
+          class="value"
+          id="rLimite">
+          —
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      id="rDetalle"
+      class="help"
+      style="margin-top:15px">
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     HISTORIAL
+     ======================================================== -->
+
+<section
+  id="tab-historial"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <h2>
+      Historial de mediciones
+    </h2>
+
+
+    <div
+      class="grid3 no-print">
+
+
+      <div class="field">
+
+        <label>
+          Buscar
+        </label>
+
+        <input
+          id="buscar"
+          oninput="renderHistorial()"
+          placeholder="voladura, punto, sismógrafo...">
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Estado
+        </label>
+
+        <select
+          id="filtroEstado"
+          onchange="renderHistorial()">
+
+          <option value="">
+            Todos
+          </option>
+
+          <option value="green">
+            Dentro
+          </option>
+
+          <option value="orange">
+            Atención
+          </option>
+
+          <option value="red">
+            Por encima
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label>
+          Grupo
+        </label>
+
+        <select
+          id="filtroGrupo"
+          onchange="renderHistorial()">
+
+          <option value="">
+            Todos
+          </option>
+
+          <option value="I">
+            Línea 1 — Comercial / industrial
+          </option>
+
+          <option value="II">
+            Grupo II
+          </option>
+
+          <option value="III">
+            Línea 3 — Sensible / gran valor
+          </option>
+
+        </select>
+
+      </div>
+
+
+    </div>
+
+
+    <div
+      id="historialTable"
+      style="overflow-x:auto;margin-top:20px">
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     GRÁFICA
+     ======================================================== -->
+
+<section
+  id="tab-grafica"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <h2>
+      Gráfica de control — frecuencia / velocidad
+    </h2>
+
+
+    <p class="help">
+
+      La gráfica representa simultáneamente las tres
+      componentes registradas por el sismógrafo.
+      La posición horizontal corresponde a la frecuencia
+      principal y la posición vertical al PPV de cada
+      componente.
+
+      La componente que presenta el mayor PPV queda
+      identificada adicionalmente mediante un aro exterior
+      cuyo color indica el estado frente al límite.
+
+    </p>
+
+
+    <div class="chart-wrapper">
+
+      <canvas id="chart"></canvas>
+
+    </div>
+
+
+    <!-- LEYENDA DE COMPONENTES -->
+
+    <div class="component-legend">
+
+
+      <div class="component-item">
+
+        <span
+          class="component-symbol symbol-vertical">
+          ★
+        </span>
+
+        <span>
+          Componente Vertical
+        </span>
+
+      </div>
+
+
+      <div class="component-item">
+
+        <span
+          class="component-symbol symbol-longitudinal">
+          ■
+        </span>
+
+        <span>
+          Componente Longitudinal
+        </span>
+
+      </div>
+
+
+      <div class="component-item">
+
+        <span
+          class="component-symbol symbol-transversal">
+          ✕
+        </span>
+
+        <span>
+          Componente Transversal
+        </span>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+  <div class="card">
+
+
+    <h3>
+      Medición representada
+    </h3>
+
+
+    <div class="grid3">
+
+
+      <div class="metric">
+
+        <div class="label">
+          Frecuencia
+        </div>
+
+        <div
+          class="value"
+          id="chartFreq">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          PPV máxima
+        </div>
+
+        <div
+          class="value"
+          id="chartPPV">
+          —
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          Grupo
+        </div>
+
+        <div
+          class="value"
+          id="chartGroup">
+          —
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     ESTUDIO
+     ======================================================== -->
+
+<section
+  id="tab-estudio"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <h2>
+      Estudio de propagación
+    </h2>
+
+
+    <p class="help">
+
+      Herramienta experimental para estudiar la relación
+      entre velocidad de vibración, carga máxima instantánea
+      y distancia a partir de las mediciones almacenadas.
+      Este ajuste de propagación no constituye una ecuación
+      de cálculo propia de DIN 4150-3.
+
+    </p>
+
+
+    <div class="actions no-print">
+
+      <button
+        class="btn"
+        onclick="calcularEstudio()">
+
+        Calcular estudio
+
+      </button>
+
+    </div>
+
+
+    <div id="estudioResultado"></div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     DATOS
+     ======================================================== -->
+
+<section
+  id="tab-datos"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <h2>
+      Datos y copias de seguridad
+    </h2>
+
+
+    <p class="help">
+
+      Los datos se almacenan localmente en este dispositivo.
+      Realiza periódicamente una copia para respaldo.
+
+    </p>
+
+
+    <div class="actions no-print">
+
+
+      <button
+        class="btn green"
+        onclick="exportJSON()">
+
+        Descargar copia JSON
+
+      </button>
+
+
+      <button
+        class="btn"
+        onclick="document.getElementById('importJSON').click()">
+
+        Restaurar JSON
+
+      </button>
+
+
+      <input
+        type="file"
+        id="importJSON"
+        accept=".json"
+        style="display:none"
+        onchange="importJSONFile(event)">
+
+
+      <button
+        class="btn light"
+        onclick="exportCSV()">
+
+        Exportar CSV
+
+      </button>
+
+
+      <button
+        class="btn light"
+        onclick="exportExcel()">
+
+        Exportar Excel
+
+      </button>
+
+
+      <button
+        class="btn light"
+        onclick="document.getElementById('importCSV').click()">
+
+        Importar CSV
+
+      </button>
+
+
+      <input
+        type="file"
+        id="importCSV"
+        accept=".csv"
+        style="display:none"
+        onchange="importCSVFile(event)">
+
+
+      <button
+        class="btn red"
+        onclick="borrarTodo()">
+
+        Borrar todos los datos
+
+      </button>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     INFORME
+     ======================================================== -->
+
+<section
+  id="tab-informe"
+  class="tab">
+
+
+  <div class="card">
+
+
+    <div class="no-print actions">
+
+      <button
+        class="btn"
+        onclick="imprimirConGrafica()">
+
+        Imprimir / Guardar PDF
+
+      </button>
+
+    </div>
+
+
+    <div id="informeContenido">
+
+
+      <h1 style="color:#17324d">
+
+        INFORME DE CONTROL DE VIBRACIONES
+        POR VOLADURA
+
+      </h1>
+
+
+      <h2 style="color:#245b86">
+
+        DIN 4150-3:2016-12
+
+      </h2>
+
+
+      <hr>
+
+
+      <div id="informeDatos">
+
+        Seleccione una medición desde el historial.
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  <span>© 2026 LEMOS GRANITE, S.L. All rights reserved | A Technology Solution by </span>
+  <img src="LEMOS.png" alt="LEMOS" class="footer-logo">
+
+</footer>
+
+
+
+<script>
+
+/* ==========================================================
+   BASE DE DATOS - IndexedDB (PERSISTENTE EN iOS)
+   ========================================================== */
+
+const DB_NAME = 'SICONVOL_DB';
+const DB_VERSION = 1;
+const STORE_NAME = 'mediciones';
+
+let db = null;
+let mediciones = [];
+let medicionSeleccionada = null;
+
+// ── Inicializar IndexedDB ──
+function initDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+
+        request.onupgradeneeded = function(e) {
+            const db = e.target.result;
+            if (!db.objectStoreNames.contains(STORE_NAME)) {
+                const store = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+                store.createIndex('fecha', 'fecha', { unique: false });
+                store.createIndex('voladura', 'voladura', { unique: false });
+            }
+        };
+
+        request.onsuccess = function(e) {
+            db = e.target.result;
+            loadData().then(resolve).catch(reject);
+        };
+
+        request.onerror = function(e) {
+            console.error('Error al abrir IndexedDB:', e);
+            // Si IndexedDB falla, usar localStorage como respaldo
+            mediciones = cargarDBLocalStorage();
+            resolve();
+        };
+    });
+}
+
+// ── Cargar datos desde IndexedDB ──
+function loadData() {
+    return new Promise((resolve, reject) => {
+        if (!db) {
+            mediciones = cargarDBLocalStorage();
+            resolve();
+            return;
+        }
+
+        const transaction = db.transaction(STORE_NAME, 'readonly');
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.getAll();
+
+        request.onsuccess = function(e) {
+            mediciones = e.target.result || [];
+            resolve();
+        };
+
+        request.onerror = function(e) {
+            console.error('Error al cargar datos:', e);
+            mediciones = cargarDBLocalStorage();
+            resolve();
+        };
+    });
+}
+
+// ── Guardar datos en IndexedDB ──
+function saveData() {
+    return new Promise((resolve, reject) => {
+        if (!db) {
+            guardarDBLocalStorage();
+            resolve();
+            return;
+        }
+
+        const transaction = db.transaction(STORE_NAME, 'readwrite');
+        const store = transaction.objectStore(STORE_NAME);
+
+        // Limpiar todos los registros y volver a insertar
+        const clearRequest = store.clear();
+
+        clearRequest.onsuccess = function() {
+            mediciones.forEach(m => {
+                store.put(m);
+            });
+        };
+
+        transaction.oncomplete = function() {
+            resolve();
+        };
+
+        transaction.onerror = function(e) {
+            console.error('Error al guardar datos:', e);
+            guardarDBLocalStorage();
+            resolve();
+        };
+    });
+}
+
+// ── Respaldo en localStorage (por si IndexedDB falla) ──
+const DB_KEY = "UNE22381_VIBRACIONES_V2";
+
+function cargarDBLocalStorage() {
+    try {
+        const raw = localStorage.getItem(DB_KEY);
+        if (!raw) return [];
+        const data = JSON.parse(raw);
+        return Array.isArray(data) ? data : [];
+    } catch(e) {
+        console.error(e);
+        return [];
+    }
+}
+
+function guardarDBLocalStorage() {
+    try {
+        localStorage.setItem(DB_KEY, JSON.stringify(mediciones));
+    } catch(e) {
+        console.error('Error al guardar en localStorage:', e);
+    }
+}
+
+
+/* ==========================================================
+   CRITERIOS
+   ========================================================== */
+
+const CRITERIOS = {
+
+  I:{
+    nombre:"Edificios comerciales, industriales y de diseño similar",
+    foundation:{f1:20,f10:20,f50:40,f100:50},
+    topShort:40,
+    slabShort:20,
+    topLong:10,
+    slabLong:10
+  },
+
+  II:{
+    nombre:"Viviendas y edificios de diseño y/o ocupación similar",
+    foundation:{f1:5,f10:5,f50:15,f100:20},
+    topShort:15,
+    slabShort:20,
+    topLong:5,
+    slabLong:10
+  },
+
+  III:{
+    nombre:"Estructuras especialmente sensibles y de gran valor intrínseco",
+    foundation:{f1:3,f10:3,f50:8,f100:10},
+    topShort:8,
+    slabShort:20,
+    topLong:2.5,
+    slabLong:10
+  }
+
+};
+
+const DIN_MODOS = {
+
+  fundacion_corta:{
+    etiqueta:"Corta duración — cimentación",
+    requiereFrecuencia:true,
+    tipoMedicion:"Cimentación · tres componentes"
+  },
+
+  piso_superior_corta:{
+    etiqueta:"Corta duración — piso superior horizontal",
+    requiereFrecuencia:false,
+    tipoMedicion:"Piso superior · dos componentes horizontales"
+  },
+
+  losa_corta:{
+    etiqueta:"Corta duración — losa de piso vertical",
+    requiereFrecuencia:false,
+    tipoMedicion:"Losa de piso · componente vertical"
+  },
+
+  piso_superior_larga:{
+    etiqueta:"Larga duración — piso superior horizontal",
+    requiereFrecuencia:false,
+    tipoMedicion:"Piso superior · dos componentes horizontales"
+  },
+
+  losa_larga:{
+    etiqueta:"Larga duración — losa de piso vertical",
+    requiereFrecuencia:false,
+    tipoMedicion:"Losa de piso · componente vertical"
+  }
+
+};
+
+
+/* ==========================================================
+   UTILIDADES
+   ========================================================== */
+
+function uid(){
+
+  return Date.now().toString(36)
+    +
+    Math.random()
+      .toString(36)
+      .substring(2,9);
+
+}
+
+
+function n(v){
+
+  const x =
+    parseFloat(v);
+
+  return Number.isFinite(x)
+    ? x
+    : null;
+
+}
+
+
+function esc(s){
+
+  return String(s ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;");
+
+}
+
+
+function fmt(x,d=3){
+
+  if(
+    x===null ||
+    x===undefined ||
+    !Number.isFinite(Number(x))
+  ){
+
+    return "—";
+
+  }
+
+  return Number(x)
+    .toLocaleString(
+      "es-ES",
+      {
+        minimumFractionDigits:0,
+        maximumFractionDigits:d
+      }
+    );
+
+}
+
+
+/* ==========================================================
+   NAVEGACIÓN
+   ========================================================== */
+
+function showTab(id,btn){
+
+  document.querySelectorAll(".tab")
+    .forEach(x=>
+      x.classList.remove("active")
+    );
+
+
+  document
+    .getElementById(id)
+    .classList.add("active");
+
+
+  document
+    .querySelectorAll("nav button")
+    .forEach(x=>
+      x.classList.remove("active")
+    );
+
+
+  if(btn)
+    btn.classList.add("active");
+
+
+  if(id==="tab-historial")
+    renderHistorial();
+
+
+  if(id==="tab-dashboard")
+    actualizarDashboard();
+
+
+  if(id==="tab-grafica")
+    dibujarGrafica();
+
+
+  if(id==="tab-estudio")
+    calcularEstudio();
+
+}
+
+
+/* ==========================================================
+   EVALUACIÓN
+   ========================================================== */
+
+function interpolarDINFundacion(c, freq){
+
+  if(freq===null || !Number.isFinite(freq))
+    return null;
+
+  /*
+    DIN 4150-3:2016-12, Tabla 1:
+      1–10 Hz   -> valor constante
+      10–50 Hz  -> interpolación lineal
+      50–100 Hz -> interpolación lineal
+      >100 Hz   -> valor de 100 Hz como mínimo
+  */
+
+  if(freq < 1)
+    return null;
+
+  if(freq <= 10)
+    return c.foundation.f10;
+
+  if(freq <= 50){
+    return c.foundation.f10 +
+      (c.foundation.f50-c.foundation.f10) *
+      ((freq-10)/(50-10));
+  }
+
+  if(freq <= 100){
+    return c.foundation.f50 +
+      (c.foundation.f100-c.foundation.f50) *
+      ((freq-50)/(100-50));
+  }
+
+  return c.foundation.f100;
+}
+
+
+function obtenerComponenteDIN(v,l,t,modo){
+
+  const componentes = {
+
+    Vertical:{
+      valor:v,
+      eje:"z"
+    },
+
+    Longitudinal:{
+      valor:l,
+      eje:"x"
+    },
+
+    Transversal:{
+      valor:t,
+      eje:"y"
+    }
+
+  };
+
+  let permitidas;
+
+  switch(modo){
+
+    case "piso_superior_corta":
+    case "piso_superior_larga":
+      permitidas=["Longitudinal","Transversal"];
+      break;
+
+    case "losa_corta":
+    case "losa_larga":
+      permitidas=["Vertical"];
+      break;
+
+    case "fundacion_corta":
+    default:
+      permitidas=["Vertical","Longitudinal","Transversal"];
+      break;
+
+  }
+
+  const validas = permitidas
+    .map(nombre=>({
+      nombre,
+      valor:componentes[nombre].valor,
+      eje:componentes[nombre].eje
+    }))
+    .filter(x=>x.valor!==null && Number.isFinite(x.valor));
+
+  if(!validas.length)
+    return null;
+
+  validas.sort((a,b)=>b.valor-a.valor);
+
+  return validas[0];
+}
+
+
+function evaluar(
+  grupo,
+  freq,
+  ppv,
+  modo="fundacion_corta"
+){
+
+  const c=CRITERIOS[grupo];
+  const config=DIN_MODOS[modo] || DIN_MODOS.fundacion_corta;
+
+  if(!c){
+
+    return{
+      estado:"gray",
+      texto:"Grupo DIN no válido",
+      limite:null,
+      modo,
+      modoEtiqueta:config.etiqueta
+    };
+
+  }
+
+  if(ppv===null || ppv===undefined || !Number.isFinite(Number(ppv))){
+
+    return{
+      estado:"gray",
+      texto:"Falta la velocidad de vibración",
+      limite:null,
+      modo,
+      modoEtiqueta:config.etiqueta
+    };
+
+  }
+
+  let limite=null;
+  let tipo="";
+
+  if(modo==="fundacion_corta"){
+
+    limite=interpolarDINFundacion(c,freq);
+
+    if(limite===null){
+
+      return{
+        estado:"gray",
+        texto:"Frecuencia fuera del rango aplicable de DIN 4150-3 para esta evaluación.",
+        limite:null,
+        modo,
+        modoEtiqueta:config.etiqueta,
+        zona:"fuera"
+      };
+
+    }
+
+    tipo="valor guía en cimentación, dependiente de la frecuencia";
+
+  }
+
+  else if(modo==="piso_superior_corta"){
+
+    limite=c.topShort;
+    tipo="valor guía en piso superior horizontal, todas las frecuencias";
+
+  }
+
+  else if(modo==="losa_corta"){
+
+    limite=c.slabShort;
+    tipo="valor guía en losa de piso vertical, todas las frecuencias";
+
+  }
+
+  else if(modo==="piso_superior_larga"){
+
+    limite=c.topLong;
+    tipo="valor guía en piso superior horizontal, vibración de larga duración";
+
+  }
+
+  else if(modo==="losa_larga"){
+
+    limite=c.slabLong;
+    tipo="valor guía en losa de piso vertical, vibración de larga duración";
+
+  }
+
+  if(!Number.isFinite(limite)){
+
+    return{
+      estado:"gray",
+      texto:"No existe un valor guía disponible para esta combinación.",
+      limite:null,
+      modo,
+      modoEtiqueta:config.etiqueta
+    };
+
+  }
+
+  let estado;
+
+  if(ppv<=limite){
+
+    if(ppv>=limite*0.80)
+      estado="orange";
+    else
+      estado="green";
+
+  }
+  else{
+
+    estado="red";
+
+  }
+
+  let texto;
+
+  if(estado==="green")
+    texto="DENTRO DEL VALOR GUÍA";
+
+  if(estado==="orange")
+    texto="VIGILANCIA — ≥ 80 % DEL VALOR GUÍA";
+
+  if(estado==="red")
+    texto="POR ENCIMA DEL VALOR GUÍA";
+
+  return{
+
+    estado,
+    texto,
+    limite,
+    tipo,
+    grupo,
+    frecuencia:freq,
+    ppv,
+    modo,
+    modoEtiqueta:config.etiqueta,
+    tipoMedicion:config.tipoMedicion
+
+  };
+
+}
+
+
+/* ==========================================================
+   MAYOR COMPONENTE
+   ========================================================== */
+
+function obtenerMayor(
+  v,
+  l,
+  t,
+  modo="fundacion_corta"
+){
+
+  return obtenerComponenteDIN(v,l,t,modo);
+
+}
+
+
+/* ==========================================================
+   FORMULARIO
+   ========================================================== */
+
+function leerFormulario(){
+
+  const v =
+    n(document.getElementById("v").value);
+
+  const l =
+    n(document.getElementById("l").value);
+
+  const t =
+    n(document.getElementById("t").value);
+
+  const freq =
+    n(document.getElementById("frecuencia").value);
+
+  const modoDIN =
+    document.getElementById("modoDIN")?.value ||
+    "fundacion_corta";
+
+  const mayor =
+    obtenerMayor(v,l,t,modoDIN);
+
+  return{
+
+    id:
+      document.getElementById("editId").value
+      ||
+      uid(),
+
+    voladura:
+      document.getElementById("voladura").value,
+
+    fecha:
+      document.getElementById("fecha").value,
+
+    hora:
+      document.getElementById("hora").value,
+
+    explotacion:
+      document.getElementById("explotacion").value,
+
+    punto:
+      document.getElementById("punto").value,
+
+    distancia:
+      n(
+        document.getElementById("distancia").value
+      ),
+
+    grupo:
+      document.getElementById("grupo").value,
+
+    estructura:
+      document.getElementById("estructura").value,
+
+    cargaTotal:
+      n(
+        document.getElementById("cargaTotal").value
+      ),
+
+    cargaMIC:
+      n(
+        document.getElementById("cargaMIC").value
+      ),
+
+    barrenos:
+      n(
+        document.getElementById("barrenos").value
+      ),
+
+    secuencias:
+      document.getElementById("secuencias").value,
+
+    fabricante:
+      document.getElementById("fabricante").value,
+
+    modelo:
+      document.getElementById("modelo").value,
+
+    serie:
+      document.getElementById("serie").value,
+
+    obsEquipo:
+      document.getElementById("obsEquipo").value,
+
+    vertical:v,
+
+    longitudinal:l,
+
+    transversal:t,
+
+    ppv:
+      mayor
+      ?
+      mayor.valor
+      :
+      null,
+
+    componente:
+      mayor
+      ?
+      mayor.nombre
+      :
+      null,
+
+    frecuencia:freq,
+
+    metodoFrecuencia:
+      document.getElementById(
+        "metodoFrecuencia"
+      ).value,
+
+    modoDIN,
+
+    desplazamiento:
+      n(
+        document.getElementById(
+          "desplazamiento"
+        ).value
+      ),
+
+    observaciones:
+      document.getElementById(
+        "observaciones"
+      ).value,
+
+    creado:
+    (() => {
+      const existente = mediciones.find(
+        x => x.id === (document.getElementById('editId').value || '')
+      );
+      return existente && existente.creado
+        ? existente.creado
+        : new Date().toISOString();
+    })()
+
+  };
+
+}
+
+
+/* ==========================================================
+   RESULTADO
+   ========================================================== */
+
+function mostrarResultado(m){
+
+  if(!m || m.ppv===null){
+
+    document.getElementById(
+      "resultadoStatus"
+    ).className="status gray";
+
+    document.getElementById(
+      "resultadoStatus"
+    ).innerHTML=
+
+      `<div class="big">
+        Sin datos suficientes
+       </div>
+
+       <div class="small">
+        Introduce al menos una componente de velocidad de vibración.
+       </div>`;
+
+    return;
+
+  }
+
+  const modo=m.modoDIN || "fundacion_corta";
+  const r=evaluar(
+    m.grupo,
+    m.frecuencia,
+    m.ppv,
+    modo
+  );
+
+  document.getElementById(
+    "resultadoStatus"
+  ).className="status "+r.estado;
+
+  document.getElementById(
+    "resultadoStatus"
+  ).innerHTML=
+
+    `<div class="big">
+      ${r.texto}
+     </div>
+
+     <div class="small">
+      Línea ${esc(m.grupo)}
+      · ${esc(r.modoEtiqueta || "")}
+     </div>`;
+
+  document.getElementById("rPPV").textContent =
+    fmt(m.ppv)+" mm/s";
+
+  document.getElementById("rComp").textContent =
+    m.componente || "—";
+
+  document.getElementById("rFreq").textContent =
+    m.frecuencia===null ? "No requerida" : fmt(m.frecuencia)+" Hz";
+
+  document.getElementById("rLimite").textContent =
+    r.limite===null
+      ? "—"
+      : fmt(r.limite)+" mm/s";
+
+  let detalle =
+    `Velocidad máxima evaluable:
+     <b>${fmt(m.ppv)} mm/s</b>.
+     Componente evaluada:
+     <b>${esc(m.componente)}</b>.
+     <br>
+     Modo:
+     <b>${esc(r.modoEtiqueta || modo)}</b>.`;
+
+  if(m.frecuencia!==null){
+
+    detalle +=
+      `<br>
+       Frecuencia principal:
+       <b>${fmt(m.frecuencia)} Hz</b>.`;
+
+  }
+
+  if(r.limite!==null){
+
+    const porcentaje=(m.ppv/r.limite)*100;
+
+    detalle +=
+      `<br>
+       Valor guía DIN 4150-3:
+       <b>${fmt(r.limite)} mm/s</b>.
+       Relación PPV/valor guía:
+       <b>${fmt(porcentaje,1)} %</b>.`;
+
+  }
+
+  detalle +=
+    `<br><br>
+     <b>Componentes registradas:</b>
+     Vertical ${fmt(m.vertical)} mm/s ·
+     Longitudinal ${fmt(m.longitudinal)} mm/s ·
+     Transversal ${fmt(m.transversal)} mm/s.`;
+
+  document.getElementById("rDetalle").innerHTML=detalle;
+
+}
+
+
+/* ==========================================================
+   CALCULAR
+   ========================================================== */
+
+function calcular(silencioso=false){
+
+  const m =
+    leerFormulario();
+
+
+  mostrarResultado(m);
+
+
+  medicionSeleccionada =
+    m;
+
+
+  actualizarGraficaSeleccion(m);
+
+
+  return m;
+
+}
+
+
+/* ==========================================================
+   GUARDAR - IndexedDB
+   ========================================================== */
+
+async function guardarMedicion(){
+
+  const m =
+    calcular(true);
+
+
+  const modo = m.modoDIN || "fundacion_corta";
+  const necesitaFrecuencia =
+    (DIN_MODOS[modo] || DIN_MODOS.fundacion_corta).requiereFrecuencia;
+
+  if(
+    m.ppv===null ||
+    (necesitaFrecuencia && m.frecuencia===null)
+  ){
+
+    alert(
+      necesitaFrecuencia
+        ? "Introduce al menos una componente de velocidad de vibración y la frecuencia principal."
+        : "Introduce al menos una componente de velocidad de vibración."
+    );
+
+    return;
+
+  }
+
+
+  // Verificar si existe
+  const index = mediciones.findIndex(x => x.id === m.id);
+
+  if (index >= 0) {
+    mediciones[index] = m;
+  } else {
+    mediciones.push(m);
+  }
+
+  // Guardar en IndexedDB
+  await saveData();
+
+  medicionSeleccionada = m;
+
+  // Verificar que se guardó
+  const encontrada = mediciones.find(x => x.id === m.id);
+  if (encontrada) {
+    alert("Medición guardada correctamente en este dispositivo.");
+  } else {
+    alert("Error: No se pudo guardar la medición.");
+  }
+
+  renderHistorial();
+
+  actualizarDashboard();
+
+}
+
+
+/* ==========================================================
+   CARGAR MEDICIÓN (BOTÓN EDITAR ARREGLADO)
+   ========================================================== */
+
+function cargarMedicion(id){
+
+  const m =
+    mediciones.find(
+      x=>x.id===id
+    );
+
+
+  if(!m)
+    return;
+
+
+  medicionSeleccionada =
+    m;
+
+
+  document.getElementById(
+    "editId"
+  ).value=m.id;
+
+
+  const fields={
+
+    voladura:m.voladura,
+
+    fecha:m.fecha,
+
+    hora:m.hora,
+
+    explotacion:m.explotacion,
+
+    punto:m.punto,
+
+    distancia:m.distancia,
+
+    grupo:m.grupo,
+
+    estructura:m.estructura,
+
+    cargaTotal:m.cargaTotal,
+
+    cargaMIC:m.cargaMIC,
+
+    barrenos:m.barrenos,
+
+    secuencias:m.secuencias,
+
+    fabricante:m.fabricante,
+
+    modelo:m.modelo,
+
+    serie:m.serie,
+
+    obsEquipo:m.obsEquipo,
+
+    v:m.vertical,
+
+    l:m.longitudinal,
+
+    t:m.transversal,
+
+    frecuencia:m.frecuencia,
+
+    modoDIN:
+      m.modoDIN || "fundacion_corta",
+
+    metodoFrecuencia:
+      m.metodoFrecuencia,
+
+    desplazamiento:
+      m.desplazamiento,
+
+    observaciones:
+      m.observaciones
+
+  };
+
+
+  Object.entries(fields)
+    .forEach(
+      ([id,val])=>{
+        const el =
+          document.getElementById(id);
+
+        if(el)
+          el.value =
+            val ?? "";
+      }
+    );
+
+
+  document.getElementById(
+    "formTitle"
+  ).textContent =
+    "Editar medición";
+
+
+  mostrarResultado(m);
+
+  // Cambiar a la pestaña de "Nueva medición" para editar
+  showTab("tab-nueva", document.querySelectorAll("nav button")[1]);
+
+}
+
+
+/* ==========================================================
+   ELIMINAR - IndexedDB
+   ========================================================== */
+
+async function eliminarMedicion(id){
+
+  if(
+    !confirm(
+      "¿Eliminar esta medición?"
+    )
+  )
+    return;
+
+
+  mediciones =
+    mediciones.filter(
+      x=>x.id!==id
+    );
+
+  // Guardar en IndexedDB
+  await saveData();
+
+  renderHistorial();
+
+  actualizarDashboard();
+
+}
+
+
+/* ==========================================================
+   LIMPIAR
+   ========================================================== */
+
+function limpiarFormulario(){
+
+  document.querySelectorAll(
+    "#formCard input:not([type=hidden])," +
+    "#formCard textarea"
+  )
+  .forEach(
+    el=>el.value=""
+  );
+
+
+  document.getElementById(
+    "grupo"
+  ).value="II";
+
+
+  const modoEl = document.getElementById("modoDIN");
+  if(modoEl)
+    modoEl.value="fundacion_corta";
+
+  document.getElementById(
+    "metodoFrecuencia"
+  ).selectedIndex=0;
+
+
+  document.getElementById(
+    "editId"
+  ).value="";
+
+
+  document.getElementById(
+    "formTitle"
+  ).textContent =
+    "Nueva medición";
+
+
+  document.getElementById(
+    "resultadoStatus"
+  ).className =
+    "status gray";
+
+
+  document.getElementById(
+    "resultadoStatus"
+  ).innerHTML =
+
+    `<div class="big">
+      Sin calcular
+     </div>
+
+     <div class="small">
+      Introduce los valores de PPV y frecuencia.
+     </div>`;
+
+
+  [
+    "rPPV",
+    "rComp",
+    "rFreq",
+    "rLimite"
+  ]
+  .forEach(
+    id=>
+      document.getElementById(id)
+        .textContent="—"
+  );
+
+
+  medicionSeleccionada=null;
+
+  actualizarGraficaSeleccion(null);
+
+}
+
+
+/* ==========================================================
+   HISTORIAL
+   ========================================================== */
+
+function renderHistorial(){
+
+  const buscar =
+    (
+      document.getElementById(
+        "buscar"
+      )?.value
+      ||
+      ""
+    )
+    .toLowerCase();
+
+
+  const estado =
+    document.getElementById(
+      "filtroEstado"
+    )?.value
+    ||
+    "";
+
+
+  const grupo =
+    document.getElementById(
+      "filtroGrupo"
+    )?.value
+    ||
+    "";
+
+
+  let data =
+    mediciones.filter(
+      m=>{
+
+        const txt=[
+
+          m.voladura,
+
+          m.punto,
+
+          m.explotacion,
+
+          m.fabricante,
+
+          m.modelo,
+
+          m.serie
+
+        ]
+        .join(" ")
+        .toLowerCase();
+
+
+        if(
+          buscar &&
+          !txt.includes(buscar)
+        )
+          return false;
+
+
+        const r =
+          evaluar(
+            m.grupo,
+            m.frecuencia,
+            m.ppv,
+            m.modoDIN || "fundacion_corta"
+          );
+
+
+        if(
+          estado &&
+          r.estado!==estado
+        )
+          return false;
+
+
+        if(
+          grupo &&
+          m.grupo!==grupo
+        )
+          return false;
+
+
+        return true;
+
+      }
+    );
+
+
+  data.sort(
+    (a,b)=>
+      String(
+        b.fecha+b.hora
+      )
+      .localeCompare(
+        String(
+          a.fecha+a.hora
+        )
+      )
+  );
+
+
+  if(!data.length){
+
+    document.getElementById(
+      "historialTable"
+    ).innerHTML =
+
+      `<p class="help">
+        No hay mediciones.
+       </p>`;
+
+    return;
+
+  }
+
+
+  let html=
+
+    `<table>
+
+      <thead>
+
+        <tr>
+
+          <th>Fecha</th>
+
+          <th>Voladura</th>
+
+          <th>Punto</th>
+
+          <th>Sismógrafo</th>
+
+          <th>Distancia</th>
+
+          <th>PPV</th>
+
+          <th>Componente</th>
+
+          <th>Hz</th>
+
+          <th>Grupo</th>
+
+          <th>Resultado</th>
+
+          <th>Acciones</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>`;
+
+
+  data.forEach(
+    m=>{
+
+      const r =
+        evaluar(
+          m.grupo,
+          m.frecuencia,
+          m.ppv,
+          m.modoDIN || "fundacion_corta"
+        );
+
+
+      const badge =
+
+        `<span
+          class="badge ${r.estado}">
+          ${r.texto}
+         </span>`;
+
+
+      html+=
+
+        `<tr>
+
+          <td>
+            ${esc(m.fecha)}
+            ${esc(m.hora)}
+          </td>
+
+          <td>
+            ${esc(m.voladura)}
+          </td>
+
+          <td>
+            ${esc(m.punto)}
+          </td>
+
+          <td>
+            ${esc(m.fabricante)}
+            ${esc(m.modelo)}
+          </td>
+
+          <td>
+            ${fmt(m.distancia)} m
+          </td>
+
+          <td>
+            ${fmt(m.ppv)} mm/s
+          </td>
+
+          <td>
+            ${esc(m.componente)}
+          </td>
+
+          <td>
+            ${fmt(m.frecuencia)} Hz
+          </td>
+
+          <td>
+            ${esc(m.grupo)}
+          </td>
+
+          <td>
+            ${badge}
+          </td>
+
+          <td>
+
+            <button
+              class="small-btn"
+              onclick="cargarMedicion('${m.id}')">
+
+              Editar
+
+            </button>
+
+
+            <button
+              class="small-btn"
+              onclick="verInforme('${m.id}')">
+
+              PDF
+
+            </button>
+
+
+            <button
+              class="small-btn"
+              onclick="verGrafica('${m.id}')">
+
+              Gráfica
+
+            </button>
+
+
+            <button
+              class="small-btn"
+              onclick="eliminarMedicion('${m.id}')">
+
+              Eliminar
+
+            </button>
+
+          </td>
+
+        </tr>`;
+
+    }
+  );
+
+
+  html+=
+
+    `</tbody>
+     </table>`;
+
+
+  document.getElementById(
+    "historialTable"
+  ).innerHTML =
+    html;
+
+}
+
+
+/* ==========================================================
+   DASHBOARD
+   ========================================================== */
+
+function actualizarDashboard(){
+
+  let green=0;
+  let orange=0;
+  let red=0;
+
+
+  mediciones.forEach(
+    m=>{
+
+      const r =
+        evaluar(
+          m.grupo,
+          m.frecuencia,
+          m.ppv,
+          m.modoDIN || "fundacion_corta"
+        );
+
+
+      if(r.estado==="green")
+        green++;
+
+
+      if(r.estado==="orange")
+        orange++;
+
+
+      if(r.estado==="red")
+        red++;
+
+    }
+  );
+
+
+  document.getElementById(
+    "kpiTotal"
+  ).textContent =
+    mediciones.length;
+
+
+  document.getElementById(
+    "kpiGreen"
+  ).textContent =
+    green;
+
+
+  document.getElementById(
+    "kpiOrange"
+  ).textContent =
+    orange;
+
+
+  document.getElementById(
+    "kpiRed"
+  ).textContent =
+    red;
+
+
+  const ultimas =
+    [...mediciones]
+    .sort(
+      (a,b)=>
+        String(
+          b.fecha+b.hora
+        )
+        .localeCompare(
+          String(
+            a.fecha+a.hora
+          )
+        )
+    )
+    .slice(0,30);
+
+
+  if(!ultimas.length){
+
+    document.getElementById(
+      "dashboardTable"
+    ).innerHTML =
+
+      `<p class="help">
+        Todavía no hay mediciones.
+       </p>`;
+
+    return;
+
+  }
+
+
+  let html=
+
+    `<table>
+
+      <thead>
+
+        <tr>
+
+          <th>Fecha</th>
+
+          <th>Voladura</th>
+
+          <th>Punto</th>
+
+          <th>PPV</th>
+
+          <th>Hz</th>
+
+          <th>Estado</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>`;
+
+
+  ultimas.forEach(
+    m=>{
+
+      const r =
+        evaluar(
+          m.grupo,
+          m.frecuencia,
+          m.ppv,
+          m.modoDIN || "fundacion_corta"
+        );
+
+
+      html+=
+
+        `<tr>
+
+          <td>
+            ${esc(m.fecha)}
+          </td>
+
+          <td>
+            ${esc(m.voladura)}
+          </td>
+
+          <td>
+            ${esc(m.punto)}
+          </td>
+
+          <td>
+            ${fmt(m.ppv)} mm/s
+          </td>
+
+          <td>
+            ${fmt(m.frecuencia)} Hz
+          </td>
+
+          <td>
+
+            <span
+              class="badge ${r.estado}">
+
+              ${r.texto}
+
+            </span>
+
+          </td>
+
+        </tr>`;
+
+    }
+  );
+
+
+  html+=
+    "</tbody></table>";
+
+
+  document.getElementById(
+    "dashboardTable"
+  ).innerHTML =
+    html;
+
+}
+
+
+/* ==========================================================
+   GRÁFICA
+   ========================================================== */
+
+function actualizarGraficaSeleccion(m){
+
+  medicionSeleccionada =
+    m;
+
+
+  if(m){
+
+    document.getElementById(
+      "chartFreq"
+    ).textContent =
+      fmt(m.frecuencia)+" Hz";
+
+
+    document.getElementById(
+      "chartPPV"
+    ).textContent =
+      fmt(m.ppv)+" mm/s";
+
+
+    document.getElementById(
+      "chartGroup"
+    ).textContent =
+      "Línea "+m.grupo+" · "+(DIN_MODOS[m.modoDIN || "fundacion_corta"]?.etiqueta || "DIN 4150-3");
+
+  }
+
+  else{
+
+    document.getElementById(
+      "chartFreq"
+    ).textContent="—";
+
+
+    document.getElementById(
+      "chartPPV"
+    ).textContent="—";
+
+
+    document.getElementById(
+      "chartGroup"
+    ).textContent="—";
+
+  }
+
+
+  dibujarGrafica();
+
+}
+
+
+function verGrafica(id){
+
+  const m =
+    mediciones.find(
+      x=>x.id===id
+    );
+
+
+  if(!m)
+    return;
+
+
+  medicionSeleccionada =
+    m;
+
+
+  actualizarGraficaSeleccion(m);
+
+
+  showTab(
+    "tab-grafica",
+    document.querySelectorAll(
+      "nav button"
+    )[3]
+  );
+
+}
+
+
+/* ==========================================================
+   DIBUJAR GRÁFICA COMPLETA
+   ========================================================== */
+
+function dibujarGrafica(){
+
+  const canvas =
+    document.getElementById(
+      "chart"
+    );
+
+
+  if(!canvas)
+    return;
+
+
+  const rect =
+    canvas.getBoundingClientRect();
+
+
+  const dpr =
+    window.devicePixelRatio || 1;
+
+
+  const W =
+    Math.max(
+      rect.width,
+      600
+    );
+
+
+  const H =
+    560;
+
+
+  canvas.width =
+    W*dpr;
+
+
+  canvas.height =
+    H*dpr;
+
+
+  canvas.style.height =
+    H+"px";
+
+
+  const ctx =
+    canvas.getContext("2d");
+
+
+  ctx.setTransform(
+    dpr,
+    0,
+    0,
+    dpr,
+    0,
+    0
+  );
+
+
+  ctx.clearRect(
+    0,
+    0,
+    W,
+    H
+  );
+
+
+  /* ========================================================
+     ÁREA DE GRÁFICA
+     ======================================================== */
+
+  const left=85;
+  const right=245;
+  const top=40;
+  const bottom=65;
+
+
+  const pw =
+    W-left-right;
+
+
+  const ph =
+    H-top-bottom;
+
+
+  /*
+     Escala X:
+       2 Hz -> 200 Hz
+
+     Escala Y:
+       1 mm/s -> 150 mm/s
+  */
+
+  const xmin=2;
+  const xmax=200;
+
+  const ymin=1;
+  const ymax=150;
+
+
+  function lx(x){
+
+    return left+
+
+      (
+        Math.log10(x)
+        -
+        Math.log10(xmin)
+      )
+      /
+      (
+        Math.log10(xmax)
+        -
+        Math.log10(xmin)
+      )
+      *
+      pw;
+
+  }
+
+
+  function ly(y){
+
+    return top+
+
+      (
+        Math.log10(ymax)
+        -
+        Math.log10(y)
+      )
+      /
+      (
+        Math.log10(ymax)
+        -
+        Math.log10(ymin)
+      )
+      *
+      ph;
+
+  }
+
+
+  /* ========================================================
+     FONDO
+     ======================================================== */
+
+  ctx.fillStyle =
+    "#ffffff";
+
+  ctx.fillRect(
+    0,
+    0,
+    W,
+    H
+  );
+
+
+  /* ========================================================
+     REJILLA
+     ======================================================== */
+
+  ctx.font =
+    "11px Arial";
+
+  ctx.strokeStyle =
+    "#e5e7eb";
+
+  ctx.fillStyle =
+    "#667085";
+
+  ctx.lineWidth=1;
+
+
+  const xticks=[
+    2,
+    5,
+    10,
+    15,
+    20,
+    50,
+    75,
+    100,
+    200
+  ];
+
+
+  xticks.forEach(
+    x=>{
+
+      const px =
+        lx(x);
+
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+        px,
+        top
+      );
+
+      ctx.lineTo(
+        px,
+        top+ph
+      );
+
+      ctx.stroke();
+
+
+      ctx.fillText(
+        String(x),
+        px-8,
+        top+ph+20
+      );
+
+    }
+  );
+
+
+  const yticks=[
+    1,
+    2,
+    5,
+    10,
+    20,
+    50,
+    100,
+    150
+  ];
+
+
+  yticks.forEach(
+    y=>{
+
+      const py =
+        ly(y);
+
+
+      ctx.beginPath();
+
+      ctx.moveTo(
+        left,
+        py
+      );
+
+      ctx.lineTo(
+        left+pw,
+        py
+      );
+
+      ctx.stroke();
+
+
+      ctx.fillText(
+        String(y),
+        42,
+        py+4
+      );
+
+    }
+  );
+
+
+  /* ========================================================
+     EJES
+     ======================================================== */
+
+  ctx.strokeStyle =
+    "#344054";
+
+  ctx.lineWidth=1.5;
+
+  ctx.beginPath();
+
+  ctx.moveTo(
+    left,
+    top
+  );
+
+  ctx.lineTo(
+    left,
+    top+ph
+  );
+
+  ctx.lineTo(
+    left+pw,
+    top+ph
+  );
+
+  ctx.stroke();
+
+
+  /* ========================================================
+     CURVAS DE LÍMITES
+     ======================================================== */
+
+  const modoGrafica =
+    medicionSeleccionada?.modoDIN ||
+    "fundacion_corta";
+
+
+  dibujarCurva(
+    ctx,
+    lx,
+    ly,
+    "I",
+    "#16803c",
+    modoGrafica
+  );
+
+
+  dibujarCurva(
+    ctx,
+    lx,
+    ly,
+    "II",
+    "#245b86",
+    modoGrafica
+  );
+
+
+  dibujarCurva(
+    ctx,
+    lx,
+    ly,
+    "III",
+    "#b42318",
+    modoGrafica
+  );
+
+
+  /* ========================================================
+     PUNTOS DE LAS TRES COMPONENTES
+     ======================================================== */
+
+  if(
+    medicionSeleccionada &&
+    medicionSeleccionada.frecuencia!==null &&
+    medicionSeleccionada.frecuencia>0
+  ){
+
+    dibujarComponentes(
+      ctx,
+      lx,
+      ly,
+      medicionSeleccionada
+    );
+
+  }
+
+
+  /* ========================================================
+     TÍTULOS DE EJES
+     ======================================================== */
+
+  ctx.fillStyle =
+    "#17324d";
+
+  ctx.font =
+    "bold 14px Arial";
+
+
+  ctx.fillText(
+    "Frecuencia (Hz)",
+    left+
+      pw/2-
+      50,
+    H-15
+  );
+
+  ctx.font="bold 12px Arial";
+  ctx.fillStyle="#667085";
+  ctx.fillText(
+    "DIN 4150-3:2016-12 · "+
+    (DIN_MODOS[modoGrafica]?.etiqueta || ""),
+    left,
+    22
+  );
+
+
+  ctx.save();
+
+
+  ctx.translate(
+    18,
+    top+
+      ph/2+
+      100
+  );
+
+
+  ctx.rotate(
+    -Math.PI/2
+  );
+
+
+  ctx.fillText(
+    "Velocidad de vibración (mm/s)",
+    0,
+    0
+  );
+
+
+  ctx.restore();
+
+
+  /* ========================================================
+     LEYENDA COMPLETA DENTRO DE LA GRÁFICA
+     ======================================================== */
+
+  dibujarLeyendaCompleta(
+    ctx,
+    W,
+    H
+  );
+
+}
+
+
+/* ==========================================================
+   CURVAS
+   ========================================================== */
+
+function dibujarCurva(
+  ctx,
+  lx,
+  ly,
+  grupo,
+  color,
+  modo="fundacion_corta"
+){
+
+  const c=CRITERIOS[grupo];
+
+  if(!c)
+    return;
+
+  ctx.strokeStyle=color;
+  ctx.lineWidth=3;
+  ctx.beginPath();
+
+  let first=true;
+
+  for(let i=0;i<=300;i++){
+
+    const f=2*Math.pow(100,i/300);
+
+    let v;
+
+    if(modo==="fundacion_corta"){
+
+      v=interpolarDINFundacion(c,f);
+
+    }
+    else if(modo==="piso_superior_corta"){
+
+      v=c.topShort;
+
+    }
+    else if(modo==="losa_corta"){
+
+      v=c.slabShort;
+
+    }
+    else if(modo==="piso_superior_larga"){
+
+      v=c.topLong;
+
+    }
+    else if(modo==="losa_larga"){
+
+      v=c.slabLong;
+
+    }
+    else{
+
+      v=interpolarDINFundacion(c,f);
+
+    }
+
+    v=Math.max(1,Math.min(150,v));
+
+    const x=lx(f);
+    const y=ly(v);
+
+    if(first){
+      ctx.moveTo(x,y);
+      first=false;
+    }
+    else{
+      ctx.lineTo(x,y);
+    }
+
+  }
+
+  ctx.stroke();
+
+}
+
+
+/* ==========================================================
+   DIBUJAR COMPONENTES
+   ========================================================== */
+
+function dibujarComponentes(
+  ctx,
+  lx,
+  ly,
+  m
+){
+
+  const freq =
+    m.frecuencia;
+
+
+  const componentes=[
+
+    {
+      nombre:"Vertical",
+      valor:m.vertical,
+      color:"#e53935",
+      tipo:"star"
+    },
+
+    {
+      nombre:"Longitudinal",
+      valor:m.longitudinal,
+      color:"#16803c",
+      tipo:"square"
+    },
+
+    {
+      nombre:"Transversal",
+      valor:m.transversal,
+      color:"#9b59b6",
+      tipo:"cross"
+    }
+
+  ];
+
+
+  const modo=m.modoDIN || "fundacion_corta";
+
+  const nombresEvaluables =
+    modo==="piso_superior_corta" ||
+    modo==="piso_superior_larga"
+      ? ["Longitudinal","Transversal"]
+      : modo==="losa_corta" ||
+        modo==="losa_larga"
+      ? ["Vertical"]
+      : ["Vertical","Longitudinal","Transversal"];
+
+  const validas =
+    componentes.filter(
+      x=>
+        nombresEvaluables.includes(x.nombre) &&
+        x.valor!==null &&
+        x.valor>0
+    );
+
+
+  if(!validas.length)
+    return;
+
+
+  /*
+     Determinamos cuál es la mayor
+     de las componentes que DIN 4150-3
+     utiliza en el modo seleccionado.
+  */
+
+  let maxComp=validas[0];
+
+  validas.forEach(c=>{
+
+    if(c.valor>maxComp.valor)
+      maxComp=c;
+
+  });
+
+
+  /*
+     Estado de la PPV máxima
+     frente al límite del grupo.
+  */
+
+  const r =
+    evaluar(
+      m.grupo,
+      m.frecuencia,
+      maxComp.valor,
+      m.modoDIN || "fundacion_corta"
+    );
+
+
+  let estadoColor;
+
+
+  if(r.estado==="green")
+    estadoColor="#16803c";
+
+
+  else if(r.estado==="orange")
+    estadoColor="#f59e0b";
+
+
+  else if(r.estado==="red")
+    estadoColor="#b42318";
+
+
+  else
+    estadoColor="#667085";
+
+
+  /*
+     Separación visual.
+
+     Como normalmente las tres componentes
+     comparten la frecuencia principal,
+     pueden caer exactamente sobre la misma
+     coordenada X.
+
+     Por eso desplazamos ligeramente los
+     puntos solamente en X para que puedan
+     verse individualmente.
+
+     La frecuencia real continúa apareciendo
+     en la etiqueta.
+  */
+
+  const offsets={
+
+    Vertical:-7,
+
+    Longitudinal:0,
+
+    Transversal:7
+
+  };
+
+
+  validas.forEach(
+    c=>{
+
+      const realX =
+        lx(freq);
+
+
+      const x =
+        realX+
+        offsets[c.nombre];
+
+
+      const y =
+        ly(c.valor);
+
+
+      /*
+         Aro exterior únicamente para
+         la componente máxima.
+      */
+
+      const esMax =
+        c.nombre===
+        maxComp.nombre;
+
+
+      if(esMax){
+
+        ctx.beginPath();
+
+        ctx.arc(
+          x,
+          y,
+          12,
+          0,
+          Math.PI*2
+        );
+
+        ctx.strokeStyle =
+          estadoColor;
+
+        ctx.lineWidth=3;
+
+        ctx.stroke();
+
+      }
+
+
+      /*
+         Símbolo
+      */
+
+      ctx.fillStyle =
+        c.color;
+
+      ctx.strokeStyle =
+        c.color;
+
+      ctx.lineWidth=2;
+
+
+      if(c.tipo==="square"){
+
+        ctx.fillRect(
+          x-6,
+          y-6,
+          12,
+          12
+        );
+
+      }
+
+
+      else if(c.tipo==="star"){
+
+        dibujarEstrella(
+          ctx,
+          x,
+          y,
+          8,
+          4,
+          5,
+          c.color
+        );
+
+      }
+
+
+      else if(c.tipo==="cross"){
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+          x-7,
+          y-7
+        );
+
+        ctx.lineTo(
+          x+7,
+          y+7
+        );
+
+        ctx.moveTo(
+          x+7,
+          y-7
+        );
+
+        ctx.lineTo(
+          x-7,
+          y+7
+        );
+
+        ctx.stroke();
+
+      }
+
+
+      /*
+         Etiqueta
+      */
+
+      ctx.font =
+        "bold 11px Arial";
+
+      ctx.fillStyle =
+        c.color;
+
+
+      let etiqueta =
+        c.nombre+
+        ": "+
+        fmt(c.valor)+
+        " mm/s";
+
+
+      if(esMax){
+
+        etiqueta +=
+          "  ← PPV máx.";
+
+      }
+
+
+      let labelX =
+        x+15;
+
+
+      /*
+         Evitar que las etiquetas
+         se salgan por la derecha.
+      */
+
+      if(
+        labelX >
+        0+
+        lx(200)-
+        150
+      ){
+
+        labelX =
+          x-
+          150;
+
+      }
+
+
+      ctx.fillText(
+        etiqueta,
+        labelX,
+        y-10
+      );
+
+    }
+  );
+
+
+  /*
+     Línea vertical de frecuencia.
+  */
+
+  ctx.strokeStyle =
+    "rgba(23,50,77,.35)";
+
+  ctx.setLineDash([
+    5,
+    5
+  ]);
+
+  ctx.lineWidth=1;
+
+
+  const fx =
+    lx(freq);
+
+
+  ctx.beginPath();
+
+  ctx.moveTo(
+    fx,
+    topSeguro(ly)
+  );
+
+  ctx.lineTo(
+    fx,
+    500
+  );
+
+  ctx.stroke();
+
+
+  ctx.setLineDash([]);
+
+
+  /*
+     Etiqueta de frecuencia.
+  */
+
+  ctx.fillStyle =
+    "#344054";
+
+  ctx.font =
+    "bold 11px Arial";
+
+
+  ctx.fillText(
+    "f = "+
+    fmt(freq)+
+    " Hz",
+    fx+8,
+    30
+  );
+
+}
+
+
+/* ==========================================================
+   ESTRELLA
+   ========================================================== */
+
+function dibujarEstrella(
+  ctx,
+  cx,
+  cy,
+  outer,
+  inner,
+  points,
+  color
+){
+
+  ctx.save();
+
+  ctx.beginPath();
+
+  for(
+    let i=0;
+    i<points*2;
+    i++
+  ){
+
+    const radius =
+      i%2===0
+      ?
+      outer
+      :
+      inner;
+
+
+    const angle =
+      -Math.PI/2+
+      i*
+      Math.PI/
+      points;
+
+
+    const x =
+      cx+
+      Math.cos(angle)*
+      radius;
+
+
+    const y =
+      cy+
+      Math.sin(angle)*
+      radius;
+
+
+    if(i===0)
+      ctx.moveTo(x,y);
+
+    else
+      ctx.lineTo(x,y);
+
+  }
+
+
+  ctx.closePath();
+
+  ctx.fillStyle =
+    color;
+
+  ctx.fill();
+
+  ctx.restore();
+
+}
+
+
+/* ==========================================================
+   PEQUEÑA UTILIDAD
+   ========================================================== */
+
+function topSeguro(){
+  return 40;
+}
+
+
+/* ==========================================================
+   LEYENDA COMPLETA
+   ========================================================== */
+
+function dibujarLeyendaCompleta(
+  ctx,
+  W,
+  H
+){
+
+  /*
+     La leyenda se dibuja dentro de un
+     panel blanco a la derecha del gráfico.
+  */
+
+  const x =
+    W-225;
+
+
+  const y =
+    70;
+
+
+  const width =
+    205;
+
+
+  const height =
+    330;
+
+
+  /*
+     Fondo
+  */
+
+  ctx.fillStyle =
+    "rgba(255,255,255,.96)";
+
+
+  ctx.strokeStyle =
+    "#d0d5dd";
+
+
+  ctx.lineWidth=1;
+
+
+  ctx.beginPath();
+
+  ctx.roundRect(
+    x,
+    y,
+    width,
+    height,
+    8
+  );
+
+  ctx.fill();
+
+  ctx.stroke();
+
+
+  /*
+     Título
+  */
+
+  ctx.fillStyle =
+    "#17324d";
+
+  ctx.font =
+    "bold 13px Arial";
+
+
+  ctx.fillText(
+    "DIN 4150-3 · VALORES GUÍA",
+    x+14,
+    y+23
+  );
+
+
+  let yy =
+    y+48;
+
+
+  /*
+     LÍMITES
+  */
+
+  ctx.font =
+    "bold 11px Arial";
+
+  ctx.fillStyle =
+    "#667085";
+
+
+  ctx.fillText(
+    "LÍMITES",
+    x+14,
+    yy
+  );
+
+
+  yy+=22;
+
+
+  dibujarLineaLeyenda(
+    ctx,
+    x+14,
+    yy,
+    "#16803c",
+    "Valor guía Línea 1"
+  );
+
+
+  yy+=22;
+
+
+  dibujarLineaLeyenda(
+    ctx,
+    x+14,
+    yy,
+    "#245b86",
+    "Valor guía Línea 2"
+  );
+
+
+  yy+=22;
+
+
+  dibujarLineaLeyenda(
+    ctx,
+    x+14,
+    yy,
+    "#b42318",
+    "Valor guía Línea 3"
+  );
+
+
+  yy+=32;
+
+
+  /*
+     ESTADOS
+  */
+
+  ctx.font =
+    "bold 11px Arial";
+
+  ctx.fillStyle =
+    "#667085";
+
+
+  ctx.fillText(
+    "ESTADO PPV MÁX.",
+    x+14,
+    yy
+  );
+
+
+  yy+=22;
+
+
+  dibujarEstadoLeyenda(
+    ctx,
+    x+25,
+    yy,
+    "#16803c",
+    "Lectura bajo valor guía (PPV máx.)"
+  );
+
+
+  yy+=26;
+
+
+  dibujarEstadoLeyenda(
+    ctx,
+    x+25,
+    yy,
+    "#f59e0b",
+    "Lectura en vigilancia (≥80 %)"
+  );
+
+
+  yy+=26;
+
+
+  dibujarEstadoLeyenda(
+    ctx,
+    x+25,
+    yy,
+    "#b42318",
+    "Lectura sobre valor guía (PPV máx.)"
+  );
+
+
+  yy+=35;
+
+
+  /*
+     COMPONENTES
+  */
+
+  ctx.font =
+    "bold 11px Arial";
+
+  ctx.fillStyle =
+    "#667085";
+
+
+  ctx.fillText(
+    "COMPONENTES",
+    x+14,
+    yy
+  );
+
+
+  yy+=23;
+
+
+  /*
+     Vertical
+  */
+
+  ctx.font =
+    "bold 18px Arial";
+
+  ctx.fillStyle =
+    "#e53935";
+
+
+  ctx.fillText(
+    "★",
+    x+16,
+    yy
+  );
+
+
+  ctx.font =
+    "11px Arial";
+
+  ctx.fillStyle =
+    "#344054";
+
+
+  ctx.fillText(
+    "Componente Vertical",
+    x+40,
+    yy
+  );
+
+
+  yy+=25;
+
+
+  /*
+     Longitudinal
+  */
+
+  ctx.fillStyle =
+    "#16803c";
+
+  ctx.font =
+    "bold 16px Arial";
+
+
+  ctx.fillText(
+    "■",
+    x+18,
+    yy
+  );
+
+
+  ctx.font =
+    "11px Arial";
+
+  ctx.fillStyle =
+    "#344054";
+
+
+  ctx.fillText(
+    "Componente Longitudinal",
+    x+40,
+    yy
+  );
+
+
+  yy+=25;
+
+
+  /*
+     Transversal
+  */
+
+  ctx.fillStyle =
+    "#9b59b6";
+
+  ctx.font =
+    "bold 19px Arial";
+
+
+  ctx.fillText(
+    "✕",
+    x+17,
+    yy
+  );
+
+
+  ctx.font =
+    "11px Arial";
+
+  ctx.fillStyle =
+    "#344054";
+
+
+  ctx.fillText(
+    "Componente Transversal",
+    x+40,
+    yy
+  );
+
+}
+
+
+/* ==========================================================
+   LÍNEA DE LEYENDA
+   ========================================================== */
+
+function dibujarLineaLeyenda(
+  ctx,
+  x,
+  y,
+  color,
+  texto
+){
+
+  ctx.strokeStyle =
+    color;
+
+  ctx.lineWidth=3;
+
+
+  ctx.beginPath();
+
+  ctx.moveTo(
+    x,
+    y
+  );
+
+  ctx.lineTo(
+    x+25,
+    y
+  );
+
+  ctx.stroke();
+
+
+  ctx.fillStyle =
+    "#344054";
+
+  ctx.font =
+    "11px Arial";
+
+
+  ctx.fillText(
+    texto,
+    x+35,
+    y+4
+  );
+
+}
+
+
+/* ==========================================================
+   LEYENDA DE ESTADOS
+   ========================================================== */
+
+function dibujarEstadoLeyenda(
+  ctx,
+  x,
+  y,
+  color,
+  texto
+){
+
+  /*
+     Círculo exterior representa el
+     estado de la PPV máxima.
+  */
+
+  ctx.strokeStyle =
+    color;
+
+  ctx.lineWidth=3;
+
+
+  ctx.beginPath();
+
+  ctx.arc(
+    x,
+    y,
+    7,
+    0,
+    Math.PI*2
+  );
+
+  ctx.stroke();
+
+
+  ctx.fillStyle =
+    "#344054";
+
+  ctx.font =
+    "10px Arial";
+
+
+  /*
+     La leyenda es ancha.
+     Partimos el texto en dos líneas
+     si fuera necesario.
+  */
+
+  const palabras =
+    texto.split(" ");
+
+
+  let linea="";
+  let lineas=[];
+
+
+  palabras.forEach(
+    palabra=>{
+
+      const prueba =
+        linea
+        ?
+        linea+" "+palabra
+        :
+        palabra;
+
+
+      if(
+        prueba.length>28
+      ){
+
+        lineas.push(linea);
+
+        linea=palabra;
+
+      }
+
+      else{
+
+        linea=prueba;
+
+      }
+
+    }
+  );
+
+
+  if(linea)
+    lineas.push(linea);
+
+
+  lineas.forEach(
+    (l,i)=>{
+
+      ctx.fillText(
+        l,
+        x+15,
+        y+
+        3+
+        i*12
+      );
+
+    }
+  );
+
+}
+
+
+/* ==========================================================
+   ESTUDIO DE PROPAGACIÓN
+   ========================================================== */
+
+function calcularEstudio(){
+
+  const datos =
+    mediciones.filter(
+      m=>
+
+        Number.isFinite(m.ppv)
+        &&
+        Number.isFinite(m.distancia)
+        &&
+        m.ppv>0
+        &&
+        m.distancia>0
+    );
+
+
+  if(datos.length<2){
+
+    document.getElementById(
+      "estudioResultado"
+    ).innerHTML =
+
+      `<div class="alert">
+
+        Se necesitan al menos dos mediciones
+        con PPV y distancia para realizar
+        un estudio preliminar.
+
+       </div>`;
+
+    return;
+
+  }
+
+
+  /*
+     Ajuste:
+
+       V = A × D^B
+
+     ln(V)=ln(A)+B ln(D)
+  */
+
+
+  const xs =
+    datos.map(
+      m=>Math.log(
+        m.distancia
+      )
+    );
+
+
+  const ys =
+    datos.map(
+      m=>Math.log(
+        m.ppv
+      )
+    );
+
+
+  const xmean =
+    xs.reduce(
+      (a,b)=>a+b,
+      0
+    )
+    /
+    xs.length;
+
+
+  const ymean =
+    ys.reduce(
+      (a,b)=>a+b,
+      0
+    )
+    /
+    ys.length;
+
+
+  let num=0;
+  let den=0;
+
+
+  for(
+    let i=0;
+    i<xs.length;
+    i++
+  ){
+
+    num +=
+      (
+        xs[i]-xmean
+      )
+      *
+      (
+        ys[i]-ymean
+      );
+
+
+    den +=
+      (
+        xs[i]-xmean
+      )**2;
+
+  }
+
+
+  const B =
+    num/den;
+
+
+  const lnA =
+    ymean-
+    B*xmean;
+
+
+  const A =
+    Math.exp(lnA);
+
+
+  let ssTot=0;
+  let ssRes=0;
+
+
+  for(
+    let i=0;
+    i<xs.length;
+    i++
+  ){
+
+    const pred =
+      lnA+
+      B*xs[i];
+
+
+    ssTot +=
+      (
+        ys[i]-ymean
+      )**2;
+
+
+    ssRes +=
+      (
+        ys[i]-pred
+      )**2;
+
+  }
+
+
+  const r2 =
+    ssTot===0
+      ?
+      1
+      :
+      1-
+      ssRes/ssTot;
+
+
+  document.getElementById(
+    "estudioResultado"
+  ).innerHTML =
+
+    `
+
+    <div class="result-grid">
+
+      <div class="metric">
+
+        <div class="label">
+          Nº puntos
+        </div>
+
+        <div class="value">
+          ${datos.length}
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          A
+        </div>
+
+        <div class="value">
+          ${fmt(A,4)}
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          B
+        </div>
+
+        <div class="value">
+          ${fmt(B,4)}
+        </div>
+
+      </div>
+
+
+      <div class="metric">
+
+        <div class="label">
+          R²
+        </div>
+
+        <div class="value">
+          ${fmt(r2,4)}
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div
+      class="card"
+      style="
+        margin-top:15px;
+        background:#f8fafc
+      ">
+
+
+      <h3>
+        Ley ajustada
+      </h3>
+
+
+      <p
+        style="
+          font-size:18px;
+          text-align:center
+        ">
+
+        <b>
+          PPV =
+          ${fmt(A,4)}
+          ×
+          D<sup>${fmt(B,4)}</sup>
+        </b>
+
+      </p>
+
+
+      <p class="help">
+
+        Ajuste logarítmico preliminar realizado
+        sobre las mediciones disponibles.
+
+        Para estudios reglamentarios deberá
+        utilizarse la metodología y tratamiento
+        de datos que corresponda al estudio
+        técnico de vibraciones.
+
+      </p>
+
+
+    </div>
+
+    `;
+
+}
+
+
+/* ==========================================================
+   DESCARGA
+   ========================================================== */
+
+function descargarBlob(
+  blob,
+  nombre
+){
+
+  const url =
+    URL.createObjectURL(
+      blob
+    );
+
+
+  const a =
+    document.createElement("a");
+
+
+  a.href =
+    url;
+
+
+  a.download =
+    nombre;
+
+
+  document.body.appendChild(a);
+
+
+  a.click();
+
+
+  a.remove();
+
+
+  setTimeout(
+    ()=>{
+      URL.revokeObjectURL(url);
+    },
+    1000
+  );
+
+}
+
+
+/* ==========================================================
+   EXPORTAR JSON
+   ========================================================== */
+
+function exportJSON(){
+
+  const blob =
+    new Blob(
+      [
+        JSON.stringify(
+          mediciones,
+          null,
+          2
+        )
+      ],
+      {
+        type:
+          "application/json"
+      }
+    );
+
+
+  descargarBlob(
+    blob,
+    "backup_vibraciones_din4150_3.json"
+  );
+
+}
+
+
+/* ==========================================================
+   IMPORTAR JSON
+   ========================================================== */
+
+async function importJSONFile(event){
+
+  const file =
+    event.target.files[0];
+
+
+  if(!file)
+    return;
+
+
+  const reader =
+    new FileReader();
+
+
+  reader.onload=async function(){
+
+    try{
+
+      const data =
+        JSON.parse(
+          reader.result
+        );
+
+
+      if(!Array.isArray(data))
+        throw new Error(
+          "Formato incorrecto"
+        );
+
+
+      if(
+        !confirm(
+          "Esto reemplazará las mediciones actuales. ¿Continuar?"
+        )
+      )
+        return;
+
+
+      mediciones =
+        data.map(m => ({
+          ...m,
+          modoDIN:
+            m.modoDIN ||
+            "fundacion_corta"
+        }));
+
+      // Guardar en IndexedDB
+      await saveData();
+
+      renderHistorial();
+
+      actualizarDashboard();
+
+
+      alert(
+        "Backup restaurado."
+      );
+
+
+    }
+
+    catch(e){
+
+      alert(
+        "No se pudo importar el archivo JSON.\n"+
+        e.message
+      );
+
+    }
+
+  };
+
+
+  reader.readAsText(file);
+
+}
+
+
+/* ==========================================================
+   CSV
+   ========================================================== */
+
+function csvEscape(v){
+
+  if(
+    v===null ||
+    v===undefined
+  )
+    return "";
+
+
+  let s =
+    String(v);
+
+
+  if(
+    s.includes(";")
+    ||
+    s.includes('"')
+    ||
+    s.includes("\n")
+  ){
+
+    s =
+      '"'+
+      s.replaceAll(
+        '"',
+        '""'
+      )+
+      '"';
+
+  }
+
+
+  return s;
+
+}
+
+
+/* ==========================================================
+   EXPORTAR CSV
+   ========================================================== */
+
+function exportCSV(){
+
+  const headers=[
+
+    "id",
+
+    "voladura",
+
+    "fecha",
+
+    "hora",
+
+    "explotacion",
+
+    "punto",
+
+    "distancia_m",
+
+    "grupo",
+
+    "estructura",
+
+    "carga_total_kg",
+
+    "carga_MIC_kg",
+
+    "barrenos",
+
+    "secuencias",
+
+    "fabricante",
+
+    "modelo",
+
+    "serie",
+
+    "vertical_mm_s",
+
+    "longitudinal_mm_s",
+
+    "transversal_mm_s",
+
+    "ppv_max_mm_s",
+
+    "componente",
+
+    "frecuencia_hz",
+
+    "modo_din_4150_3",
+
+    "metodo_frecuencia",
+
+    "desplazamiento_mm",
+
+    "observaciones"
+
+  ];
+
+
+  let csv =
+    headers.join(";")
+    +
+    "\n";
+
+
+  mediciones.forEach(
+    m=>{
+
+      const row=[
+
+        m.id,
+
+        m.voladura,
+
+        m.fecha,
+
+        m.hora,
+
+        m.explotacion,
+
+        m.punto,
+
+        m.distancia,
+
+        m.grupo,
+
+        m.estructura,
+
+        m.cargaTotal,
+
+        m.cargaMIC,
+
+        m.barrenos,
+
+        m.secuencias,
+
+        m.fabricante,
+
+        m.modelo,
+
+        m.serie,
+
+        m.vertical,
+
+        m.longitudinal,
+
+        m.transversal,
+
+        m.ppv,
+
+        m.componente,
+
+        m.frecuencia,
+
+        m.modoDIN || "fundacion_corta",
+
+        m.metodoFrecuencia,
+
+        m.desplazamiento,
+
+        m.observaciones
+
+      ];
+
+
+      csv +=
+        row
+        .map(csvEscape)
+        .join(";")
+        +
+        "\n";
+
+    }
+  );
+
+
+  const blob =
+    new Blob(
+      [
+        "\ufeff"+
+        csv
+      ],
+      {
+        type:
+          "text/csv;charset=utf-8"
+      }
+    );
+
+
+  descargarBlob(
+    blob,
+    "mediciones_vibraciones_din4150_3.csv"
+  );
+
+}
+
+/* ==========================================================
+   EXPORTAR EXCEL — FORMATO .XLS COMPATIBLE SIN DEPENDENCIAS
+   ========================================================== */
+
+function exportExcel(){
+
+  const headers=[
+
+    "ID",
+    "Voladura",
+    "Fecha",
+    "Hora",
+    "Explotación / obra",
+    "Punto",
+    "Distancia (m)",
+    "Línea DIN 4150-3",
+    "Estructura",
+    "Modo de evaluación DIN 4150-3",
+    "Carga total (kg)",
+    "Carga máxima instantánea / secuencia (kg)",
+    "Nº barrenos",
+    "Secuencias",
+    "Fabricante",
+    "Modelo",
+    "Nº serie",
+    "Vertical (mm/s)",
+    "Longitudinal (mm/s)",
+    "Transversal (mm/s)",
+    "Velocidad evaluada (mm/s)",
+    "Componente evaluada",
+    "Frecuencia (Hz)",
+    "Método frecuencia",
+    "Desplazamiento (mm)",
+    "Estado",
+    "Valor guía DIN 4150-3 (mm/s)",
+    "Relación PPV/guía (%)",
+    "Observaciones"
+
+  ];
+
+  const rows=mediciones.map(m=>{
+
+    const modo=m.modoDIN || "fundacion_corta";
+
+    const r=evaluar(
+      m.grupo,
+      m.frecuencia,
+      m.ppv,
+      modo
+    );
+
+    return [
+
+      m.id,
+      m.voladura,
+      m.fecha,
+      m.hora,
+      m.explotacion,
+      m.punto,
+      m.distancia,
+      m.grupo,
+      m.estructura,
+      DIN_MODOS[modo]?.etiqueta || modo,
+      m.cargaTotal,
+      m.cargaMIC,
+      m.barrenos,
+      m.secuencias,
+      m.fabricante,
+      m.modelo,
+      m.serie,
+      m.vertical,
+      m.longitudinal,
+      m.transversal,
+      m.ppv,
+      m.componente,
+      m.frecuencia,
+      m.metodoFrecuencia,
+      m.desplazamiento,
+      r.texto,
+      r.limite,
+      r.limite && m.ppv!==null
+        ? (m.ppv/r.limite)*100
+        : null,
+      m.observaciones
+
+    ];
+
+  });
+
+  const escXls=v=>{
+    const s=String(v ?? "");
+    return s
+      .replace(/&/g,"&amp;")
+      .replace(/</g,"&lt;")
+      .replace(/>/g,"&gt;")
+      .replace(/"/g,"&quot;");
+  };
+
+  let html=
+    '<html xmlns:o="urn:schemas-microsoft-com:office:office" '+
+    'xmlns:x="urn:schemas-microsoft-com:office:excel" '+
+    'xmlns="http://www.w3.org/TR/REC-html40">'+
+    '<head><meta charset="UTF-8">'+
+    '<style>'+
+    'table{border-collapse:collapse;font-family:Arial,sans-serif;font-size:10pt}'+
+    'th{background:#17324d;color:#fff;font-weight:bold;border:1px solid #9aa4b2;padding:6px}'+
+    'td{border:1px solid #d0d5dd;padding:5px}'+
+    '</style></head><body>'+
+    '<table><thead><tr>';
+
+  headers.forEach(h=>{
+    html+='<th>'+escXls(h)+'</th>';
+  });
+
+  html+='</tr></thead><tbody>';
+
+  rows.forEach(row=>{
+
+    html+='<tr>';
+
+    row.forEach(v=>{
+      html+='<td>'+escXls(v)+'</td>';
+    });
+
+    html+='</tr>';
+
+  });
+
+  html+='</tbody></table></body></html>';
+
+  const blob=new Blob(
+    ['\ufeff',html],
+    {type:'application/vnd.ms-excel;charset=utf-8'}
+  );
+
+  descargarBlob(
+    blob,
+    'mediciones_vibraciones_din4150_3.xls'
+  );
+
+}
+
+
+
+/* ==========================================================
+   IMPORTAR CSV
+   ========================================================== */
+
+function parseCSVLine(line){
+
+  const result=[];
+
+  let current="";
+
+  let quoted=false;
+
+
+  for(
+    let i=0;
+    i<line.length;
+    i++
+  ){
+
+    const ch =
+      line[i];
+
+
+    if(ch==='"'){
+
+      if(
+        quoted &&
+        line[i+1]==='"'
+      ){
+
+        current+='"';
+
+        i++;
+
+      }
+
+      else{
+
+        quoted=
+          !quoted;
+
+      }
+
+    }
+
+
+    else if(
+      ch===";" &&
+      !quoted
+    ){
+
+      result.push(
+        current
+      );
+
+      current="";
+
+    }
+
+
+    else{
+
+      current+=ch;
+
+    }
+
+  }
+
+
+  result.push(
+    current
+  );
+
+
+  return result;
+
+}
+
+
+/* ==========================================================
+   IMPORTAR CSV
+   ========================================================== */
+
+async function importCSVFile(event){
+
+  const file =
+    event.target.files[0];
+
+
+  if(!file)
+    return;
+
+
+  const reader =
+    new FileReader();
+
+
+  reader.onload=async function(){
+
+    try{
+
+      let text =
+        reader.result;
+
+
+      text =
+        text.replace(
+          /^\uFEFF/,
+          ""
+        );
+
+
+      const lines =
+        text
+        .split(/\r?\n/)
+        .filter(
+          x=>x.trim()!==""
+        );
+
+
+      if(lines.length<2)
+        throw new Error(
+          "CSV vacío"
+        );
+
+
+      const headers =
+        parseCSVLine(
+          lines[0]
+        );
+
+
+      const rows=[];
+
+
+      for(
+        let i=1;
+        i<lines.length;
+        i++
+      ){
+
+        const values =
+          parseCSVLine(
+            lines[i]
+          );
+
+
+        const obj={};
+
+
+        headers.forEach(
+          (h,j)=>{
+
+            obj[h] =
+              values[j] ??
+              "";
+
+          }
+        );
+
+
+        rows.push({
+
+          id:
+            obj.id ||
+            uid(),
+
+          voladura:
+            obj.voladura ||
+            "",
+
+          fecha:
+            obj.fecha ||
+            "",
+
+          hora:
+            obj.hora ||
+            "",
+
+          explotacion:
+            obj.explotacion ||
+            "",
+
+          punto:
+            obj.punto ||
+            "",
+
+          distancia:
+            n(obj.distancia_m),
+
+          grupo:
+            obj.grupo ||
+            "II",
+
+          estructura:
+            obj.estructura ||
+            "",
+
+          cargaTotal:
+            n(
+              obj.carga_total_kg
+            ),
+
+          cargaMIC:
+            n(
+              obj.carga_MIC_kg
+            ),
+
+          barrenos:
+            n(obj.barrenos),
+
+          secuencias:
+            obj.secuencias ||
+            "",
+
+          fabricante:
+            obj.fabricante ||
+            "",
+
+          modelo:
+            obj.modelo ||
+            "",
+
+          serie:
+            obj.serie ||
+            "",
+
+          vertical:
+            n(
+              obj.vertical_mm_s
+            ),
+
+          longitudinal:
+            n(
+              obj.longitudinal_mm_s
+            ),
+
+          transversal:
+            n(
+              obj.transversal_mm_s
+            ),
+
+          ppv:
+            n(
+              obj.ppv_max_mm_s
+            ),
+
+          componente:
+            obj.componente ||
+            "",
+
+          frecuencia:
+            n(
+              obj.frecuencia_hz
+            ),
+
+          modoDIN:
+            obj.modo_din_4150_3 ||
+            "fundacion_corta",
+
+          metodoFrecuencia:
+            obj.metodo_frecuencia ||
+            "",
+
+          desplazamiento:
+            n(
+              obj.desplazamiento_mm
+            ),
+
+          observaciones:
+            obj.observaciones ||
+            "",
+
+          creado:
+            new Date().toISOString()
+
+        });
+
+      }
+
+
+      if(
+        !confirm(
+          `Se han encontrado ${rows.length} registros. `+
+          `¿Añadirlos a la base de datos?`
+        )
+      )
+        return;
+
+
+      mediciones=[
+        ...mediciones,
+        ...rows
+      ];
+
+      // Guardar en IndexedDB
+      await saveData();
+
+      renderHistorial();
+
+      actualizarDashboard();
+
+
+      alert(
+        `Importadas ${rows.length} mediciones.`
+      );
+
+
+    }
+
+    catch(e){
+
+      alert(
+        "No se pudo importar el CSV.\n"+
+        e.message
+      );
+
+    }
+
+  };
+
+
+  reader.readAsText(
+    file,
+    "UTF-8"
+  );
+
+}
+
+
+/* ==========================================================
+   BORRAR TODO
+   ========================================================== */
+
+async function borrarTodo(){
+
+  if(
+    !confirm(
+      "ATENCIÓN: se eliminarán todas las mediciones "+
+      "guardadas en este dispositivo.\n\n"+
+      "¿Continuar?"
+    )
+  )
+    return;
+
+
+  mediciones=[];
+
+  // Guardar en IndexedDB
+  await saveData();
+
+  renderHistorial();
+
+  actualizarDashboard();
+
+
+  alert(
+    "Datos eliminados."
+  );
+
+}
+
+
+/* ==========================================================
+   FECHA ACTUAL
+   ========================================================== */
+
+function establecerFechaActual(){
+
+  const ahora =
+    new Date();
+
+
+  const yyyy =
+    ahora.getFullYear();
+
+
+  const mm =
+    String(
+      ahora.getMonth()+1
+    )
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  const dd =
+    String(
+      ahora.getDate()
+    )
+    .padStart(
+      2,
+      "0"
+    );
+
+
+  document.getElementById(
+    "fecha"
+  ).value =
+
+    `${yyyy}-${mm}-${dd}`;
+
+
+  document.getElementById(
+    "hora"
+  ).value =
+
+    String(
+      ahora.getHours()
+    )
+    .padStart(2,"0")
+    +
+    ":"
+    +
+    String(
+      ahora.getMinutes()
+    )
+    .padStart(2,"0");
+
+}
+
+
+/* ==========================================================
+   INFORME
+   ========================================================== */
+
+function verInforme(id){
+
+  const m =
+    mediciones.find(
+      x=>x.id===id
+    );
+
+
+  if(!m)
+    return;
+
+
+  medicionSeleccionada =
+    m;
+
+
+  generarInforme(m);
+
+
+  showTab(
+    "tab-informe",
+    document.querySelectorAll(
+      "nav button"
+    )[6]
+  );
+
+}
+
+
+function generarInforme(m){
+
+  const modo=m.modoDIN || "fundacion_corta";
+
+  const r=evaluar(
+    m.grupo,
+    m.frecuencia,
+    m.ppv,
+    modo
+  );
+
+  const pct=r.limite ? (m.ppv/r.limite)*100 : null;
+
+  const fechaSave=m.creado ? new Date(m.creado) : null;
+  let fechaGeneracionCompleta;
+
+  if(fechaSave && !isNaN(fechaSave.getTime())){
+
+    const fechaGeneracion=fechaSave.toLocaleDateString('es-ES');
+    const horaGeneracion=fechaSave.toLocaleTimeString(
+      'es-ES',
+      {hour:'2-digit',minute:'2-digit'}
+    );
+
+    fechaGeneracionCompleta=
+      `${fechaGeneracion} · ${horaGeneracion}`;
+
+  }
+  else{
+
+    fechaGeneracionCompleta='Fecha no disponible';
+
+  }
+
+  const pdfGeneradoEl=document.getElementById('pdf-generado');
+
+  if(pdfGeneradoEl)
+    pdfGeneradoEl.textContent=fechaGeneracionCompleta;
+
+  const pdfProyectoEl=document.getElementById('pdf-proyecto');
+
+  if(pdfProyectoEl && m.explotacion)
+    pdfProyectoEl.textContent=m.explotacion;
+
+  document.getElementById("informeDatos").innerHTML=
+
+  `
+
+    <h3>
+      1. Identificación
+    </h3>
+
+    <table>
+
+      <tr>
+        <td><b>Voladura</b></td>
+        <td>${esc(m.voladura)}</td>
+        <td><b>Fecha</b></td>
+        <td>${esc(m.fecha)}</td>
+      </tr>
+
+      <tr>
+        <td><b>Hora</b></td>
+        <td>${esc(m.hora)}</td>
+        <td><b>Explotación</b></td>
+        <td>${esc(m.explotacion)}</td>
+      </tr>
+
+      <tr>
+        <td><b>Punto</b></td>
+        <td>${esc(m.punto)}</td>
+        <td><b>Distancia</b></td>
+        <td>${fmt(m.distancia)} m</td>
+      </tr>
+
+      <tr>
+        <td><b>Estructura</b></td>
+        <td>${esc(m.estructura)}</td>
+        <td><b>Línea DIN 4150-3</b></td>
+        <td>${esc(m.grupo)}</td>
+      </tr>
+
+      <tr>
+        <td><b>Modo de evaluación</b></td>
+        <td colspan="3">${esc(r.modoEtiqueta || modo)}</td>
+      </tr>
+
+    </table>
+
+
+    <h3>
+      2. Datos de la voladura
+    </h3>
+
+    <table>
+
+      <tr>
+        <td><b>Carga total</b></td>
+        <td>${fmt(m.cargaTotal)} kg</td>
+        <td><b>Carga máxima instantánea / secuencia</b></td>
+        <td>${fmt(m.cargaMIC)} kg</td>
+      </tr>
+
+      <tr>
+        <td><b>Nº de barrenos</b></td>
+        <td>${fmt(m.barrenos,0)}</td>
+        <td><b>Secuencias</b></td>
+        <td>${esc(m.secuencias)}</td>
+      </tr>
+
+    </table>
+
+
+    <h3>
+      3. Instrumentación
+    </h3>
+
+    <table>
+
+      <tr>
+        <td><b>Fabricante</b></td>
+        <td>${esc(m.fabricante)}</td>
+        <td><b>Modelo</b></td>
+        <td>${esc(m.modelo)}</td>
+      </tr>
+
+      <tr>
+        <td><b>Nº serie</b></td>
+        <td>${esc(m.serie)}</td>
+        <td><b>Método de frecuencia</b></td>
+        <td>${esc(m.metodoFrecuencia)}</td>
+      </tr>
+
+    </table>
+
+
+    <h3>
+      4. Resultados de la medición
+    </h3>
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Componente</th>
+          <th>Símbolo</th>
+          <th>PPV (mm/s)</th>
+          <th>Observación</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr>
+          <td>Vertical</td>
+          <td style="color:#e53935;font-size:18px;font-weight:bold;">★</td>
+          <td>${fmt(m.vertical)}</td>
+          <td>${m.componente==="Vertical" ? "<b>Componente evaluada</b>" : ""}</td>
+        </tr>
+
+        <tr>
+          <td>Longitudinal</td>
+          <td style="color:#16803c;font-size:18px;font-weight:bold;">■</td>
+          <td>${fmt(m.longitudinal)}</td>
+          <td>${m.componente==="Longitudinal" ? "<b>Componente evaluada</b>" : ""}</td>
+        </tr>
+
+        <tr>
+          <td>Transversal</td>
+          <td style="color:#9b59b6;font-size:18px;font-weight:bold;">✕</td>
+          <td>${fmt(m.transversal)}</td>
+          <td>${m.componente==="Transversal" ? "<b>Componente evaluada</b>" : ""}</td>
+        </tr>
+
+      </tbody>
+
+    </table>
+
+
+    <div
+      style="
+        margin-top:20px;
+        padding:20px;
+        border:2px solid ${
+          r.estado==="green"
+          ? "#16803c"
+          : r.estado==="orange"
+          ? "#b56a00"
+          : r.estado==="red"
+          ? "#b42318"
+          : "#667085"
+        };
+        border-radius:10px;
+        page-break-inside:avoid;
+      ">
+
+      <h2 style="margin-top:0">
+        RESULTADO: ${esc(r.texto)}
+      </h2>
+
+      <p>
+        <b>Velocidad máxima evaluada:</b>
+        ${fmt(m.ppv)} mm/s
+      </p>
+
+      <p>
+        <b>Componente evaluada:</b>
+        ${esc(m.componente)}
+      </p>
+
+      <p>
+        <b>Frecuencia principal:</b>
+        ${m.frecuencia===null ? "No requerida para este modo" : fmt(m.frecuencia)+" Hz"}
+      </p>
+
+      <p>
+        <b>Línea de estructura:</b>
+        ${esc(m.grupo)} — ${esc(CRITERIOS[m.grupo]?.nombre || "")}
+      </p>
+
+      <p>
+        <b>Modo:</b>
+        ${esc(r.modoEtiqueta || modo)}
+      </p>
+
+      <p>
+        <b>Valor guía DIN 4150-3:</b>
+        ${r.limite===null ? "No disponible" : fmt(r.limite)+" mm/s"}
+      </p>
+
+      <p>
+        <b>Relación PPV/valor guía:</b>
+        ${pct===null ? "—" : fmt(pct,1)+" %"}
+      </p>
+
+    </div>
+
+
+    <h3>
+      5. Observaciones
+    </h3>
+
+    <p>
+      ${esc(m.observaciones)}
+    </p>
+
+
+    <h3>
+      6. Criterio de evaluación
+    </h3>
+
+    <p>
+      La evaluación se ha adaptado a DIN 4150-3:2016-12.
+      Para la opción de corta duración en cimentación se utiliza
+      el máximo de las tres componentes de velocidad de vibración
+      (vertical, longitudinal y transversal) y el valor guía dependiente
+      de la frecuencia de la Tabla 1.
+    </p>
+
+    <p>
+      Para el piso superior se consideran las dos componentes
+      horizontales. Para la losa de piso se considera la componente
+      vertical. Los modos de larga duración utilizan los valores guía
+      correspondientes de la Tabla 4.
+    </p>
+
+    <p>
+      En la evaluación de cimentación, para 10–50 Hz y 50–100 Hz
+      se realiza interpolación lineal entre los puntos de la tabla;
+      por encima de 100 Hz se aplica como mínimo el valor correspondiente
+      a 100 Hz.
+    </p>
+
+    <p>
+      <b>Importante:</b> "VIGILANCIA — ≥ 80 %" es un indicador preventivo
+      interno de la aplicación y no constituye una categoría normativa
+      adicional de DIN 4150-3.
+    </p>
+
+    <hr>
+
+    <p style="font-size:11px;color:#667085">
+      Documento generado mediante Control de Vibraciones V2.
+      Este informe es una herramienta de registro y comparación con
+      valores guía; debe ser revisado por personal técnicamente competente
+      antes de su utilización con finalidad oficial o reglamentaria.
+    </p>
+
+  `;
+
+}
+
+
+/* ==========================================================
+   FUNCIONES PARA PDF CON GRÁFICA
+   ========================================================== */
+
+function prepararGraficaParaPDF() {
+  const canvas = document.getElementById('chart');
+  if (!canvas) {
+    console.warn('No se encontró el canvas');
+    return;
+  }
+  
+  dibujarGrafica();
+  
+  const ctx = canvas.getContext('2d');
+  
+  try {
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    window._chartImageData = imageData;
+    window._chartDataURL = canvas.toDataURL('image/png');
+  } catch(e) {
+    console.warn('Error al capturar canvas:', e);
+  }
+  
+  console.log('✅ Gráfica preparada para exportación PDF');
+}
+
+
+function imprimirConGrafica() {
+  const graficaTab = document.getElementById('tab-grafica');
+  const informeTab = document.getElementById('tab-informe');
+  
+  if (informeTab && informeTab.classList.contains('active')) {
+    // La gráfica ya debería estar visible
+  }
+  
+  prepararGraficaParaPDF();
+  
+  setTimeout(function() {
+    dibujarGrafica();
+    
+    setTimeout(function() {
+      window.print();
+    }, 200);
+  }, 150);
+}
+
+
+/* ==========================================================
+   INICIO
+   ========================================================== */
+
+window.addEventListener(
+  "resize",
+  ()=>{
+
+    if(
+      document
+        .getElementById(
+          "tab-grafica"
+        )
+        .classList
+        .contains("active")
+    ){
+
+      dibujarGrafica();
+
+    }
+
+  }
+);
+
+
+window.addEventListener('beforeprint', function() {
+  console.log('🖨️ Preparando impresión...');
+  
+  const graficaActiva = document.getElementById('tab-grafica')?.classList.contains('active');
+  const informeActivo = document.getElementById('tab-informe')?.classList.contains('active');
+  
+  if (graficaActiva || informeActivo) {
+    dibujarGrafica();
+    prepararGraficaParaPDF();
+  }
+});
+
+
+window.addEventListener('afterprint', function() {
+  console.log('📄 Impresión completada');
+  window._chartImageData = null;
+  window._chartDataURL = null;
+});
+
+
+
+/* ==========================================================
+   THEME MANAGER (DYNAMIC LUXURY CLARO / OSCURO)
+   ========================================================== */
+
+function initTheme() {
+  const saved = localStorage.getItem('SICONVOL_THEME') || 'light';
+  setTheme(saved);
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') || 'light';
+  const next = current === 'dark' ? 'light' : 'dark';
+  setTheme(next);
+}
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('SICONVOL_THEME', theme);
+  const icon = document.getElementById('themeIcon');
+  const label = document.getElementById('themeLabel');
+  const meta = document.getElementById('themeMeta');
+  const logo = document.querySelector('.header-logo');
+  if (logo) {
+    logo.src = 'lemostransparente.png';
+  }
+  if (icon && label) {
+    if (theme === 'dark') {
+      icon.textContent = '🌙';
+      label.textContent = 'Modo Oscuro';
+      if (meta) meta.setAttribute('content', '#060911');
+    } else {
+      icon.textContent = '☀️';
+      label.textContent = 'Modo Claro';
+      if (meta) meta.setAttribute('content', '#0a101c');
+    }
+  }
+}
+
+// Inicializar tema inmediatamente
+initTheme();
+
+document.addEventListener(
+  "DOMContentLoaded",
+  async ()=>{
+
+    initTheme();
+
+    // Inicializar IndexedDB
+    await initDB();
+
+    establecerFechaActual();
+
+    actualizarDashboard();
+
+    renderHistorial();
+
+    setTimeout(
+      function() {
+        dibujarGrafica();
+        prepararGraficaParaPDF();
+      },
+      100
+    );
+
+  }
+);
+
+</script>
+
+</body>
+</html>
